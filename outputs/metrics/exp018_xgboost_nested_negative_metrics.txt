@@ -1,0 +1,58 @@
+experiment_id: EXP-018
+parameters: {'objective': 'binary:logistic', 'eval_metric': 'auc', 'n_estimators': 9000, 'learning_rate': 0.03, 'max_depth': 5, 'min_child_weight': 1, 'subsample': 0.9, 'colsample_bytree': 0.9, 'reg_alpha': 0.0, 'reg_lambda': 1.0, 'gamma': 0.0, 'tree_method': 'hist', 'random_state': 42, 'n_jobs': -1}; early_stopping_rounds=300
+base_features_reused: ['screen_gt_8', 'screen_le_6', 'social_gt_4', 'social_le_4', 'clear_positive_zone', 'clear_negative_zone', 'ambiguous_zone', 'screen_dist_to_6', 'screen_dist_to_8', 'social_dist_to_4', 'screen_abs_dist_to_6', 'screen_abs_dist_to_8', 'social_abs_dist_to_4', 'screen_x_social', 'screen_plus_social', 'screen_minus_social', 'screen_over_social', 'social_over_screen', 'min_abs_threshold_distance', 'screen_mid_band', 'social_near_threshold', 'screen_near_threshold', 'region_code']
+new_rule_features: ['neg_rule_social_weekend', 'neg_rule_social_work', 'neg_rule_social_screen', 'negative_rule_count', 'negative_rule_any']
+nested_rule_selection: thresholds and utility selected only on each outer_train
+rules_by_fold:
+ fold      rule_family  social_threshold  secondary_threshold       secondary_feature secondary_operator  coverage  base_target_rate  rule_target_rate     lift  rule_utility  rows  negative_zone_rows            feature_name
+    1 A_social_weekend              1.79                 6.58     weekend_screen_time                  >  0.165107          0.324927          0.669543 2.060598      0.140029 20393              123514 neg_rule_social_weekend
+    1    B_social_work              1.79                 1.99        work_study_hours                 <=  0.229869          0.324927          0.641554 1.974457      0.151806 28392              123514    neg_rule_social_work
+    1  C_social_screen              1.79                 4.50 daily_screen_time_hours                  >  0.231464          0.324927          0.624506 1.921990      0.144130 28589              123514  neg_rule_social_screen
+    2 A_social_weekend              1.79                 6.58     weekend_screen_time                  >  0.165583          0.325327          0.670341 2.060512      0.140393 20503              123823 neg_rule_social_weekend
+    2    B_social_work              1.68                 2.00        work_study_hours                 <=  0.266057          0.325327          0.621540 1.910506      0.152788 32944              123823    neg_rule_social_work
+    2  C_social_screen              1.79                 4.50 daily_screen_time_hours                  >  0.230975          0.325327          0.625699 1.923292      0.144358 28600              123823  neg_rule_social_screen
+    3 A_social_weekend              1.79                 6.58     weekend_screen_time                  >  0.164964          0.325251          0.668592 2.055617      0.139451 20425              123815 neg_rule_social_weekend
+    3    B_social_work              1.68                 2.00        work_study_hours                 <=  0.265275          0.325251          0.619759 1.905478      0.151686 32845              123815    neg_rule_social_work
+    3  C_social_screen              1.79                 4.50 daily_screen_time_hours                  >  0.231321          0.325251          0.624804 1.920987      0.144072 28641              123815  neg_rule_social_screen
+    4 A_social_weekend              1.79                 6.58     weekend_screen_time                  >  0.164881          0.325784          0.670328 2.057581      0.139904 20393              123683 neg_rule_social_weekend
+    4    B_social_work              1.68                 1.99        work_study_hours                 <=  0.265323          0.325784          0.618296 1.897868      0.150671 32816              123683    neg_rule_social_work
+    4  C_social_screen              1.79                 4.50 daily_screen_time_hours                  >  0.230145          0.325784          0.625400 1.919673      0.143736 28465              123683  neg_rule_social_screen
+    5 A_social_weekend              1.79                 6.58     weekend_screen_time                  >  0.165706          0.325163          0.669334 2.058455      0.140101 20498              123701 neg_rule_social_weekend
+    5    B_social_work              1.68                 2.00        work_study_hours                 <=  0.266659          0.325163          0.620718 1.908943      0.152622 32986              123701    neg_rule_social_work
+    5  C_social_screen              1.79                 4.50 daily_screen_time_hours                  >  0.231631          0.325163          0.625624 1.924031      0.144606 28653              123701  neg_rule_social_screen
+threshold_stability:
+                  social_threshold_mean  social_threshold_std  secondary_threshold_mean  secondary_threshold_std  lift_mean  lift_std  coverage_mean  coverage_std
+rule_family                                                                                                                                                       
+A_social_weekend                  1.790              0.000000                     6.580                 0.000000   2.058553  0.002097       0.165248      0.000373
+B_social_work                     1.702              0.049193                     1.996                 0.005477   1.919451  0.031134       0.258637      0.016092
+C_social_screen                   1.790              0.000000                     4.500                 0.000000   1.921994  0.001749       0.231107      0.000590
+stability_assessment: Thresholds vary reasonably with stable lift/coverage (robust hypothesis).
+fold_1_roc_auc: 0.96509017
+fold_2_roc_auc: 0.96562440
+fold_3_roc_auc: 0.96588801
+fold_4_roc_auc: 0.96640756
+fold_5_roc_auc: 0.96546207
+mean_roc_auc: 0.96569444
+std_roc_auc: 0.00044047
+overall_oof_roc_auc: 0.96569323
+exp016_oof_auc: 0.96570173
+global_delta: -0.00000850
+fold_deltas: [6.987995776053246e-05, -4.006136697054519e-05, 4.321132850426679e-06, -4.745913889558917e-05, -2.533362313483778e-05]
+std_delta: -0.00003118
+fold_1_best_iteration_zero_based: 7885
+fold_2_best_iteration_zero_based: 7390
+fold_3_best_iteration_zero_based: 7501
+fold_4_best_iteration_zero_based: 7820
+fold_5_best_iteration_zero_based: 7426
+region_results:
+{'clear_negative_zone': {'rows': 154634, 'exp016_auc': 0.9140341872492231, 'exp018_auc': 0.9139018027560082, 'auc_delta': -0.00013238449321495427, 'exp016_logloss': 0.3450794000261916, 'exp018_logloss': 0.3453137496046916}, 'outside_clear_negative_zone': {'rows': 536735, 'exp016_auc': 0.9665703530634857, 'exp018_auc': 0.9665839052162294, 'auc_delta': 1.3552152743678825e-05, 'exp016_logloss': 0.17669960952662608, 'exp018_logloss': 0.17667851269360565}}
+new_feature_mean_normalized_gain: {'neg_rule_social_weekend': 0.0007100089742782585, 'neg_rule_social_work': 0.000862398026370665, 'neg_rule_social_screen': 0.0006959284385745291, 'negative_rule_count': 0.0006249276421970662, 'negative_rule_any': 0.0007126095375031067}
+fold_1_seconds: 756.93
+fold_2_seconds: 662.52
+fold_3_seconds: 681.52
+fold_4_seconds: 736.88
+fold_5_seconds: 623.29
+total_seconds: 3463.38
+decision: Empeora: descartar reglas nested.
+submission_validations: OK
+problems: none

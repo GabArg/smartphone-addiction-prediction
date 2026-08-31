@@ -1,0 +1,33 @@
+experiment_id: EXP-003
+parameters: CatBoostClassifier(iterations=4000, learning_rate=0.05, depth=7, loss_function='Logloss', eval_metric='AUC', random_seed=42, verbose=False, allow_writing_files=False)
+cv_strategy: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+early_stopping_rounds: 200
+fold_1_roc_auc: 0.963017
+fold_2_roc_auc: 0.963355
+fold_3_roc_auc: 0.963795
+fold_4_roc_auc: 0.964422
+fold_5_roc_auc: 0.963375
+mean_roc_auc: 0.963593
+std_roc_auc: 0.000483
+overall_oof_roc_auc: 0.963592
+fold_1_best_iteration: 3999
+fold_2_best_iteration: 3998
+fold_3_best_iteration: 3996
+fold_4_best_iteration: 3999
+fold_5_best_iteration: 3990
+mean_best_iteration: 3996.40
+fold_1_seconds: 978.34
+fold_2_seconds: 1024.49
+fold_3_seconds: 1017.02
+fold_4_seconds: 1041.68
+fold_5_seconds: 1023.49
+total_seconds: 5085.14
+exp002_mean_roc_auc: 0.958956
+fold_1_difference_vs_exp002: +0.004704
+fold_2_difference_vs_exp002: +0.004722
+fold_3_difference_vs_exp002: +0.004745
+fold_4_difference_vs_exp002: +0.004451
+fold_5_difference_vs_exp002: +0.004563
+mean_difference_vs_exp002: +0.004637
+exp002_best_iterations: [999, 999, 999, 999, 999]
+conclusion: EXP-003 mejora EXP-002 en CV

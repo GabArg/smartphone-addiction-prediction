@@ -1,0 +1,4 @@
+step,feature,spec,auc,delta,folds_improved,accepted,std
+0,baseline,[],0.9635099637855411,0.0,5,True,
+1,screen_minus_social,"[('screen_minus_social', 1)]",0.9635752939431477,6.533015760656902e-05,5,True,0.0004410103652178554
+2,social_minus_gaming,"[('screen_minus_social', 1), ('social_minus_gaming', 1)]",0.9635920976940741,1.6803750926386307e-05,4,False,0.0004499890301990681

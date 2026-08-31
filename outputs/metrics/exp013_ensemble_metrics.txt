@@ -1,0 +1,57 @@
+EXP-013 - ENSEMBLE CENTERED ON EXP-012
+exp012_individual_auc: 0.96522827
+exp003_individual_auc: 0.96359231
+exp006_individual_auc: 0.96366366
+exp008_individual_auc: 0.96435470
+exp010_individual_auc: 0.96437429
+
+pearson_correlation:
+           exp012     exp003     exp006     exp008     exp010
+exp012 1.00000000 0.98920059 0.99045353 0.99462752 0.99407998
+exp003 0.98920059 1.00000000 0.99193981 0.99154960 0.99073945
+exp006 0.99045353 0.99193981 1.00000000 0.99179066 0.99400956
+exp008 0.99462752 0.99154960 0.99179066 1.00000000 0.99593712
+exp010 0.99407998 0.99073945 0.99400956 0.99593712 1.00000000
+
+spearman_correlation:
+           exp012     exp003     exp006     exp008     exp010
+exp012 1.00000000 0.98961773 0.99311353 0.99639562 0.99580967
+exp003 0.98961773 1.00000000 0.99065793 0.99123368 0.99051377
+exp006 0.99311353 0.99065793 1.00000000 0.99400042 0.99530785
+exp008 0.99639562 0.99123368 0.99400042 1.00000000 0.99713962
+exp010 0.99580967 0.99051377 0.99530785 0.99713962 1.00000000
+
+exp012_baseline: name=exp012_individual; method=probability; models=('exp012',); weights=(1.0,); auc=0.96522827; fold_scores=[0.96460143, 0.96521723, 0.96534392, 0.96599757, 0.96500485]; std=0.00045783
+exp011_reference_oof: 0.96483039
+
+probability_pair_results:
+name=prob_pair_exp012_exp003; method=probability; models=('exp012', 'exp003'); weights=(0.77, 0.22999999999999998); auc=0.96540041; fold_scores=[0.96478703, 0.9653113, 0.96554788, 0.96618063, 0.96519383]; std=0.00045984
+name=prob_pair_exp012_exp006; method=probability; models=('exp012', 'exp006'); weights=(0.79, 0.20999999999999996); auc=0.96534653; fold_scores=[0.96470715, 0.96530787, 0.96551178, 0.966105, 0.96512147]; std=0.00046119
+name=prob_pair_exp012_exp008; method=probability; models=('exp012', 'exp008'); weights=(0.79, 0.20999999999999996); auc=0.96529400; fold_scores=[0.96466785, 0.96527418, 0.96541049, 0.96607758, 0.96506131]; std=0.00046348
+name=prob_pair_exp012_exp010; method=probability; models=('exp012', 'exp010'); weights=(0.76, 0.24); auc=0.96532448; fold_scores=[0.96468754, 0.9653064, 0.96543719, 0.96611426, 0.96509652]; std=0.00046784
+probability_triple_results:
+name=prob_triple_exp012_exp003_exp006; method=probability; models=('exp012', 'exp003', 'exp006'); weights=(0.72, 0.18, 0.1); auc=0.96541841; fold_scores=[0.96479426, 0.96533728, 0.9655797, 0.96619133, 0.96520679]; std=0.00046136
+name=prob_triple_exp012_exp003_exp008; method=probability; models=('exp012', 'exp003', 'exp008'); weights=(0.73, 0.21, 0.06); auc=0.96540503; fold_scores=[0.96479243, 0.96531757, 0.96554881, 0.96619009, 0.9651945]; std=0.00046134
+name=prob_triple_exp012_exp003_exp010; method=probability; models=('exp012', 'exp003', 'exp010'); weights=(0.68, 0.19, 0.13); auc=0.96542186; fold_scores=[0.96480215, 0.96533955, 0.96555864, 0.96621384, 0.96521155]; std=0.00046496
+name=prob_triple_exp012_exp006_exp008; method=probability; models=('exp012', 'exp006', 'exp008'); weights=(0.72, 0.17, 0.11); auc=0.96535964; fold_scores=[0.96472254, 0.965322, 0.96551343, 0.96613034, 0.96512849]; std=0.00046439
+name=prob_triple_exp012_exp006_exp010; method=probability; models=('exp012', 'exp006', 'exp010'); weights=(0.72, 0.15, 0.13); auc=0.96536271; fold_scores=[0.96472058, 0.96532881, 0.96551009, 0.9661357, 0.96513641]; std=0.00046559
+four_model_search_performed: True
+five_model_search_performed: False
+multi_model_result: name=prob_four_exp012_exp003_exp010_exp006; method=probability; models=('exp012', 'exp003', 'exp010', 'exp006'); weights=(0.68, 0.17, 0.09, 0.06); auc=0.96542691; fold_scores=[0.9648026, 0.96534841, 0.9655747, 0.96621048, 0.96521519]; std=0.00046401
+multi_model_result: name=prob_four_exp012_exp003_exp010_exp008; method=probability; models=('exp012', 'exp003', 'exp010', 'exp008'); weights=(0.68, 0.19, 0.13, 0.0); auc=0.96542186; fold_scores=[0.96480215, 0.96533955, 0.96555864, 0.96621384, 0.96521155]; std=0.00046496
+
+best_probability: name=prob_four_exp012_exp003_exp010_exp006; method=probability; models=('exp012', 'exp003', 'exp010', 'exp006'); weights=(0.68, 0.17, 0.09, 0.06); auc=0.96542691; fold_scores=[0.9648026, 0.96534841, 0.9655747, 0.96621048, 0.96521519]; std=0.00046401
+rank_result: name=rank_exp012_exp003; method=rank; models=('exp012', 'exp003'); weights=(0.76, 0.24); auc=0.96539781; fold_scores=[0.96479331, 0.96530322, 0.96554141, 0.96617922, 0.96519086]; std=0.00045790
+rank_result: name=rank_exp012_exp003_exp006; method=rank; models=('exp012', 'exp003', 'exp006'); weights=(0.72, 0.18, 0.1); auc=0.96541346; fold_scores=[0.96479833, 0.96533153, 0.965569, 0.96618716, 0.96519993]; std=0.00045901
+rank_result: name=rank_exp012_exp003_exp010_exp006; method=rank; models=('exp012', 'exp003', 'exp010', 'exp006'); weights=(0.68, 0.18, 0.09, 0.05); auc=0.96542127; fold_scores=[0.96480638, 0.96533857, 0.96556354, 0.9662077, 0.96520843]; std=0.00046236
+best_rank: name=rank_exp012_exp003_exp010_exp006; method=rank; models=('exp012', 'exp003', 'exp010', 'exp006'); weights=(0.68, 0.18, 0.09, 0.05); auc=0.96542127; fold_scores=[0.96480638, 0.96533857, 0.96556354, 0.9662077, 0.96520843]; std=0.00046236
+
+raw_best_auc: 0.96542691
+near_tie_tolerance: 0.00002
+winner: name=rank_exp012_exp003_exp006; method=rank; models=('exp012', 'exp003', 'exp006'); weights=(0.72, 0.18, 0.1); auc=0.96541346; fold_scores=[0.96479833, 0.96533153, 0.965569, 0.96618716, 0.96519993]; std=0.00045901
+improvement_vs_exp012: +0.00018519
+fold_improvements_vs_exp012: [0.00019689249292331734, 0.00011430067634754515, 0.0002250793441739285, 0.00018959665918594215, 0.00019508431922032887]
+improved_fold_count: 5
+std_change_vs_exp012: +0.00000118
+threshold_met: True
+submission_generated: True

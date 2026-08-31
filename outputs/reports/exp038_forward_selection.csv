@@ -1,0 +1,2 @@
+step,feature,auc,delta_incremental,folds_improved,accepted,configuration
+0,baseline,0.9635752939431477,0.0,5,True,"{'social_over_screen': ('round', 2.0), 'gaming_over_screen': ('round', 2.0), 'work_over_screen': ('round', 2.0), 'work_over_social': ('round', 2.0), 'gaming_over_social': ('round', 2.0), 'screen_minus_social': ('round', 1.0)}"

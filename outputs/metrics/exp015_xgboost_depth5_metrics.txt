@@ -1,0 +1,61 @@
+experiment_id: EXP-015
+parameters: XGBClassifier(objective='binary:logistic', eval_metric='auc', n_estimators=6000, learning_rate=0.03, max_depth=5, min_child_weight=1, subsample=0.9, colsample_bytree=0.9, reg_alpha=0.0, reg_lambda=1.0, gamma=0.0, tree_method='hist', random_state=42, n_jobs=-1, early_stopping_rounds=200)
+features_reused_exactly_from_exp012: ['screen_gt_8', 'screen_le_6', 'social_gt_4', 'social_le_4', 'clear_positive_zone', 'clear_negative_zone', 'ambiguous_zone', 'screen_dist_to_6', 'screen_dist_to_8', 'social_dist_to_4', 'screen_abs_dist_to_6', 'screen_abs_dist_to_8', 'social_abs_dist_to_4', 'screen_x_social', 'screen_plus_social', 'screen_minus_social', 'screen_over_social', 'social_over_screen', 'min_abs_threshold_distance', 'screen_mid_band', 'social_near_threshold', 'screen_near_threshold', 'region_code']
+cv_strategy: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+fold_1_roc_auc: 0.96493421
+fold_2_roc_auc: 0.96557286
+fold_3_roc_auc: 0.96578517
+fold_4_roc_auc: 0.96633031
+fold_5_roc_auc: 0.96540304
+fold_1_to_3_diagnostic_match: true
+mean_roc_auc: 0.96560512
+std_roc_auc: 0.00045833
+overall_oof_roc_auc: 0.96560334
+exp012_overall_oof_auc: 0.96522827
+global_delta_vs_exp012: +0.00037507
+fold_deltas_vs_exp012: [0.0003327761140152763, 0.00035563260199478197, 0.0004412513510680949, 0.00033273743161155167, 0.00039819146407049644]
+std_change_vs_exp012: +0.00000049
+fold_1_best_iteration_zero_based: 5997
+fold_2_best_iteration_zero_based: 5994
+fold_3_best_iteration_zero_based: 5982
+fold_4_best_iteration_zero_based: 5994
+fold_5_best_iteration_zero_based: 5997
+best_iteration_distribution: {'before_5500': 0, 'between_5500_and_5900': 0, 'above_5900': 5}
+fold_1_seconds: 540.40
+fold_2_seconds: 551.50
+fold_3_seconds: 514.09
+fold_4_seconds: 508.11
+fold_5_seconds: 510.09
+total_seconds: 2627.20
+pearson_vs_exp012: 0.99755565
+pearson_vs_exp003: 0.99108437
+pearson_vs_exp006: 0.99158574
+pearson_vs_exp008: 0.99457743
+spearman_vs_exp012: 0.99816924
+spearman_vs_exp003: 0.98985756
+spearman_vs_exp006: 0.99313224
+spearman_vs_exp008: 0.99609306
+top20_mean_normalized_gain:
+1. clear_positive_zone: 0.56557606
+2. region_code: 0.28603243
+3. screen_dist_to_6: 0.04201219
+4. daily_screen_time_hours: 0.02067007
+5. ambiguous_zone: 0.01216143
+6. social_dist_to_4: 0.01184052
+7. social_media_hours: 0.01152303
+8. social_over_screen: 0.00851497
+9. weekend_screen_time: 0.00535701
+10. social_abs_dist_to_4: 0.00387438
+11. screen_over_social: 0.00378133
+12. screen_gt_8: 0.00268797
+13. notifications_per_day: 0.00251316
+14. app_opens_per_day: 0.00246025
+15. screen_abs_dist_to_8: 0.00217497
+16. screen_plus_social: 0.00171598
+17. clear_negative_zone: 0.00170986
+18. screen_dist_to_8: 0.00143748
+19. screen_x_social: 0.00112366
+20. social_le_4: 0.00111383
+decision: Mejora >= +0.00010 OOF: recomendar subir a Kaggle.
+tree_recommendation: testear mas arboles en un experimento posterior
+submission_validations: OK

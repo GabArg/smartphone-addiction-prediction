@@ -1,0 +1,14 @@
+type,auc,delta_exp027,delta_exp028,fold,feature,granularity,smoothing,method,weight,selection_auc,valid_coverage,valid_unseen,features
+individual_result,0.9659226940534905,3.506000888497951e-06,-8.011085601666856e-06,,,,,,,,,,
+no_missing_result,0.9659227494202929,3.5613676908630154e-06,,,,,,,,,,,
+multi_result,0.9659219702864315,2.782233829434766e-06,-8.734852660730041e-06,,,,,,,,,,
+individual_choice,,,,1.0,daily_screen_time_hours,exact,10.0,rank,0.005,0.9660981636528259,0.9999276798241173,7.232017588266775e-05,
+individual_choice,,,,2.0,daily_screen_time_hours,exact,10.0,rank,0.01,0.9659426808219651,0.9999349118417056,6.508815829440097e-05,
+individual_choice,,,,3.0,daily_screen_time_hours,exact,5.0,rank,0.01,0.9658721525262461,0.9999204478065291,7.955219347093452e-05,
+individual_choice,,,,4.0,daily_screen_time_hours,exact,20.0,rank,0.01,0.9657276523802952,0.9999566078944704,4.339210552960065e-05,
+individual_choice,,,,5.0,daily_screen_time_hours,exact,5.0,rank,0.01,0.9659791250020245,0.9998987510215299,0.00010124897847012794,
+multi_choice,,,,1.0,,,,rank,0.005,0.9660978811353399,,,daily_screen_time_hours
+multi_choice,,,,2.0,,,,rank,0.005,0.9659424356172117,,,daily_screen_time_hours
+multi_choice,,,,3.0,,,,rank,0.01,0.9658718193122849,,,daily_screen_time_hours
+multi_choice,,,,4.0,,,,rank,0.01,0.9657270377985177,,,daily_screen_time_hours
+multi_choice,,,,5.0,,,,rank,0.01,0.9659789964692647,,,daily_screen_time_hours

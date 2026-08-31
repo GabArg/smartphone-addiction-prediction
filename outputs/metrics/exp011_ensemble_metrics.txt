@@ -1,0 +1,36 @@
+EXP-011 - DOES EXP-010 IMPROVE EXP-009?
+exp003_individual_auc: 0.96359231
+exp006_individual_auc: 0.96366366
+exp008_individual_auc: 0.96435470
+exp010_individual_auc: 0.96437429
+
+pearson_correlation:
+           exp003     exp006     exp008     exp010
+exp003 1.00000000 0.99193981 0.99154960 0.99073945
+exp006 0.99193981 1.00000000 0.99179066 0.99400956
+exp008 0.99154960 0.99179066 1.00000000 0.99593712
+exp010 0.99073945 0.99400956 0.99593712 1.00000000
+
+spearman_correlation:
+           exp003     exp006     exp008     exp010
+exp003 1.00000000 0.99065793 0.99123368 0.99051377
+exp006 0.99065793 1.00000000 0.99400042 0.99530785
+exp008 0.99123368 0.99400042 1.00000000 0.99713962
+exp010 0.99051377 0.99530785 0.99713962 1.00000000
+
+baseline_exp009: name=exp009_baseline; method=rank; models=('exp008', 'exp003', 'exp006'); weights=(0.53, 0.23, 0.24); auc=0.96474203; fold_scores=[0.96411639, 0.96460167, 0.96492353, 0.96557899, 0.96449535]; std=0.00049100
+replacement_probability_search: {'models': ('exp010', 'exp003', 'exp006'), 'auc': 0.9647321216287891, 'weights': (0.57, 0.31, 0.12), 'coarse_auc': 0.9647309570839323, 'coarse_weights': (0.6, 0.3, 0.1)}
+joint_probability_search: {'models': ('exp008', 'exp010', 'exp003', 'exp006'), 'auc': 0.9648390709472572, 'weights': (0.33, 0.33, 0.23, 0.11), 'coarse_auc': 0.9648377369173673, 'coarse_weights': (0.3, 0.35, 0.25, 0.1)}
+probability_finalist: name=replacement_probability; method=probability; models=('exp010', 'exp003', 'exp006'); weights=(0.57, 0.31, 0.12); auc=0.96473212; fold_scores=[0.9640667, 0.9645971, 0.96488504, 0.96558883, 0.96452597]; std=0.00050216
+probability_finalist: name=joint_probability; method=probability; models=('exp008', 'exp010', 'exp003', 'exp006'); weights=(0.33, 0.33, 0.23, 0.11); auc=0.96483907; fold_scores=[0.9641933, 0.96471681, 0.96498476, 0.96569792, 0.96461057]; std=0.00049860
+rank_finalist: name=replacement_rank; method=rank; models=('exp010', 'exp003', 'exp006'); weights=(0.58, 0.31, 0.11); auc=0.96472748; fold_scores=[0.96406724, 0.9645875, 0.96488265, 0.96558407, 0.96452036]; std=0.00050124
+rank_finalist: name=joint_rank; method=rank; models=('exp008', 'exp010', 'exp003', 'exp006'); weights=(0.33, 0.33, 0.23, 0.11); auc=0.96483039; fold_scores=[0.96419083, 0.96470352, 0.96497941, 0.96568601, 0.96460033]; std=0.00049646
+
+raw_best_auc: 0.96483907
+near_tie_tolerance: 0.00002
+winner: name=joint_rank; method=rank; models=('exp008', 'exp010', 'exp003', 'exp006'); weights=(0.33, 0.33, 0.23, 0.11); auc=0.96483039; fold_scores=[0.96419083, 0.96470352, 0.96497941, 0.96568601, 0.96460033]; std=0.00049646
+winning_exp010_weight: 0.33
+improvement_vs_exp009: +0.00008836
+required_improvement: 0.00003
+threshold_met: True
+submission_generated: True

@@ -1,0 +1,61 @@
+"""Compatibility wrapper for the migrated EXP-004 LightGBM baseline."""
+
+from src.models.lightgbm_baseline import (
+    DATA_DIR,
+    EXP003_NORMALIZED_OOF_PATH,
+    EXP003_SOURCE_OOF_PATH,
+    EXPERIMENT_ID,
+    ID_COLUMN,
+    LOG_PATH,
+    METRICS_DIR,
+    METRICS_PATH,
+    MODEL_PARAMS,
+    N_SPLITS,
+    OOF_PATH,
+    OUTPUTS_DIR,
+    PREDICTIONS_DIR,
+    PROJECT_ROOT,
+    RANDOM_STATE,
+    SUBMISSIONS_DIR,
+    SUBMISSION_PATH,
+    TARGET,
+    TEST_PREDICTIONS_PATH,
+    main,
+    normalize_exp003_oof,
+    prepare_aligned_categories,
+    read_exp003_auc,
+    update_experiment_log,
+    validate_submission,
+)
+
+__all__ = [
+    "DATA_DIR",
+    "EXP003_NORMALIZED_OOF_PATH",
+    "EXP003_SOURCE_OOF_PATH",
+    "EXPERIMENT_ID",
+    "ID_COLUMN",
+    "LOG_PATH",
+    "METRICS_DIR",
+    "METRICS_PATH",
+    "MODEL_PARAMS",
+    "N_SPLITS",
+    "OOF_PATH",
+    "OUTPUTS_DIR",
+    "PREDICTIONS_DIR",
+    "PROJECT_ROOT",
+    "RANDOM_STATE",
+    "SUBMISSIONS_DIR",
+    "SUBMISSION_PATH",
+    "TARGET",
+    "TEST_PREDICTIONS_PATH",
+    "main",
+    "normalize_exp003_oof",
+    "prepare_aligned_categories",
+    "read_exp003_auc",
+    "update_experiment_log",
+    "validate_submission",
+]
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,18 @@
+EXP-031 ExtraTrees diversity experiment
+status=blocked_before_first_fold_completion
+requested_model=ExtraTreesClassifier(n_estimators=800,max_depth=None,min_samples_split=2,min_samples_leaf=2,max_features=sqrt,bootstrap=False,class_weight=None,random_state=42,n_jobs=-1)
+features=exact EXP-012/016 threshold-region features
+preprocessing=fold-fitted median numeric imputation; categorical __MISSING__ plus OneHotEncoder(handle_unknown=ignore); float32 transformed matrix
+attempt_1=failed MemoryError with default loky workers after 252.8 seconds
+attempt_2=failed MemoryError with requested threading backend after 220.0 seconds; runtime still selected loky
+attempt_3=failed MemoryError with require=sharedmem after 220.1 seconds; runtime still selected loky
+attempt_4=failed MemoryError with LOKY_MAX_CPU_COUNT=1 and confirmed sequential execution after 778.1 seconds
+root_cause=the accumulated fully-grown 800-tree forest exceeds available RAM even with one worker; final allocation failure requested an additional 16777216 bytes
+statistical_parameters_changed=false
+completed_folds=0
+oof_available=false
+test_predictions_available=false
+submission_generated=false
+experiment_log_updated=false
+safe_next_options=require user authorization because each changes execution/model semantics: more RAM; smaller n_estimators; bounded max_depth; larger min_samples_leaf; or explicitly approved independently-batched sub-forests
+total_attempt_wall_seconds=1471.0

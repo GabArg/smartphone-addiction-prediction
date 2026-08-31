@@ -1,0 +1,148 @@
+EXP-026 original forensics; no submission; no experiment-log update
+audit: {'shape': (7500, 16), 'columns': ['transaction_id', 'user_id', 'age', 'gender', 'daily_screen_time_hours', 'social_media_hours', 'gaming_hours', 'work_study_hours', 'sleep_hours', 'notifications_per_day', 'app_opens_per_day', 'weekend_screen_time', 'stress_level', 'academic_work_impact', 'addiction_level', 'addicted_label'], 'dtypes': {'transaction_id': 'str', 'user_id': 'str', 'age': 'int64', 'gender': 'str', 'daily_screen_time_hours': 'float64', 'social_media_hours': 'float64', 'gaming_hours': 'float64', 'work_study_hours': 'float64', 'sleep_hours': 'float64', 'notifications_per_day': 'int64', 'app_opens_per_day': 'int64', 'weekend_screen_time': 'float64', 'stress_level': 'str', 'academic_work_impact': 'str', 'addiction_level': 'str', 'addicted_label': 'int64'}, 'duplicates': 0, 'missing': {'transaction_id': 0, 'user_id': 0, 'age': 0, 'gender': 0, 'daily_screen_time_hours': 0, 'social_media_hours': 0, 'gaming_hours': 0, 'work_study_hours': 0, 'sleep_hours': 0, 'notifications_per_day': 0, 'app_opens_per_day': 0, 'weekend_screen_time': 0, 'stress_level': 0, 'academic_work_impact': 0, 'addiction_level': 819, 'addicted_label': 0}, 'cardinality': {'transaction_id': 7500, 'user_id': 7500, 'age': 18, 'gender': 3, 'daily_screen_time_hours': 900, 'social_media_hours': 551, 'gaming_hours': 401, 'work_study_hours': 551, 'sleep_hours': 451, 'notifications_per_day': 231, 'app_opens_per_day': 166, 'weekend_screen_time': 1096, 'stress_level': 3, 'academic_work_impact': 2, 'addiction_level': 4, 'addicted_label': 2}, 'target_rate': np.float64(0.7077333333333333)}
+shared: ['age', 'daily_screen_time_hours', 'social_media_hours', 'gaming_hours', 'work_study_hours', 'sleep_hours', 'notifications_per_day', 'app_opens_per_day', 'weekend_screen_time', 'gender', 'stress_level', 'academic_work_impact']
+original_only: ['transaction_id', 'user_id', 'addiction_level']
+synthetic_only: ['id']
+regions:
+             region  original_rows  original_target_rate  original_positives  original_negatives  original_purity  original_contradictions  synthetic_rows  synthetic_target_rate  synthetic_positives  synthetic_negatives  synthetic_purity  synthetic_contradictions  target_rate_difference
+clear_positive_zone           4841               1.00000                4841                   0          1.00000                      0.0          245424               0.975899               239509                 5915          0.975899                    5915.0               -0.024101
+clear_negative_zone           1634               0.00000                   0                1634          1.00000                      0.0          154634               0.325291                50301               104333          0.674709                   50301.0                0.325291
+     ambiguous_zone           1025               0.45561                 467                 558          0.54439                      NaN          102202               0.649831                66414                35788          0.649831                       NaN                0.194221
+top_distribution_shifts:
+                feature        type  original_missing  synthetic_missing  original_mean  synthetic_mean  original_median  synthetic_median  original_std  synthetic_std  original_min  synthetic_min  original_max  synthetic_max  ks_statistic  wasserstein  original_unique  synthetic_unique  original_granularity  synthetic_granularity  original_q01  synthetic_q01  original_q05  synthetic_q05  original_q10  synthetic_q10  original_q25  synthetic_q25  original_q50  synthetic_q50  original_q75  synthetic_q75  original_q90  synthetic_q90  original_q95  synthetic_q95  original_q99  synthetic_q99  tv_distance original_categories          synthetic_categories
+       work_study_hours     numeric               0.0           0.074516       3.242420        2.366971            3.230              2.20      1.600765       1.258797          0.50           0.00          6.00           6.00      0.258868     0.875449            551.0             600.0                  0.01                   0.01        0.5700           0.37          0.76           0.63          1.02           0.84          1.85           1.36         3.230           2.20          4.64           3.20          5.46           4.15        5.7105           4.71        5.9400           5.67          NaN                 NaN                           NaN
+     social_media_hours     numeric               0.0           0.193811       3.273484        2.471038            3.270              2.31      1.585342       1.316137          0.50           0.00          6.00           8.00      0.240312     0.806115            551.0             721.0                  0.01                   0.01        0.5500           0.22          0.80           0.58          1.06           0.85          1.91           1.45         3.270           2.31          4.63           3.37          5.46           4.33        5.7400           4.86        5.9500           5.71          NaN                 NaN                           NaN
+           gaming_hours     numeric               0.0           0.183435       2.014183        1.459265            2.040              1.33      1.146039       0.934552          0.00           0.00          4.00           4.00      0.237039     0.554948            401.0             401.0                  0.01                   0.01        0.0500           0.05          0.22           0.18          0.42           0.32          1.02           0.70         2.040           1.33          2.99           2.09          3.60           2.80        3.8100           3.21        3.9600           3.83          NaN                 NaN                           NaN
+  notifications_per_day     numeric               0.0           0.097754     134.257333      145.894900          134.000            150.00     66.586883      65.917556         20.00          20.00        250.00         250.00      0.082591    11.649707            231.0             231.0                  1.00                   1.00       22.0000          23.00         31.00          33.00         41.00          49.00         76.00          93.00       134.000         150.00        191.00         204.00        227.00         232.00      239.0000         240.00      248.0000         248.00          NaN                 NaN                           NaN
+      app_opens_per_day     numeric               0.0           0.116739      97.832400      102.636781           98.000            104.00     48.423349      48.093970         15.00          15.00        180.00         180.00      0.054873     4.807483            166.0             166.0                  1.00                   1.00       16.0000          16.00         22.00          23.00         31.00          35.00         55.00          64.00        98.000         104.00        140.00         145.00        164.00         167.00      173.0000         175.00      179.0000         179.00          NaN                 NaN                           NaN
+    weekend_screen_time     numeric               0.0           0.162089       9.243827        9.479866            9.260              9.58      2.718281       2.856006          3.58           0.51         14.88          17.56      0.044184     0.281726           1096.0            1437.0                  0.01                   0.01        4.1200           3.67          4.95           4.72          5.60           5.63          6.96           7.28         9.260           9.58         11.54          11.75         12.91          13.19       13.4700          13.96       14.3400          15.31          NaN                 NaN                           NaN
+daily_screen_time_hours     numeric               0.0           0.138644       7.499912        7.640865            7.525              7.77      2.609188       2.721446          3.00           0.50         12.00          15.00      0.042322     0.222104            900.0            1389.0                  0.01                   0.01        3.0799           2.03          3.45           3.19          3.87           3.97          5.22           5.48         7.525           7.77          9.81           9.84         11.06          11.24       11.5400          11.71       11.9101          12.68          NaN                 NaN                           NaN
+            sleep_hours     numeric               0.0           0.064336       6.737561        6.804334            6.720              6.80      1.283605       1.234512          4.50           4.50          9.00           9.00      0.036613     0.070544            451.0             451.0                  0.01                   0.01        4.5400           4.57          4.74           4.84          4.98           5.13          5.63           5.78         6.720           6.80          7.84           7.87          8.53           8.52        8.7600           8.73        8.9500           8.94          NaN                 NaN                           NaN
+                    age     numeric               0.0           0.041843      26.568800       26.615408           27.000             27.00      5.197108       5.153162         18.00          18.00         35.00          35.00      0.006725     0.069303             18.0              18.0                  1.00                   1.00       18.0000          18.00         18.00          18.00         19.00          19.00         22.00          22.00        27.000          27.00         31.00          31.00         34.00          34.00       35.0000          35.00       35.0000          35.00          NaN                 NaN                           NaN
+           stress_level categorical               0.0           0.079766            NaN             NaN              NaN               NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN          NaN              NaN               NaN                   NaN                    NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN     0.079766     High|Low|Medium   High|Low|Medium|__MISSING__
+   academic_work_impact categorical               0.0           0.063966            NaN             NaN              NaN               NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN          NaN              NaN               NaN                   NaN                    NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN     0.063966              No|Yes            Yes|No|__MISSING__
+                 gender categorical               0.0           0.041995            NaN             NaN              NaN               NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN          NaN              NaN               NaN                   NaN                    NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN           NaN            NaN     0.041995   Male|Other|Female Male|Female|Other|__MISSING__
+top_correlation_shifts:
+  method               feature_a           feature_b  original_correlation  synthetic_correlation  absolute_difference
+ pearson daily_screen_time_hours  social_media_hours              0.010321               0.595074             0.584752
+spearman daily_screen_time_hours  social_media_hours              0.010311               0.594056             0.583745
+ pearson daily_screen_time_hours    work_study_hours              0.003108               0.524394             0.521286
+spearman daily_screen_time_hours    work_study_hours              0.003270               0.507005             0.503735
+spearman      social_media_hours weekend_screen_time              0.012125               0.489141             0.477017
+ pearson      social_media_hours weekend_screen_time              0.011404               0.478383             0.466980
+ pearson daily_screen_time_hours        gaming_hours              0.001140               0.429148             0.428008
+ pearson        work_study_hours weekend_screen_time              0.004667               0.415349             0.410682
+spearman        work_study_hours weekend_screen_time              0.005021               0.408837             0.403817
+spearman daily_screen_time_hours        gaming_hours              0.001318               0.404012             0.402694
+ pearson            gaming_hours weekend_screen_time             -0.006282               0.341366             0.347649
+spearman            gaming_hours weekend_screen_time             -0.005771               0.326501             0.332272
+ pearson daily_screen_time_hours weekend_screen_time              0.964295               0.799819             0.164476
+spearman daily_screen_time_hours weekend_screen_time              0.966098               0.812514             0.153584
+spearman      social_media_hours    work_study_hours             -0.002692               0.124797             0.127489
+spearman      social_media_hours        gaming_hours             -0.001035               0.100145             0.101180
+ pearson      social_media_hours    work_study_hours             -0.002580               0.096810             0.099390
+ pearson      social_media_hours        gaming_hours             -0.000902               0.087126             0.088028
+spearman      social_media_hours   app_opens_per_day             -0.000484               0.050839             0.051323
+spearman            gaming_hours    work_study_hours              0.004549               0.054418             0.049869
+screen_social_correlation: {'method': 'pearson', 'feature_a': 'daily_screen_time_hours', 'feature_b': 'social_media_hours', 'original_correlation': 0.01032116057671049, 'synthetic_correlation': 0.5950736198887938, 'absolute_difference': 0.5847524593120833}
+ambiguous_metrics: {'rows': 1025, 'target_rate': np.float64(0.455609756097561), 'logistic_oof_auc': 0.5156723691986522, 'lightgbm_oof_auc': 0.5278890654141052}
+ambiguous_individual:
+          analysis                 feature  auc_direct  auc_oriented       direction                                                                                                                                                  category_rates
+individual_numeric                     age    0.516334      0.516334 higher_positive                                                                                                                                                             NaN
+individual_numeric daily_screen_time_hours    0.504448      0.504448 higher_positive                                                                                                                                                             NaN
+individual_numeric      social_media_hours    0.531613      0.531613 higher_positive                                                                                                                                                             NaN
+individual_numeric            gaming_hours    0.509482      0.509482 higher_positive                                                                                                                                                             NaN
+individual_numeric        work_study_hours    0.477907      0.522093  lower_positive                                                                                                                                                             NaN
+individual_numeric             sleep_hours    0.539467      0.539467 higher_positive                                                                                                                                                             NaN
+individual_numeric   notifications_per_day    0.498682      0.501318  lower_positive                                                                                                                                                             NaN
+individual_numeric       app_opens_per_day    0.513191      0.513191 higher_positive                                                                                                                                                             NaN
+individual_numeric     weekend_screen_time    0.479061      0.520939  lower_positive                                                                                                                                                             NaN
+ categorical_rates                  gender         NaN           NaN             NaN {'Female': {'count': 340, 'mean': 0.4588235294117647}, 'Male': {'count': 343, 'mean': 0.4839650145772595}, 'Other': {'count': 342, 'mean': 0.4239766081871345}}
+ categorical_rates            stress_level         NaN           NaN             NaN {'High': {'count': 327, 'mean': 0.45871559633027525}, 'Low': {'count': 382, 'mean': 0.43455497382198954}, 'Medium': {'count': 316, 'mean': 0.4778481012658228}}
+ categorical_rates    academic_work_impact         NaN           NaN             NaN                                                          {'No': {'count': 499, 'mean': 0.4529058116232465}, 'Yes': {'count': 526, 'mean': 0.45817490494296575}}
+ambiguous_importance:
+                               logistic_abs_coef  lightgbm_gain
+work_study_hours                        0.000000     143.791846
+sleep_hours                             0.000000     135.321698
+social_media_hours                      0.000000     111.524578
+daily_screen_time_hours                 0.000000     108.235312
+notifications_per_day                   0.000000      97.995496
+age                                     0.000000      90.257928
+weekend_screen_time                     0.000000      88.001521
+gaming_hours                            0.000000      84.187656
+app_opens_per_day                       0.000000      62.560872
+gender                                  0.000000      33.479812
+academic_work_impact                    0.000000      15.728960
+stress_level                            0.000000      10.769230
+cat__academic_work_impact_Yes           0.034491       0.000000
+cat__stress_level_Low                   0.131450       0.000000
+cat__stress_level_Medium                0.059792       0.000000
+cat__gender_Other                       0.167739       0.000000
+cat__stress_level_High                  0.029303       0.000000
+cat__gender_Male                        0.093551       0.000000
+cat__gender_Female                      0.026631       0.000000
+cat__academic_work_impact_No            0.051836       0.000000
+num__age                                0.060751       0.000000
+num__sleep_hours                        0.134604       0.000000
+num__notifications_per_day              0.028297       0.000000
+num__gaming_hours                       0.042311       0.000000
+num__daily_screen_time_hours            0.095838       0.000000
+num__app_opens_per_day                  0.040053       0.000000
+num__work_study_hours                   0.070979       0.000000
+num__social_media_hours                 0.110748       0.000000
+num__weekend_screen_time                0.133266       0.000000
+priors:
+  prior  synthetic_auc  synthetic_logloss  pearson_exp016  spearman_exp016  pearson_residual  spearman_residual  nested_auc  nested_std  nested_delta                                                                                         nested_folds                        weights
+PRIOR-B       0.886538           0.495428        0.771089         0.862896         -0.003352           0.099109    0.965658    0.000473     -0.000043 [0.9649767507032768, 0.9656253944824292, 0.9658420882672167, 0.9664124877150082, 0.9654368425864566] [0.01, 0.01, 0.01, 0.01, 0.01]
+PRIOR-A       0.818431           1.769531        0.647046         0.734504         -0.002422           0.091144    0.965621    0.000481     -0.000081    [0.9649240237124757, 0.96558661382332, 0.9658112263234441, 0.966385490554926, 0.9653991643354559] [0.01, 0.01, 0.01, 0.01, 0.01]
+PRIOR-C       0.829024           1.449984        0.655576         0.738878         -0.002635           0.079791    0.965614    0.000468     -0.000087 [0.9649405527827577, 0.9655797934600986, 0.9658083181894769, 0.9663565509176447, 0.9653881875528332] [0.01, 0.01, 0.01, 0.01, 0.01]
+nested_records: {'PRIOR-A': [{'fold': 1, 'weight': 0.01, 'train_auc': 0.965794973414331, 'valid_auc': 0.9649240237124757, 'valid_delta': -9.626920549976603e-05}, {'fold': 2, 'weight': 0.01, 'train_auc': 0.9656296820761825, 'valid_auc': 0.96558661382332, 'valid_delta': -7.784827507739678e-05}, {'fold': 3, 'weight': 0.01, 'train_auc': 0.9655737877691897, 'valid_auc': 0.9658112263234441, 'valid_delta': -7.24611738330827e-05}, {'fold': 4, 'weight': 0.01, 'train_auc': 0.9654290526941549, 'valid_auc': 0.966385490554926, 'valid_delta': -6.953426461608903e-05}, {'fold': 5, 'weight': 0.01, 'train_auc': 0.9656763228471114, 'valid_auc': 0.9653991643354559, 'valid_delta': -8.823759643727946e-05}], 'PRIOR-B': [{'fold': 1, 'weight': 0.01, 'train_auc': 0.9658286748754525, 'valid_auc': 0.9649767507032768, 'valid_delta': -4.354221469859976e-05}, {'fold': 2, 'weight': 0.01, 'train_auc': 0.9656668344576329, 'valid_auc': 0.9656253944824292, 'valid_delta': -3.90676159681691e-05}, {'fold': 3, 'weight': 0.01, 'train_auc': 0.9656129493849985, 'valid_auc': 0.9658420882672167, 'valid_delta': -4.1599230060418435e-05}, {'fold': 4, 'weight': 0.01, 'train_auc': 0.965469317675853, 'valid_auc': 0.9664124877150082, 'valid_delta': -4.253710453383519e-05}, {'fold': 5, 'weight': 0.01, 'train_auc': 0.9657139632665865, 'valid_auc': 0.9654368425864566, 'valid_delta': -5.055934543662932e-05}], 'PRIOR-C': [{'fold': 1, 'weight': 0.01, 'train_auc': 0.9657827693994785, 'valid_auc': 0.9649405527827577, 'valid_delta': -7.974013521772072e-05}, {'fold': 2, 'weight': 0.01, 'train_auc': 0.965623145782959, 'valid_auc': 0.9655797934600986, 'valid_delta': -8.466863829881266e-05}, {'fold': 3, 'weight': 0.01, 'train_auc': 0.9655662735826641, 'valid_auc': 0.9658083181894769, 'valid_delta': -7.536930780027706e-05}, {'fold': 4, 'weight': 0.01, 'train_auc': 0.9654281624453378, 'valid_auc': 0.9663565509176447, 'valid_delta': -9.847390189732241e-05}, {'fold': 5, 'weight': 0.01, 'train_auc': 0.9656710019587521, 'valid_auc': 0.9653881875528332, 'valid_delta': -9.921437906001973e-05}]}
+regional:
+             region   prior   rows  auc_exp016  auc_prior  auc_nested
+clear_positive_zone PRIOR-A 245424    0.974038   0.500000    0.974038
+clear_positive_zone PRIOR-B 245424    0.974038   0.877538    0.973534
+clear_positive_zone PRIOR-C 245424    0.974038   0.666347    0.974036
+clear_negative_zone PRIOR-A 154634    0.914034   0.500000    0.914034
+clear_negative_zone PRIOR-B 154634    0.914034   0.700420    0.914025
+clear_negative_zone PRIOR-C 154634    0.914034   0.520383    0.914034
+     ambiguous_zone PRIOR-A 102202    0.928041   0.500000    0.928041
+     ambiguous_zone PRIOR-B 102202    0.928041   0.767797    0.927998
+     ambiguous_zone PRIOR-C 102202    0.928041   0.583505    0.928038
+ambiguous_cells:
+screen_band social_band  rows  auc_exp016  auc_PRIOR-A  auc_PRIOR-B  auc_PRIOR-C
+ (6.0, 6.5]  (1.0, 2.0] 10976    0.881609          0.5     0.595204     0.570753
+ (6.0, 6.5]  (3.0, 4.0]  3613    0.875194          0.5     0.589906     0.473409
+ (6.0, 6.5]  (2.0, 3.0] 11597    0.878687          0.5     0.596273     0.528899
+ (6.0, 6.5] (-inf, 1.0]  3550    0.895605          0.5     0.569428     0.489522
+ (7.0, 7.5]  (1.0, 2.0]  6889    0.897606          0.5     0.541241     0.515160
+ (7.0, 7.5]  (3.0, 4.0]  5352    0.890668          0.5     0.542561     0.470865
+ (7.0, 7.5]  (2.0, 3.0]  9997    0.901259          0.5     0.585864     0.493677
+ (7.0, 7.5] (-inf, 1.0]  1783    0.893505          0.5     0.545573     0.466190
+ (7.5, 8.0]  (1.0, 2.0]  5025    0.916391          0.5     0.541515     0.529352
+ (7.5, 8.0]  (3.0, 4.0]  7431    0.928588          0.5     0.581724     0.495801
+ (7.5, 8.0]  (2.0, 3.0]  9541    0.926850          0.5     0.577877     0.516072
+ (7.5, 8.0] (-inf, 1.0]  1543    0.926890          0.5     0.542131     0.464772
+ (6.5, 7.0]  (1.0, 2.0]  6518    0.882589          0.5     0.541080     0.536663
+ (6.5, 7.0]  (3.0, 4.0]  5000    0.877054          0.5     0.544536     0.471570
+ (6.5, 7.0]  (2.0, 3.0] 11328    0.899306          0.5     0.585852     0.497608
+ (6.5, 7.0] (-inf, 1.0]  2059    0.887194          0.5     0.568978     0.476262
+distance_to_original:
+distance_decile  rows  distance_mean  target_rate  auc_exp016  auc_prior_c  logloss_exp016  nearest_original_label_agreement
+ (0.268, 0.867] 69137       0.771884     0.743943    0.956837     0.820951        0.229226                          0.749628
+ (0.867, 0.954] 69137       0.914476     0.742627    0.958653     0.822339        0.225134                          0.753084
+ (0.954, 1.015] 69137       0.985978     0.737463    0.960575     0.828110        0.221769                          0.757467
+ (1.015, 1.067] 69137       1.041788     0.733949    0.961855     0.827300        0.219216                          0.756990
+ (1.067, 1.116] 69137       1.091773     0.728756    0.963592     0.830386        0.215791                          0.762226
+ (1.116, 1.167] 69136       1.141332     0.720233    0.965741     0.833538        0.211600                          0.766619
+ (1.167, 1.224] 69137       1.194569     0.706351    0.965701     0.832265        0.215156                          0.766912
+ (1.224, 1.296] 69137       1.257847     0.694577    0.969865     0.835262        0.204260                          0.778353
+ (1.296, 1.409] 69137       1.346689     0.668484    0.971713     0.830776        0.202165                          0.792383
+ (1.409, 2.655] 69137       1.558794     0.617860    0.973802     0.796569        0.199282                          0.810391
+matches:
+         match_type  synthetic_matches  coverage  target_agreement  contradictions
+              exact                  0       0.0               NaN               0
+    round_1_decimal                  0       0.0               NaN               0
+natural_granularity                  0       0.0               NaN               0
+recommendation: No existe senal residual suficiente: no recomendar EXP-027.
+total_seconds: 69.91
+problems: none

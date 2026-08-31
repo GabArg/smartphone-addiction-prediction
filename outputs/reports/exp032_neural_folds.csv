@@ -1,0 +1,2 @@
+variant,fold,auc,best_epoch,epochs_run,seconds,mean_epoch_seconds,peak_rss_gb,peak_vram_gb,stage
+NN-NOMISS-BENCH,1,0.9383593818295171,20,20,386.2425381001085,18.834480585029816,0.9060287475585938,0.0,benchmark

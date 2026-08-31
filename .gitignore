@@ -1,0 +1,65 @@
+# datasets
+data/
+playground-series-s6e8/
+*.parquet
+*.feather
+
+# predictions / submissions pesadas
+outputs/predictions/
+outputs/submissions/
+# Legacy OOF predictions stored under metrics
+outputs/metrics/exp001_logistic_oof.csv
+outputs/metrics/exp002_catboost_oof.csv
+outputs/metrics/exp003_catboost_oof.csv
+
+# Historical text artifacts containing local absolute paths
+outputs/metrics/exp016_xgboost_depth5_9000_metrics.txt
+outputs/metrics/exp017_ensemble_metrics.txt
+outputs/metrics/exp021_ensemble_metrics.txt
+outputs/metrics/exp027_seed_diversity.txt
+outputs/metrics/exp035_exact_logistic_metrics.txt
+outputs/metrics/exp036_ratio_ablation_metrics.txt
+outputs/metrics/exp037_relational_metrics.txt
+outputs/metrics/exp039_highbin_metrics.txt
+outputs/reports/data_audit.txt
+outputs/manifests/absolute_paths_report.csv
+
+# caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# environments
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# credentials
+kaggle.json
+*.pem
+*.key
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# model binaries
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.ckpt
+*.bin
+
+# temporary
+tmp/
+temp/
+*.tmp
+*.log

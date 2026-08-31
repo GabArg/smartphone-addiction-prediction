@@ -1,0 +1,21 @@
+experiment_id: EXP-002
+parameters: CatBoostClassifier(iterations=1000, learning_rate=0.05, depth=7, loss_function='Logloss', eval_metric='AUC', random_seed=42, verbose=False, allow_writing_files=False)
+cv_strategy: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+early_stopping_rounds: 100
+fold_1_roc_auc: 0.958313
+fold_2_roc_auc: 0.958633
+fold_3_roc_auc: 0.959050
+fold_4_roc_auc: 0.959971
+fold_5_roc_auc: 0.958812
+mean_roc_auc: 0.958956
+std_roc_auc: 0.000562
+overall_oof_roc_auc: 0.958954
+fold_1_best_iteration: 999
+fold_2_best_iteration: 999
+fold_3_best_iteration: 999
+fold_4_best_iteration: 999
+fold_5_best_iteration: 999
+mean_best_iteration: 999.00
+total_seconds: 1180.36
+exp001_mean_roc_auc: 0.911452
+absolute_cv_auc_difference_exp002_minus_exp001: +0.047504

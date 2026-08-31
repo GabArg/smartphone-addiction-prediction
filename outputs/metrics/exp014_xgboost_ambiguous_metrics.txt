@@ -1,0 +1,77 @@
+experiment_id: EXP-014
+parameters: XGBClassifier(objective='binary:logistic', eval_metric='auc', n_estimators=6000, learning_rate=0.03, max_depth=7, min_child_weight=1, subsample=0.9, colsample_bytree=0.9, reg_alpha=0.0, reg_lambda=1.0, gamma=0.0, tree_method='hist', random_state=42, n_jobs=-1, early_stopping_rounds=200)
+threshold_features_reused_unchanged: ['screen_gt_8', 'screen_le_6', 'social_gt_4', 'social_le_4', 'clear_positive_zone', 'clear_negative_zone', 'ambiguous_zone', 'screen_dist_to_6', 'screen_dist_to_8', 'social_dist_to_4', 'screen_abs_dist_to_6', 'screen_abs_dist_to_8', 'social_abs_dist_to_4', 'screen_x_social', 'screen_plus_social', 'screen_minus_social', 'screen_over_social', 'social_over_screen', 'min_abs_threshold_distance', 'screen_mid_band', 'social_near_threshold', 'screen_near_threshold', 'region_code']
+new_ambiguous_features: ['screen_band_position', 'screen_dist_to_7', 'screen_abs_dist_to_7', 'social_margin_from_4', 'weekend_minus_daily', 'weekend_over_daily', 'daily_over_weekend', 'screen_plus_social_minus_sleep', 'screen_sleep_gap', 'total_screen_over_sleep', 'notifications_per_app_open', 'app_opens_per_notification', 'social_per_app_open', 'screen_plus_social_minus_work', 'work_to_screen_ratio', 'ambig_daily_screen', 'ambig_social_media', 'ambig_weekend_screen', 'ambig_sleep', 'ambig_notifications', 'ambig_app_opens', 'ambig_work_study', 'ambig_screen_x_social', 'ambig_weekend_minus_daily', 'ambig_screen_sleep_gap']
+cv_strategy: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+fold_1_roc_auc: 0.96439495
+fold_2_roc_auc: 0.96498759
+fold_3_roc_auc: 0.96503695
+fold_4_roc_auc: 0.96579135
+fold_5_roc_auc: 0.96480595
+mean_roc_auc: 0.96500336
+std_roc_auc: 0.00045419
+overall_oof_roc_auc: 0.96500255
+fold_1_best_iteration_zero_based: 3635
+fold_2_best_iteration_zero_based: 3554
+fold_3_best_iteration_zero_based: 3534
+fold_4_best_iteration_zero_based: 3602
+fold_5_best_iteration_zero_based: 3246
+fold_1_seconds: 466.18
+fold_2_seconds: 443.89
+fold_3_seconds: 418.75
+fold_4_seconds: 401.50
+fold_5_seconds: 376.08
+total_seconds: 2106.40
+exp012_overall_oof_auc: 0.96522827
+global_difference_vs_exp012: -0.00022572
+fold_differences_vs_exp012: [-0.0002064866455879777, -0.00022964375964018569, -0.0003069716558337099, -0.00020621478504456725, -0.00019890156940072234]
+std_change_vs_exp012: -0.00000364
+best_iteration_changes_vs_exp012: [-217, -14, -49, 163, -457]
+regional_auc:
+             region  count  proportion  class_count  exp012_auc  exp014_auc  difference note
+clear_positive_zone 297745  0.43066004            2  0.97198879  0.97153150 -0.00045729   OK
+clear_negative_zone 154634  0.22366349            2  0.91297792  0.91255089 -0.00042703   OK
+     ambiguous_zone 102202  0.14782555            2  0.92685880  0.92593585 -0.00092294   OK
+top30_mean_normalized_gain:
+1. clear_positive_zone: 0.64610011
+2. region_code: 0.25509005
+3. screen_dist_to_6: 0.02226480
+4. daily_screen_time_hours: 0.01452065
+5. ambiguous_zone: 0.01337204
+6. social_media_hours: 0.00580615
+7. social_over_screen: 0.00430573
+8. social_dist_to_4: 0.00376731
+9. social_abs_dist_to_4: 0.00292065
+10. weekend_screen_time: 0.00284360
+11. clear_negative_zone: 0.00248118
+12. screen_over_social: 0.00187019
+13. screen_abs_dist_to_8: 0.00141234
+14. app_opens_per_day: 0.00140414
+15. social_margin_from_4: 0.00138039
+16. notifications_per_day: 0.00133851
+17. screen_gt_8: 0.00091638
+18. ambig_weekend_screen: 0.00084107
+19. screen_plus_social: 0.00081905
+20. ambig_daily_screen: 0.00079460
+21. work_to_screen_ratio: 0.00078221
+22. screen_abs_dist_to_7: 0.00076564
+23. screen_x_social: 0.00074360
+24. social_le_4: 0.00066536
+25. social_gt_4: 0.00064766
+26. screen_abs_dist_to_6: 0.00058311
+27. min_abs_threshold_distance: 0.00053923
+28. gaming_hours: 0.00050655
+29. work_study_hours: 0.00048280
+30. social_near_threshold: 0.00046518
+group_importance: {'original_features': 0.02844523088521468, 'exp012_threshold_features': 0.960796601459912, 'new_ambiguous_features': 0.010758167654873255}
+pearson_vs_exp012: 0.99605813
+pearson_vs_exp003: 0.98895353
+pearson_vs_exp006: 0.99060988
+pearson_vs_exp008: 0.99286996
+pearson_vs_exp010: 0.99348533
+spearman_vs_exp012: 0.99711291
+spearman_vs_exp003: 0.98925162
+spearman_vs_exp006: 0.99329137
+spearman_vs_exp008: 0.99515237
+spearman_vs_exp010: 0.99555268
+decision: Empeora: este bloque de contexto ambiguo no aporta.

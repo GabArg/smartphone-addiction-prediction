@@ -1,0 +1,7 @@
+feature,method,parameter,train_cardinality,test_cardinality,unseen_test_rate,coverage_test
+social_over_screen,round,2.0,91,90,0.0,1.0
+gaming_over_screen,round,2.0,81,79,6.749870065001249e-06,0.999993250129935
+work_over_screen,round,2.0,93,93,0.0,1.0
+work_over_social,round,2.0,3195,2413,0.0014140977786177616,0.9985859022213822
+gaming_over_social,round,2.0,2220,1705,0.000934857004002673,0.9990651429959974
+screen_minus_social,round,1.0,141,138,0.0,1.0

@@ -1,0 +1,28 @@
+experiment_id,datetime,model,features,cv_strategy,cv_roc_auc,kaggle_score,notes
+EXP-001,2026-08-22T01:49:46-03:00,LogisticRegression,original_features,StratifiedKFold_5,0.911452,0.91355,baseline con median imputation + scaling + one-hot encoding
+EXP-002,2026-08-22T02:15:24-03:00,CatBoostClassifier,original_features,StratifiedKFold_5,0.958956,0.95996,CatBoost baseline; native numerical missing handling; categorical missing as __MISSING__; fold ensemble
+EXP-003,2026-08-22T10:04:01-03:00,CatBoostClassifier,original_features,StratifiedKFold_5,0.963593,0.96497,CatBoost 4000 iterations; native numerical missing handling; categorical missing as __MISSING__; fold ensemble
+EXP-004,2026-08-22T12:00:49-03:00,LightGBM,original_features,StratifiedKFold_5,0.963537,0.96515,"LightGBM baseline, native missing handling, categorical features, 5-fold ensemble"
+EXP-005,2026-08-22T12:25:21-03:00,CatBoost_LightGBM_Blend,original_features,OOF_blend,0.964077,0.96536,linear blend optimized on OOF only
+EXP-006,2026-08-22T12:43:13-03:00,LightGBM,original_plus_engineered_v1,StratifiedKFold_5,0.963665,0.96538,LightGBM with 8 engineered behavioral ratio/difference features
+EXP-007,2026-08-22T15:18:35-03:00,Ensemble,multi_model_existing_predictions,OOF_ensemble_optimization,0.964257,0.96555,probability_three; weights exp003/exp004/exp006=0.43/0.18/0.39
+EXP-008,2026-08-22T16:05:16-03:00,XGBoost,original_features,StratifiedKFold_5,0.964358,0.96587,"XGBoost baseline with ordinal categorical encoding, native numerical NaN, fold ensemble"
+EXP-009,2026-08-22T19:42:18-03:00,Ensemble_with_XGBoost,existing_model_predictions,OOF_ensemble_optimization,0.964742,0.96601,rank; models=exp008/exp003/exp006; weights=0.53/0.23/0.24
+EXP-010,2026-08-22T20:20:14-03:00,XGBoost,original_plus_engineered_v1,StratifiedKFold_5,0.964376,,XGBoost baseline from EXP-008 plus same 8 engineered features used in EXP-006
+EXP-011,2026-08-22T20:59:39-03:00,Ensemble_with_XGBoost_Features,existing_model_predictions,OOF_ensemble_optimization,0.96483,0.96611,rank; models=exp008/exp010/exp003/exp006; weights=0.33/0.33/0.23/0.11
+EXP-012,2026-08-22T22:02:30-03:00,XGBoost,original_plus_threshold_region_features,StratifiedKFold_5,0.965233,0.96696,threshold/region features based on daily_screen_time_hours and social_media_hours
+EXP-013,2026-08-22T23:09:13-03:00,Ensemble_with_XGBoost_Thresholds,existing_model_predictions,OOF_ensemble_optimization,0.965413,0.96688,rank; models=exp012/exp003/exp006; weights=0.72/0.18/0.10
+EXP-014,2026-08-23T01:04:52-03:00,XGBoost,exp012_thresholds_plus_ambiguous_context,StratifiedKFold_5,0.965003,,EXP-012 threshold features plus targeted ambiguous-zone context features
+EXP-015,2026-08-23T08:42:14-03:00,XGBoost,exp012_threshold_region_features,StratifiedKFold_5,0.965605,0.9671,EXP-012 with max_depth reduced from 7 to 5; all other settings unchanged
+EXP-016,2026-08-23T13:30:25-03:00,XGBoost,exp012_threshold_region_features,StratifiedKFold_5,0.965702,0.9673,EXP-015 max_depth=5 with n_estimators increased from 6000 to 9000 and early stopping 300
+EXP-017,2026-08-23T17:21:15-03:00,Ensemble_with_EXP016,existing_model_predictions,OOF_ensemble_optimization,0.965781,0.96725,probability; models=exp016/exp003/exp012; weights=0.77/0.14/0.09
+EXP-018,2026-08-23T18:38:06-03:00,XGBoost,exp016_plus_nested_negative_zone_rules,Nested_rules_with_StratifiedKFold_5,0.965694,,EXP-016 plus 5 outer-fold-discovered clear-negative-zone rule features
+EXP-019,2026-08-24T00:35:44-03:00,LightGBM,exp012_threshold_region_features,StratifiedKFold_5,0.964513,,LightGBM using exact threshold/region features from EXP-012/016
+EXP-020,2026-08-24T09:23:12-03:00,CatBoostClassifier,exp012_threshold_region_features,StratifiedKFold_5,0.964878,,CatBoost using exact threshold/region features from EXP-012/016
+EXP-021,2026-08-24T09:41:59-03:00,Ensemble_EXP016_EXP020,existing_model_predictions,OOF_ensemble_optimization,0.9658598,0.96733,"rank; exp016=0.7125, exp020=0.2875"
+EXP-022,2026-08-24T12:36:41-03:00,CatBoostClassifier,exp012_threshold_region_features,StratifiedKFold_5,0.964911,,EXP-020 CatBoost thresholds with iterations increased from 6500 to 9000 and early stopping 350
+EXP-027,2026-08-25T14:54:20-03:00,XGBoost_Seed_Ensemble,exp012_threshold_region_features,StratifiedKFold_5_seed_ensemble,0.96591919,,"probability; seed_weights={42: 0.4, 2026: 0.3, 777: 0.3}; catboost_weight=0.25"
+EXP-035,2026-08-26T12:35:25,ExactValueSparseLogistic_Ensemble,original_exact_categories_plus_selected_interactions_ratios,Nested_OOF_ensemble_optimization,0.9668097848980568,,rank blend EXP-027 0.80 + exact-value sparse Logistic variant C 0.20
+EXP-036,2026-08-26T15:20:31,RatioSparseLogistic_Ensemble,"[('social_over_screen', 2), ('gaming_over_screen', 2), ('work_over_screen', 2), ('work_over_social', 2), ('gaming_over_social', 2)]",Nested_OOF_ensemble_optimization,0.9670368278351088,,"fold-specific nested blend EXP027 + EXP036; choices=rank:0.3,rank:0.3,rank:0.3,rank:0.3,rank:0.3"
+EXP-037,2026-08-27T01:00:19,RelationalSparseLogistic_Ensemble,EXP036 ratios + screen_minus_social round1,Nested_OOF_ensemble_optimization,0.967068329297671,,rank blend EXP027=0.625 EXP037=0.375; fold-safe selection
+EXP-039,2026-08-29T03:51:53,HighBinLightGBM_Ensemble,"(('weekend_freq', 'screen_freq'), True, ())",Nested_OOF_ensemble_optimization,0.9674680607837304,,rank blend EXP027=0.375 EXP037=0.225 EXP039=0.400; extra EXP022 weight selected 0; max_bin=4095

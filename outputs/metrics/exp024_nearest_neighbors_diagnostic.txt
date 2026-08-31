@@ -1,0 +1,39 @@
+EXP-024 nearest-neighbor/signature diagnostic; no training boosters; no submission
+SPACE-D omitted: one-hot dimensionality risks brute-force memory/time at 691k rows
+best_standalone: {'config': 'SPACE-B|manhattan|mean|k=100', 'space': 'SPACE-B', 'metric': 'manhattan', 'signal_type': 'mean', 'k': 100, 'oof_auc': 0.9359630825540944, 'fold_mean': 0.9359675820999271, 'fold_std': 0.0007553921337505625, 'fold_1_auc': 0.9350168606373883, 'fold_2_auc': 0.93533984098462, 'fold_3_auc': 0.9366662330979412, 'fold_4_auc': 0.9369905868293263, 'fold_5_auc': 0.93582438895036, 'pearson_exp016': 0.9084598144521278, 'spearman_exp016': 0.9393274926651632, 'pearson_residual': -0.0010249146070455213, 'spearman_residual': 0.16290099131922497}
+global_top5: ['SPACE-B|manhattan|mean|k=100', 'SPACE-B|manhattan|mean|k=200', 'SPACE-B|euclidean|mean|k=100', 'SPACE-C|euclidean|mean|k=200', 'SPACE-C|manhattan|mean|k=200']
+knn_nested_records: [{'fold': 1, 'config': 'SPACE-B|euclidean|mean|k=100', 'weight': 0.01, 'train_auc': 0.9658579906791698, 'train_delta': -1.4166897694956049e-05, 'valid_auc': 0.9649979371772553, 'valid_delta': -2.2355740720070294e-05}, {'fold': 2, 'config': 'SPACE-B|euclidean|mean|k=100', 'weight': 0.01, 'train_auc': 0.9656967525456247, 'train_delta': -1.463625635089727e-05, 'valid_auc': 0.9656440544167075, 'valid_delta': -2.0407681689871282e-05}, {'fold': 3, 'config': 'SPACE-B|euclidean|mean|k=100', 'weight': 0.01, 'train_auc': 0.965639694915479, 'train_delta': -1.7021734037281355e-05, 'valid_auc': 0.9658727860544132, 'valid_delta': -1.0901442863975319e-05}, {'fold': 4, 'config': 'SPACE-B|euclidean|mean|k=100', 'weight': 0.01, 'train_auc': 0.965495207162176, 'train_delta': -1.773704274965482e-05, 'valid_auc': 0.9664470893587125, 'valid_delta': -7.935460829555652e-06}, {'fold': 5, 'config': 'SPACE-B|euclidean|mean|k=100', 'weight': 0.01, 'train_auc': 0.9657402456510048, 'train_delta': -1.5337492074052328e-05, 'valid_auc': 0.9654698557746163, 'valid_delta': -1.7546157276893126e-05}]
+knn_nested_eval: {'auc': 0.9656859537663932, 'folds': [0.9649979371772553, 0.9656440544167075, 0.9658727860544132, 0.9664470893587125, 0.9654698557746163], 'mean': 0.965686344556341, 'std': 0.0004766662678732501}
+signature_nested_records: [{'fold': 1, 'signature': 'A_1decimal_5vars', 'weight': 0.01, 'train_delta': -1.0935175795090402e-05, 'valid_delta': -1.0944321475303553e-05}, {'fold': 2, 'signature': 'A_1decimal_5vars', 'weight': 0.01, 'train_delta': -1.234159465224316e-05, 'valid_delta': -5.10496505745639e-06}, {'fold': 3, 'signature': 'A_1decimal_5vars', 'weight': 0.01, 'train_delta': -7.921756374429378e-06, 'valid_delta': -2.2950840023572283e-05}, {'fold': 4, 'signature': 'A_1decimal_5vars', 'weight': 0.01, 'train_delta': -1.396655385110801e-05, 'valid_delta': 1.0793231456363017e-06}, {'fold': 5, 'signature': 'A_1decimal_5vars', 'weight': 0.01, 'train_delta': -9.646323755885255e-06, 'valid_delta': -1.6328798262854605e-05}]
+signature_nested_eval: {'auc': 0.9656907605852092, 'folds': [0.9650093485965001, 0.96565935713334, 0.9658607366572536, 0.9664561041426877, 0.9654710731336303], 'mean': 0.9656913239326824, 'std': 0.0004750183345443747}
+signature_results:
+       signature  min_train_count  signature_count_sum_folds  valid_rows_covered  coverage  mean_purity  pct_rate_below_005  pct_rate_above_095  global_signal_auc  known_signature_coverage
+A_1decimal_5vars                5                       9459               19292  0.027904     0.785245            0.027276            0.271593           0.540285                  0.092566
+A_1decimal_5vars               10                       1613               10534  0.015236     0.753798            0.003100            0.176689           0.540285                  0.092566
+A_1decimal_5vars               20                        483                7776  0.011247     0.743945            0.000000            0.132505           0.540285                  0.092566
+A_1decimal_5vars               50                        188                5829  0.008431     0.720269            0.000000            0.000000           0.540285                  0.092566
+B_halfunit_5vars                5                     129680              382050  0.552599     0.875110            0.086181            0.448203           0.879253                  0.855835
+B_halfunit_5vars               10                      53170              276538  0.399986     0.841166            0.077995            0.310551           0.879253                  0.855835
+B_halfunit_5vars               20                      18303              170733  0.246949     0.801695            0.088674            0.200131           0.879253                  0.855835
+B_halfunit_5vars               50                       3389               67980  0.098327     0.752991            0.070227            0.099734           0.879253                  0.855835
+   C_mixed_3vars                5                       9229              689665  0.997535     0.901144            0.058945            0.562249           0.928206                  0.999531
+   C_mixed_3vars               10                       8139              687890  0.994968     0.897398            0.057992            0.548347           0.928206                  0.999531
+   C_mixed_3vars               20                       7133              684310  0.989790     0.893252            0.060844            0.532315           0.928206                  0.999531
+   C_mixed_3vars               50                       5638              672048  0.972054     0.887982            0.059241            0.516318           0.928206                  0.999531
+nearest_distance_bands:
+   distance_band  rows  target_rate  auc_exp016  auc_best_knn  logloss_exp016  distance_mean
+(-0.001, 0.0593] 69137     0.682109    0.919654      0.852578        0.330182       0.025739
+ (0.0593, 0.109] 69137     0.613290    0.945836      0.899668        0.288395       0.086612
+  (0.109, 0.143] 69137     0.588093    0.948124      0.904300        0.285280       0.126562
+  (0.143, 0.171] 69137     0.602499    0.952974      0.913222        0.270570       0.156879
+  (0.171, 0.199] 69137     0.642073    0.958264      0.922629        0.249878       0.184818
+   (0.199, 0.23] 69136     0.692013    0.966995      0.938580        0.214282       0.213942
+   (0.23, 0.266] 69137     0.750134    0.975197      0.952208        0.174090       0.247421
+  (0.266, 0.314] 69137     0.805227    0.981209      0.962762        0.138224       0.289168
+  (0.314, 0.389] 69137     0.846392    0.986107      0.971964        0.107971       0.347983
+  (0.389, 2.119] 69137     0.872413    0.989866      0.979199        0.084728       0.489865
+regional: {'clear_positive_zone': {'rows': 297745, 'exp016_auc': 0.9728037117546363, 'best_local_signal_auc': 0.9282299506252859, 'best_nested_auc': 0.9725971730787619}, 'clear_negative_zone': {'rows': 154634, 'exp016_auc': 0.9140341872492231, 'best_local_signal_auc': 0.847628355101261, 'best_nested_auc': 0.9140014976099047}, 'ambiguous_zone': {'rows': 102202, 'exp016_auc': 0.9280405270624151, 'best_local_signal_auc': 0.8488417771230463, 'best_nested_auc': 0.9280377998939889}}
+best_type: SIGNATURE; best_eval: {'auc': 0.9656907605852092, 'folds': [0.9650093485965001, 0.96565935713334, 0.9658607366572536, 0.9664561041426877, 0.9654710731336303], 'mean': 0.9656913239326824, 'std': 0.0004750183345443747}; delta=-0.0000109698; fold_delta=[-1.0944321475303553e-05, -5.10496505745639e-06, -2.2950840023572283e-05, 1.0793231456363017e-06, -1.6328798262854605e-05]
+recommendation: Empeora: descartar rama KNN.
+total_seconds: 1656.05
+problems: SPACE-D omitted as allowed

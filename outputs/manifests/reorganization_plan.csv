@@ -1,0 +1,365 @@
+current_path,proposed_path,experiment_id,category,action,reason,keep_original_reference
+.gitignore,.gitignore,,CONFIG,KEEP,"Protege datos, artifacts pesados y credenciales",true
+data/original/Smartphone_Usage_And_Addiction_Analysis_7500_Rows.csv,data/original/Smartphone_Usage_And_Addiction_Analysis_7500_Rows.csv,,DATA,IGNORE_FROM_GIT,Datos de competencia o externos; no se publican,true
+data/sample_submission.csv,data/sample_submission.csv,,DATA,IGNORE_FROM_GIT,Datos de competencia o externos; no se publican,true
+data/test.csv,data/test.csv,,DATA,IGNORE_FROM_GIT,Datos de competencia o externos; no se publican,true
+data/train.csv,data/train.csv,,DATA,IGNORE_FROM_GIT,Datos de competencia o externos; no se publican,true
+docs/bitacora_competencia.md,docs/bitacora_competencia.md,EXP-001;EXP-041B,DOC_PUBLIC,KEEP,Futura narrativa pública de la competencia,true
+docs/plan_repositorio.md,docs/internal/plan_repositorio.md,,DOC_INTERNAL,MOVE,"Plan de trabajo interno, no parte de la narrativa pública",true
+docs/PRESERVATION_REPORT.md,docs/internal/informe_preservacion.md,,DOC_INTERNAL,ARCHIVE,Documento de control interno; conservar contenido y trazabilidad,true
+docs/PROJECT_AUDIT.md,docs/internal/auditoria_repositorio.md,,DOC_INTERNAL,ARCHIVE,Documento de control interno; conservar contenido y trazabilidad,true
+docs/PUBLICATION_SAFETY.md,docs/internal/seguridad_publicacion.md,,DOC_INTERNAL,ARCHIVE,Documento de control interno; conservar contenido y trazabilidad,true
+notebooks/exp041_realmlp_kaggle.ipynb,notebooks/realmlp_kaggle.ipynb,EXP-041,NOTEBOOK,RENAME,Nombre legible; conservar EXP-041 en metadata y bitácora,true
+outputs/manifests/absolute_paths_report.csv,outputs/manifests/absolute_paths_report.csv,,MANIFEST,KEEP,Control de preservación y reorganización,true
+outputs/manifests/critical_artifacts_sha256.txt,outputs/manifests/critical_artifacts_sha256.txt,,MANIFEST,KEEP,Control de preservación y reorganización,true
+outputs/manifests/dependency_inventory.csv,outputs/manifests/dependency_inventory.csv,,MANIFEST,KEEP,Control de preservación y reorganización,true
+outputs/manifests/heavy_artifacts.csv,outputs/manifests/heavy_artifacts.csv,,MANIFEST,KEEP,Control de preservación y reorganización,true
+outputs/manifests/reorganization_plan.csv,outputs/manifests/reorganization_plan.csv,,MANIFEST,KEEP,Control de preservación y reorganización,true
+outputs/manifests/repository_snapshot.csv,outputs/manifests/repository_snapshot.csv,,MANIFEST,KEEP,Control de preservación y reorganización,true
+outputs/metrics/catboost_convergence_diagnostic.txt,outputs/reports/experiments/catboost_convergence_diagnostic.txt,,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/depth5_regularization_diagnostic.txt,outputs/reports/experiments/depth5_regularization_diagnostic.txt,,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp001_logistic_metrics.txt,outputs/reports/experiments/exp001_logistic_metrics.txt,EXP-001,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp001_logistic_oof.csv,outputs/metrics/exp001_logistic_oof.csv,EXP-001,ARTIFACT,IGNORE_FROM_GIT,OOF histórico pesado ubicado en metrics,true
+outputs/metrics/exp002_catboost_metrics.txt,outputs/reports/experiments/exp002_catboost_metrics.txt,EXP-002,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp002_catboost_oof.csv,outputs/metrics/exp002_catboost_oof.csv,EXP-002,ARTIFACT,IGNORE_FROM_GIT,OOF histórico pesado ubicado en metrics,true
+outputs/metrics/exp003_catboost_metrics.txt,outputs/reports/experiments/exp003_catboost_metrics.txt,EXP-003,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp003_catboost_oof.csv,outputs/metrics/exp003_catboost_oof.csv,EXP-003,ARTIFACT,IGNORE_FROM_GIT,OOF histórico pesado ubicado en metrics,true
+outputs/metrics/exp004_lightgbm_metrics.txt,outputs/reports/experiments/exp004_lightgbm_metrics.txt,EXP-004,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp005_blend_metrics.txt,outputs/reports/experiments/exp005_blend_metrics.txt,EXP-005,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp006_lightgbm_features_metrics.txt,outputs/reports/experiments/exp006_lightgbm_features_metrics.txt,EXP-006,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp007_ensemble_metrics.txt,outputs/reports/experiments/exp007_ensemble_metrics.txt,EXP-007,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp008_xgboost_metrics.txt,outputs/reports/experiments/exp008_xgboost_metrics.txt,EXP-008,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp009_ensemble_metrics.txt,outputs/reports/experiments/exp009_ensemble_metrics.txt,EXP-009,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp010_xgboost_features_metrics.txt,outputs/reports/experiments/exp010_xgboost_features_metrics.txt,EXP-010,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp011_ensemble_metrics.txt,outputs/reports/experiments/exp011_ensemble_metrics.txt,EXP-011,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp012_xgboost_thresholds_metrics.txt,outputs/reports/experiments/exp012_xgboost_thresholds_metrics.txt,EXP-012,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp013_ensemble_metrics.txt,outputs/reports/experiments/exp013_ensemble_metrics.txt,EXP-013,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp014_xgboost_ambiguous_metrics.txt,outputs/reports/experiments/exp014_xgboost_ambiguous_metrics.txt,EXP-014,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp015_xgboost_depth5_metrics.txt,outputs/reports/experiments/exp015_xgboost_depth5_metrics.txt,EXP-015,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp016_xgboost_depth5_9000_metrics.txt,outputs/reports/experiments/exp016_xgboost_depth5_9000_metrics.txt,EXP-016,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp017_ensemble_metrics.txt,outputs/reports/experiments/exp017_ensemble_metrics.txt,EXP-017,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp018_xgboost_nested_negative_metrics.txt,outputs/reports/experiments/exp018_xgboost_nested_negative_metrics.txt,EXP-018,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp019_lightgbm_thresholds_metrics.txt,outputs/reports/experiments/exp019_lightgbm_thresholds_metrics.txt,EXP-019,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp020_catboost_thresholds_metrics.txt,outputs/reports/experiments/exp020_catboost_thresholds_metrics.txt,EXP-020,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp021_ensemble_metrics.txt,outputs/reports/experiments/exp021_ensemble_metrics.txt,EXP-021,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp022_catboost_thresholds_9000_metrics.txt,outputs/reports/experiments/exp022_catboost_thresholds_9000_metrics.txt,EXP-022,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp023_nested_gating_diagnostic.txt,outputs/reports/experiments/exp023_nested_gating_diagnostic.txt,EXP-023,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp023_stack_logreg_metrics.txt,outputs/reports/experiments/exp023_stack_logreg_metrics.txt,EXP-023,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp024_nearest_neighbors_diagnostic.txt,outputs/reports/experiments/exp024_nearest_neighbors_diagnostic.txt,EXP-024,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp025_adversarial_validation.txt,outputs/reports/experiments/exp025_adversarial_validation.txt,EXP-025,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp026_original_forensics.txt,outputs/reports/experiments/exp026_original_forensics.txt,EXP-026,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp027_seed_diversity.txt,outputs/reports/experiments/exp027_seed_diversity.txt,EXP-027,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp028_seed5_metrics.txt,outputs/reports/experiments/exp028_seed5_metrics.txt,EXP-028,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp029_pairwise_ranking.txt,outputs/reports/experiments/exp029_pairwise_ranking.txt,EXP-029,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp030_rank_corrector_metrics.txt,outputs/reports/experiments/exp030_rank_corrector_metrics.txt,EXP-030,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp031_extratrees_metrics.txt,outputs/reports/experiments/exp031_extratrees_metrics.txt,EXP-031,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp031b_extratrees_metrics.txt,outputs/reports/experiments/exp031b_extratrees_metrics.txt,EXP-031B,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp032_neural_metrics.txt,outputs/reports/experiments/exp032_neural_metrics.txt,EXP-032,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp033_exact_value_te_metrics.txt,outputs/reports/experiments/exp033_exact_value_te_metrics.txt,EXP-033,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp034_factorization_machine.txt,outputs/reports/experiments/exp034_factorization_machine.txt,EXP-034,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp035_exact_logistic_metrics.txt,outputs/reports/experiments/exp035_exact_logistic_metrics.txt,EXP-035,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp036_ratio_ablation_metrics.txt,outputs/reports/experiments/exp036_ratio_ablation_metrics.txt,EXP-036,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp037_relational_metrics.txt,outputs/reports/experiments/exp037_relational_metrics.txt,EXP-037,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp038_discretization_metrics.txt,outputs/reports/experiments/exp038_discretization_metrics.txt,EXP-038,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp039_highbin_metrics.txt,outputs/reports/experiments/exp039_highbin_metrics.txt,EXP-039,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/exp040_dual_repr_metrics.txt,outputs/reports/experiments/exp040_dual_repr_metrics.txt,EXP-040,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/experiment_log.csv,outputs/metrics/experiment_log_original.csv,EXP-001;EXP-039,METRIC,ARCHIVE,"Log original incompleto, preservado como fuente histórica",true
+outputs/metrics/experiment_log_v2.csv,outputs/metrics/experiments.csv,EXP-001;EXP-041B,METRIC,RENAME,Nombre público simple para el catálogo completo,true
+outputs/metrics/negative_zone_diagnostic.txt,outputs/reports/experiments/negative_zone_diagnostic.txt,,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/threshold_diagnostic.txt,outputs/reports/experiments/threshold_diagnostic.txt,,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/weak_bands_diagnostic.txt,outputs/reports/experiments/weak_bands_diagnostic.txt,,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/metrics/xgboost_hyperparam_diagnostic.txt,outputs/reports/experiments/xgboost_hyperparam_diagnostic.txt,,REPORT,MOVE,Reporte textual de experimento; conservar nombre EXP para trazabilidad,true
+outputs/predictions/oof_exp003_catboost.csv,outputs/predictions/oof_exp003_catboost.csv,EXP-003,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp004_lightgbm.csv,outputs/predictions/oof_exp004_lightgbm.csv,EXP-004,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp006_lightgbm_features.csv,outputs/predictions/oof_exp006_lightgbm_features.csv,EXP-006,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp008_xgboost.csv,outputs/predictions/oof_exp008_xgboost.csv,EXP-008,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp010_xgboost_features.csv,outputs/predictions/oof_exp010_xgboost_features.csv,EXP-010,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp012_xgboost_thresholds.csv,outputs/predictions/oof_exp012_xgboost_thresholds.csv,EXP-012,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp014_xgboost_ambiguous.csv,outputs/predictions/oof_exp014_xgboost_ambiguous.csv,EXP-014,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp015_xgboost_depth5.csv,outputs/predictions/oof_exp015_xgboost_depth5.csv,EXP-015,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp016_xgboost_depth5_9000.csv,outputs/predictions/oof_exp016_xgboost_depth5_9000.csv,EXP-016,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp018_xgboost_nested_negative.csv,outputs/predictions/oof_exp018_xgboost_nested_negative.csv,EXP-018,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp019_lightgbm_thresholds.csv,outputs/predictions/oof_exp019_lightgbm_thresholds.csv,EXP-019,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp020_catboost_thresholds.csv,outputs/predictions/oof_exp020_catboost_thresholds.csv,EXP-020,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp022_catboost_thresholds_9000.csv,outputs/predictions/oof_exp022_catboost_thresholds_9000.csv,EXP-022,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp023_nested_gating_diagnostic.csv,outputs/predictions/oof_exp023_nested_gating_diagnostic.csv,EXP-023,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp023_stack_logreg.csv,outputs/predictions/oof_exp023_stack_logreg.csv,EXP-023,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp024_best_nested_blend.csv,outputs/predictions/oof_exp024_best_nested_blend.csv,EXP-024,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp025_adversarial_train.csv,outputs/predictions/oof_exp025_adversarial_train.csv,EXP-025,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp026_original_prior_blend.csv,outputs/predictions/oof_exp026_original_prior_blend.csv,EXP-026,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp027_seed2026.csv,outputs/predictions/oof_exp027_seed2026.csv,EXP-027,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp027_seed42.csv,outputs/predictions/oof_exp027_seed42.csv,EXP-027,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp027_seed777.csv,outputs/predictions/oof_exp027_seed777.csv,EXP-027,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp028_seed1234.csv,outputs/predictions/oof_exp028_seed1234.csv,EXP-028,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp028_seed31415.csv,outputs/predictions/oof_exp028_seed31415.csv,EXP-028,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp030_rank_corrector.csv,outputs/predictions/oof_exp030_rank_corrector.csv,EXP-030,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp031b_extratrees.csv,outputs/predictions/oof_exp031b_extratrees.csv,EXP-031B,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp033_best_te_nested.csv,outputs/predictions/oof_exp033_best_te_nested.csv,EXP-033,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp034_fm.csv,outputs/predictions/oof_exp034_fm.csv,EXP-034,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp035_exact_logistic.csv,outputs/predictions/oof_exp035_exact_logistic.csv,EXP-035,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp036_ratio_logistic.csv,outputs/predictions/oof_exp036_ratio_logistic.csv,EXP-036,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp037_relational_logistic.csv,outputs/predictions/oof_exp037_relational_logistic.csv,EXP-037,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp038_discretized_logistic.csv,outputs/predictions/oof_exp038_discretized_logistic.csv,EXP-038,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp039_lgbm_highbin.csv,outputs/predictions/oof_exp039_lgbm_highbin.csv,EXP-039,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/oof_exp039_lgbm_highbin_raw.csv,outputs/predictions/oof_exp039_lgbm_highbin_raw.csv,EXP-039,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp004_lightgbm.csv,outputs/predictions/test_exp004_lightgbm.csv,EXP-004,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp006_lightgbm_features.csv,outputs/predictions/test_exp006_lightgbm_features.csv,EXP-006,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp008_xgboost.csv,outputs/predictions/test_exp008_xgboost.csv,EXP-008,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp010_xgboost_features.csv,outputs/predictions/test_exp010_xgboost_features.csv,EXP-010,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp012_xgboost_thresholds.csv,outputs/predictions/test_exp012_xgboost_thresholds.csv,EXP-012,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp014_xgboost_ambiguous.csv,outputs/predictions/test_exp014_xgboost_ambiguous.csv,EXP-014,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp015_xgboost_depth5.csv,outputs/predictions/test_exp015_xgboost_depth5.csv,EXP-015,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp016_xgboost_depth5_9000.csv,outputs/predictions/test_exp016_xgboost_depth5_9000.csv,EXP-016,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp018_xgboost_nested_negative.csv,outputs/predictions/test_exp018_xgboost_nested_negative.csv,EXP-018,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp019_lightgbm_thresholds.csv,outputs/predictions/test_exp019_lightgbm_thresholds.csv,EXP-019,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp020_catboost_thresholds.csv,outputs/predictions/test_exp020_catboost_thresholds.csv,EXP-020,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp022_catboost_thresholds_9000.csv,outputs/predictions/test_exp022_catboost_thresholds_9000.csv,EXP-022,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp028_seed1234.csv,outputs/predictions/test_exp028_seed1234.csv,EXP-028,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp028_seed31415.csv,outputs/predictions/test_exp028_seed31415.csv,EXP-028,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp031b_extratrees.csv,outputs/predictions/test_exp031b_extratrees.csv,EXP-031B,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp034_fm.csv,outputs/predictions/test_exp034_fm.csv,EXP-034,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp035_exact_logistic.csv,outputs/predictions/test_exp035_exact_logistic.csv,EXP-035,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp036_ratio_logistic.csv,outputs/predictions/test_exp036_ratio_logistic.csv,EXP-036,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp037_relational_logistic.csv,outputs/predictions/test_exp037_relational_logistic.csv,EXP-037,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp038_discretized_logistic.csv,outputs/predictions/test_exp038_discretized_logistic.csv,EXP-038,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp039_lgbm_highbin.csv,outputs/predictions/test_exp039_lgbm_highbin.csv,EXP-039,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/predictions/test_exp039_lgbm_highbin_raw.csv,outputs/predictions/test_exp039_lgbm_highbin_raw.csv,EXP-039,ARTIFACT,IGNORE_FROM_GIT,Predicción fila a fila preservada fuera de Git,true
+outputs/reports/catboost_convergence.csv,outputs/reports/catboost_convergence.csv,,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/data_audit.txt,outputs/reports/data_audit.txt,,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/depth5_regularization_diagnostic.csv,outputs/reports/depth5_regularization_diagnostic.csv,,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp016_learning_curve.csv,outputs/reports/exp016_learning_curve.csv,EXP-016,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp018_nested_rules_by_fold.csv,outputs/reports/exp018_nested_rules_by_fold.csv,EXP-018,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp023_nested_gate_by_fold.csv,outputs/reports/exp023_nested_gate_by_fold.csv,EXP-023,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp023_stack_coefficients.csv,outputs/reports/exp023_stack_coefficients.csv,EXP-023,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp024_knn_configs.csv,outputs/reports/exp024_knn_configs.csv,EXP-024,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp024_nearest_distance_bands.csv,outputs/reports/exp024_nearest_distance_bands.csv,EXP-024,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp024_signature_results.csv,outputs/reports/exp024_signature_results.csv,EXP-024,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp025_adversarial_quintiles.csv,outputs/reports/exp025_adversarial_quintiles.csv,EXP-025,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp025_distribution_distances.csv,outputs/reports/exp025_distribution_distances.csv,EXP-025,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp025_feature_shift.csv,outputs/reports/exp025_feature_shift.csv,EXP-025,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp025_missing_shift.csv,outputs/reports/exp025_missing_shift.csv,EXP-025,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp026_correlation_shift.csv,outputs/reports/exp026_correlation_shift.csv,EXP-026,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp026_distance_to_original.csv,outputs/reports/exp026_distance_to_original.csv,EXP-026,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp026_original_ambiguous_analysis.csv,outputs/reports/exp026_original_ambiguous_analysis.csv,EXP-026,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp026_original_priors.csv,outputs/reports/exp026_original_priors.csv,EXP-026,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp026_original_vs_synthetic_distributions.csv,outputs/reports/exp026_original_vs_synthetic_distributions.csv,EXP-026,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp027_seed_correlations.csv,outputs/reports/exp027_seed_correlations.csv,EXP-027,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp027_seed_ensemble_results.csv,outputs/reports/exp027_seed_ensemble_results.csv,EXP-027,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp027_seed_fold_metrics.csv,outputs/reports/exp027_seed_fold_metrics.csv,EXP-027,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp028_final_blends.csv,outputs/reports/exp028_final_blends.csv,EXP-028,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp028_seed_correlations.csv,outputs/reports/exp028_seed_correlations.csv,EXP-028,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp028_seed_fold_metrics.csv,outputs/reports/exp028_seed_fold_metrics.csv,EXP-028,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp028_seed_marginal_gain.csv,outputs/reports/exp028_seed_marginal_gain.csv,EXP-028,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp028_seed_subset_results.csv,outputs/reports/exp028_seed_subset_results.csv,EXP-028,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp029_feature_shifts.csv,outputs/reports/exp029_feature_shifts.csv,EXP-029,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp029_hard_cases.csv,outputs/reports/exp029_hard_cases.csv,EXP-029,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp029_pair_error_features.csv,outputs/reports/exp029_pair_error_features.csv,EXP-029,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp029_pairwise_model_comparison.csv,outputs/reports/exp029_pairwise_model_comparison.csv,EXP-029,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp029_score_bands.csv,outputs/reports/exp029_score_bands.csv,EXP-029,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp030_band_results.csv,outputs/reports/exp030_band_results.csv,EXP-030,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp030_fold_choices.csv,outputs/reports/exp030_fold_choices.csv,EXP-030,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp030_pairwise_results.csv,outputs/reports/exp030_pairwise_results.csv,EXP-030,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp031b_blends.csv,outputs/reports/exp031b_blends.csv,EXP-031B,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp031b_correlations.csv,outputs/reports/exp031b_correlations.csv,EXP-031B,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp031b_fold_progress.csv,outputs/reports/exp031b_fold_progress.csv,EXP-031B,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp031b_regional.csv,outputs/reports/exp031b_regional.csv,EXP-031B,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp032_neural_blends.csv,outputs/reports/exp032_neural_blends.csv,EXP-032,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp032_neural_correlations.csv,outputs/reports/exp032_neural_correlations.csv,EXP-032,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp032_neural_folds.csv,outputs/reports/exp032_neural_folds.csv,EXP-032,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp032_neural_regional.csv,outputs/reports/exp032_neural_regional.csv,EXP-032,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp033_pair_te_results.csv,outputs/reports/exp033_pair_te_results.csv,EXP-033,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp033_te_blends.csv,outputs/reports/exp033_te_blends.csv,EXP-033,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp033_te_correlations.csv,outputs/reports/exp033_te_correlations.csv,EXP-033,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp033_te_results.csv,outputs/reports/exp033_te_results.csv,EXP-033,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp033_te_stability.csv,outputs/reports/exp033_te_stability.csv,EXP-033,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp033_test_transferability.csv,outputs/reports/exp033_test_transferability.csv,EXP-033,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp033_value_cardinality.csv,outputs/reports/exp033_value_cardinality.csv,EXP-033,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp034_blends.csv,outputs/reports/exp034_blends.csv,EXP-034,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp034_correlations.csv,outputs/reports/exp034_correlations.csv,EXP-034,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp034_folds.csv,outputs/reports/exp034_folds.csv,EXP-034,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp034_interactions.csv,outputs/reports/exp034_interactions.csv,EXP-034,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp034_pairwise.csv,outputs/reports/exp034_pairwise.csv,EXP-034,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp034_regional.csv,outputs/reports/exp034_regional.csv,EXP-034,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp035_blends.csv,outputs/reports/exp035_blends.csv,EXP-035,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp035_correlations.csv,outputs/reports/exp035_correlations.csv,EXP-035,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp035_pairwise.csv,outputs/reports/exp035_pairwise.csv,EXP-035,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp035_regional.csv,outputs/reports/exp035_regional.csv,EXP-035,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp035_variants.csv,outputs/reports/exp035_variants.csv,EXP-035,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp035_variants_progress.csv,outputs/reports/exp035_variants_progress.csv,EXP-035,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp036_all_fold_progress.csv,outputs/reports/exp036_all_fold_progress.csv,EXP-036,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp036_blends.csv,outputs/reports/exp036_blends.csv,EXP-036,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp036_correlations.csv,outputs/reports/exp036_correlations.csv,EXP-036,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp036_forward_selection.csv,outputs/reports/exp036_forward_selection.csv,EXP-036,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp036_new_ratio_candidates.csv,outputs/reports/exp036_new_ratio_candidates.csv,EXP-036,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp036_pairwise.csv,outputs/reports/exp036_pairwise.csv,EXP-036,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp036_ratio_granularity.csv,outputs/reports/exp036_ratio_granularity.csv,EXP-036,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp036_ratio_leave_one_out.csv,outputs/reports/exp036_ratio_leave_one_out.csv,EXP-036,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp036_ratio_pairs.csv,outputs/reports/exp036_ratio_pairs.csv,EXP-036,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp036_ratio_single_ablation.csv,outputs/reports/exp036_ratio_single_ablation.csv,EXP-036,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp036_regional.csv,outputs/reports/exp036_regional.csv,EXP-036,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp037_all_fold_progress.csv,outputs/reports/exp037_all_fold_progress.csv,EXP-037,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp037_blends.csv,outputs/reports/exp037_blends.csv,EXP-037,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp037_correlations.csv,outputs/reports/exp037_correlations.csv,EXP-037,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp037_difference_candidates.csv,outputs/reports/exp037_difference_candidates.csv,EXP-037,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp037_difference_granularity.csv,outputs/reports/exp037_difference_granularity.csv,EXP-037,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp037_final_ablation.csv,outputs/reports/exp037_final_ablation.csv,EXP-037,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp037_forward_selection.csv,outputs/reports/exp037_forward_selection.csv,EXP-037,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp037_inverse_ratios.csv,outputs/reports/exp037_inverse_ratios.csv,EXP-037,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp037_pairwise.csv,outputs/reports/exp037_pairwise.csv,EXP-037,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp037_regional.csv,outputs/reports/exp037_regional.csv,EXP-037,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp038_all_fold_progress.csv,outputs/reports/exp038_all_fold_progress.csv,EXP-038,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp038_blends.csv,outputs/reports/exp038_blends.csv,EXP-038,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp038_cardinality.csv,outputs/reports/exp038_cardinality.csv,EXP-038,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp038_forward_selection.csv,outputs/reports/exp038_forward_selection.csv,EXP-038,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp038_pairwise.csv,outputs/reports/exp038_pairwise.csv,EXP-038,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp038_quantile_bins.csv,outputs/reports/exp038_quantile_bins.csv,EXP-038,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp038_ratio_discretizations.csv,outputs/reports/exp038_ratio_discretizations.csv,EXP-038,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp038_regional.csv,outputs/reports/exp038_regional.csv,EXP-038,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp038_screen_minus_social_bins.csv,outputs/reports/exp038_screen_minus_social_bins.csv,EXP-038,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp039_all_fold_progress.csv,outputs/reports/exp039_all_fold_progress.csv,EXP-039,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp039_blends.csv,outputs/reports/exp039_blends.csv,EXP-039,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp039_correlations.csv,outputs/reports/exp039_correlations.csv,EXP-039,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp039_feature_sets.csv,outputs/reports/exp039_feature_sets.csv,EXP-039,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp039_frequency_screen.csv,outputs/reports/exp039_frequency_screen.csv,EXP-039,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp039_maxbin_screen.csv,outputs/reports/exp039_maxbin_screen.csv,EXP-039,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp039_param_screen.csv,outputs/reports/exp039_param_screen.csv,EXP-039,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp039_regional.csv,outputs/reports/exp039_regional.csv,EXP-039,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp039_value_codes.csv,outputs/reports/exp039_value_codes.csv,EXP-039,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp040_all_fold_progress.csv,outputs/reports/exp040_all_fold_progress.csv,EXP-040,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp040_blends.csv,outputs/reports/exp040_blends.csv,EXP-040,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp040_cat_params.csv,outputs/reports/exp040_cat_params.csv,EXP-040,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp040_correlations.csv,outputs/reports/exp040_correlations.csv,EXP-040,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp040_dual_sets.csv,outputs/reports/exp040_dual_sets.csv,EXP-040,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp040_feature_importance.csv,outputs/reports/exp040_feature_importance.csv,EXP-040,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp040_maxbin_check.csv,outputs/reports/exp040_maxbin_check.csv,EXP-040,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp040_pairwise.csv,outputs/reports/exp040_pairwise.csv,EXP-040,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp040_raw_cat_screen.csv,outputs/reports/exp040_raw_cat_screen.csv,EXP-040,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp040_regional.csv,outputs/reports/exp040_regional.csv,EXP-040,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/exp040_relational_cat_screen.csv,outputs/reports/exp040_relational_cat_screen.csv,EXP-040,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/negative_zone_rule_candidates.csv,outputs/reports/negative_zone_rule_candidates.csv,,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/threshold_grid_results.csv,outputs/reports/threshold_grid_results.csv,,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/weak_bands_results.csv,outputs/reports/weak_bands_results.csv,,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/reports/xgboost_hyperparam_diagnostic.csv,outputs/reports/xgboost_hyperparam_diagnostic.csv,,REPORT,KEEP,Tabla o reporte histórico liviano,true
+outputs/submissions/submission_exp001_logistic.csv,outputs/submissions/submission_exp001_logistic.csv,EXP-001,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp002_catboost.csv,outputs/submissions/submission_exp002_catboost.csv,EXP-002,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp003_catboost_4000.csv,outputs/submissions/submission_exp003_catboost_4000.csv,EXP-003,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp004_lightgbm.csv,outputs/submissions/submission_exp004_lightgbm.csv,EXP-004,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp005_blend_cat_lgbm.csv,outputs/submissions/submission_exp005_blend_cat_lgbm.csv,EXP-005,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp006_lightgbm_features.csv,outputs/submissions/submission_exp006_lightgbm_features.csv,EXP-006,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp007_ensemble.csv,outputs/submissions/submission_exp007_ensemble.csv,EXP-007,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp008_xgboost.csv,outputs/submissions/submission_exp008_xgboost.csv,EXP-008,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp009_ensemble.csv,outputs/submissions/submission_exp009_ensemble.csv,EXP-009,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp010_xgboost_features.csv,outputs/submissions/submission_exp010_xgboost_features.csv,EXP-010,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp011_ensemble.csv,outputs/submissions/submission_exp011_ensemble.csv,EXP-011,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp012_xgboost_thresholds.csv,outputs/submissions/submission_exp012_xgboost_thresholds.csv,EXP-012,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp013_ensemble.csv,outputs/submissions/submission_exp013_ensemble.csv,EXP-013,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp014_xgboost_ambiguous.csv,outputs/submissions/submission_exp014_xgboost_ambiguous.csv,EXP-014,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp015_xgboost_depth5.csv,outputs/submissions/submission_exp015_xgboost_depth5.csv,EXP-015,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp016_xgboost_depth5_9000.csv,outputs/submissions/submission_exp016_xgboost_depth5_9000.csv,EXP-016,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp017_ensemble.csv,outputs/submissions/submission_exp017_ensemble.csv,EXP-017,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp018_xgboost_nested_negative.csv,outputs/submissions/submission_exp018_xgboost_nested_negative.csv,EXP-018,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp019_lightgbm_thresholds.csv,outputs/submissions/submission_exp019_lightgbm_thresholds.csv,EXP-019,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp020_catboost_thresholds.csv,outputs/submissions/submission_exp020_catboost_thresholds.csv,EXP-020,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp021_ensemble.csv,outputs/submissions/submission_exp021_ensemble.csv,EXP-021,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp022_catboost_thresholds_9000.csv,outputs/submissions/submission_exp022_catboost_thresholds_9000.csv,EXP-022,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp027_seed_ensemble.csv,outputs/submissions/submission_exp027_seed_ensemble.csv,EXP-027,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp035_exact_logistic_ensemble.csv,outputs/submissions/submission_exp035_exact_logistic_ensemble.csv,EXP-035,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp036_ratio_logistic_ensemble.csv,outputs/submissions/submission_exp036_ratio_logistic_ensemble.csv,EXP-036,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp037_relational_logistic_ensemble.csv,outputs/submissions/submission_exp037_relational_logistic_ensemble.csv,EXP-037,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+outputs/submissions/submission_exp039_highbin_lgbm_ensemble.csv,outputs/submissions/submission_exp039_highbin_lgbm_ensemble.csv,EXP-039,ARTIFACT,IGNORE_FROM_GIT,Submission completa preservada fuera de Git,true
+README.md,README.md,,DOC_PUBLIC,KEEP,"Se reescribirá en una fase posterior, sin cambiar su ruta",true
+src/__pycache__/diagnose_exp024_nearest_neighbors.cpython-312.pyc,,EXP-024,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_exp025_adversarial_validation.cpython-312.pyc,,EXP-025,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_exp026_original_forensics.cpython-312.pyc,,EXP-026,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_exp027_seed_diversity.cpython-312.pyc,,EXP-027,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_exp029_pairwise_ranking.cpython-312.pyc,,EXP-029,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_exp033_exact_value_te.cpython-312.pyc,,EXP-033,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_exp041b_realmlp.cpython-312.pyc,,EXP-041B,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_negative_zone.cpython-312.pyc,,,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_nested_gating_exp023.cpython-312.pyc,,EXP-023,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_thresholds.cpython-312.pyc,,,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_weak_bands.cpython-312.pyc,,,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_xgboost_depth5_regularization.cpython-312.pyc,,,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/diagnose_xgboost_hyperparams.cpython-312.pyc,,,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/ensemble_exp009.cpython-312.pyc,,EXP-009,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/ensemble_exp017.cpython-312.pyc,,EXP-017,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/ensemble_exp021.cpython-312.pyc,,EXP-021,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/finalize_exp037_submission.cpython-312.pyc,,EXP-037,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/stack_exp023_logreg.cpython-312.pyc,,EXP-023,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_catboost_exp003.cpython-312.pyc,,EXP-003,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_catboost_exp020_thresholds.cpython-312.pyc,,EXP-020,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_catboost_exp022_thresholds_9000.cpython-312.pyc,,EXP-022,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp028_seed_extension.cpython-312.pyc,,EXP-028,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp030_rank_corrector.cpython-312.pyc,,EXP-030,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp031_extratrees.cpython-312.pyc,,EXP-031,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp031b_extratrees_memory_safe.cpython-312.pyc,,EXP-031B,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp032_neural_tabular.cpython-312.pyc,,EXP-032,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp034_factorization_machine.cpython-312.pyc,,EXP-034,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp035_exact_value_logistic.cpython-312.pyc,,EXP-035,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp036_ratio_ablation.cpython-312.pyc,,EXP-036,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp037_relational_features.cpython-312.pyc,,EXP-037,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp038_discretization_refinement.cpython-312.pyc,,EXP-038,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp039_high_bin_lgbm.cpython-312.pyc,,EXP-039,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp040_dual_repr_lgbm.cpython-312.pyc,,EXP-040,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_exp041_realmlp.cpython-312.pyc,,EXP-041,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_lightgbm_exp004.cpython-312.pyc,,EXP-004,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_lightgbm_exp006_features.cpython-312.pyc,,EXP-006,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_lightgbm_exp019_thresholds.cpython-312.pyc,,EXP-019,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_xgboost_exp008.cpython-312.pyc,,EXP-008,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_xgboost_exp012_threshold_features.cpython-312.pyc,,EXP-012,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_xgboost_exp015_depth5.cpython-312.pyc,,EXP-015,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_xgboost_exp016_depth5_9000.cpython-312.pyc,,EXP-016,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/__pycache__/train_xgboost_exp018_nested_negative_rules.cpython-312.pyc,,EXP-018,LEGACY,IGNORE_FROM_GIT,Bytecode regenerable; conservar físicamente hasta una limpieza autorizada,true
+src/audit_data.py,src/data/data_audit.py,,UTILITY,RENAME,"Audita esquema, faltantes y consistencia de los datos. Visible en el código principal.",true
+src/create_blend_exp005.py,src/experiments/archive/exp_005_catboost_lightgbm_blend.py,EXP-005,LEGACY,ARCHIVE,Construye el primer blend CatBoost-LightGBM. Se conserva como parte de la historia experimental.,true
+src/diagnose_catboost_convergence.py,src/diagnostics/catboost_convergence.py,EXP-002;EXP-003,DIAGNOSTIC,RENAME,Estudia la convergencia de CatBoost. Visible en el código principal.,true
+src/diagnose_exp024_nearest_neighbors.py,src/diagnostics/nearest_neighbors.py,EXP-024,DIAGNOSTIC,RENAME,Evalúa vecinos cercanos y firmas redondeadas. Visible en el código principal.,true
+src/diagnose_exp025_adversarial_validation.py,src/diagnostics/train_test_shift.py,EXP-025,DIAGNOSTIC,RENAME,Mide diferencias entre train y test. Visible en el código principal.,true
+src/diagnose_exp026_original_forensics.py,src/diagnostics/original_data_analysis.py,EXP-026,DIAGNOSTIC,RENAME,Contrasta los datos sintéticos con el dataset original. Visible en el código principal.,true
+src/diagnose_exp027_seed_diversity.py,src/diagnostics/seed_stability.py,EXP-027,DIAGNOSTIC,RENAME,Mide diversidad y estabilidad entre seeds. Visible en el código principal.,true
+src/diagnose_exp029_pairwise_ranking.py,src/diagnostics/pairwise_errors.py,EXP-029,DIAGNOSTIC,RENAME,Analiza errores de orden entre pares. Visible en el código principal.,true
+src/diagnose_exp033_exact_value_te.py,src/diagnostics/exact_value_encoding.py,EXP-033,DIAGNOSTIC,RENAME,Evalúa target encoding de valores exactos. Visible en el código principal.,true
+src/diagnose_exp041b_realmlp.py,src/diagnostics/realmlp_audit.py,EXP-041B,DIAGNOSTIC,RENAME,Audita configuración y API de RealMLP sin entrenar. Visible en el código principal.,true
+src/diagnose_negative_zone.py,src/diagnostics/negative_region.py,EXP-018,DIAGNOSTIC,RENAME,Analiza contradicciones de la región negativa. Visible en el código principal.,true
+src/diagnose_nested_gating_exp023.py,src/diagnostics/model_gating.py,EXP-023,DIAGNOSTIC,RENAME,Prueba combinación condicional de modelos. Visible en el código principal.,true
+src/diagnose_thresholds.py,src/diagnostics/threshold_analysis.py,EXP-012,DIAGNOSTIC,RENAME,Explora umbrales de screen time y social media. Visible en el código principal.,true
+src/diagnose_weak_bands.py,src/diagnostics/score_bands.py,EXP-016,DIAGNOSTIC,RENAME,Analiza bandas débiles de predicción. Visible en el código principal.,true
+src/diagnose_xgboost_depth5_regularization.py,src/diagnostics/xgboost_regularization.py,EXP-015;EXP-016,DIAGNOSTIC,RENAME,Compara regularización del XGBoost depth 5. Visible en el código principal.,true
+src/diagnose_xgboost_hyperparams.py,src/diagnostics/xgboost_parameters.py,EXP-012,DIAGNOSTIC,RENAME,Diagnóstico económico de parámetros XGBoost. Visible en el código principal.,true
+src/ensemble_exp007.py,src/experiments/archive/exp_007_early_ensemble.py,EXP-007,LEGACY,ARCHIVE,Optimiza ensemble temprano de tres modelos. Se conserva como parte de la historia experimental.,true
+src/ensemble_exp009.py,src/ensembles/blend_search.py,EXP-009,UTILITY,RENAME,Aporta utilidades de búsqueda de blends y ranking. Visible en el código principal.,true
+src/ensemble_exp011.py,src/experiments/archive/exp_011_feature_ensemble.py,EXP-011,LEGACY,ARCHIVE,Evalúa el aporte de XGBoost con features. Se conserva como parte de la historia experimental.,true
+src/ensemble_exp013.py,src/experiments/archive/exp_013_threshold_ensemble.py,EXP-013,LEGACY,ARCHIVE,Optimiza el ensemble centrado en thresholds. Se conserva como parte de la historia experimental.,true
+src/ensemble_exp017.py,src/experiments/archive/exp_017_depth5_ensemble.py,EXP-017,LEGACY,ARCHIVE,Optimiza ensemble alrededor de EXP-016. Se conserva como parte de la historia experimental.,true
+src/ensemble_exp021.py,src/experiments/exp_021_catboost_xgboost_blend.py,EXP-021,EXPERIMENT,ARCHIVE,Combina XGBoost y CatBoost de thresholds. Se conserva como parte de la historia experimental.,true
+src/finalize_exp037_submission.py,src/experiments/archive/exp_037_submission_builder.py,EXP-037,LEGACY,ARCHIVE,Reconstruye la submission de EXP-037. Se conserva como parte de la historia experimental.,true
+src/finalize_exp039_refined_blend.py,src/ensembles/final_ensemble.py,EXP-039,CORE,RENAME,Construye el blend principal EXP-027/037/039. Visible en el código principal.,true
+src/stack_exp023_logreg.py,src/experiments/archive/exp_023_logistic_stacking.py,EXP-023,EXPERIMENT,ARCHIVE,Prueba stacking logístico nested. Se conserva como parte de la historia experimental.,true
+src/train_catboost_baseline.py,src/experiments/archive/exp_002_catboost_baseline.py,EXP-002,EXPERIMENT,ARCHIVE,Entrena el baseline CatBoost. Se conserva como parte de la historia experimental.,true
+src/train_catboost_exp003.py,src/models/catboost_model.py,EXP-003,CORE,RENAME,Entrena la configuración CatBoost de referencia. Visible en el código principal.,true
+src/train_catboost_exp020_thresholds.py,src/experiments/archive/exp_020_catboost_thresholds.py,EXP-020,EXPERIMENT,ARCHIVE,Prueba CatBoost con features de thresholds. Se conserva como parte de la historia experimental.,true
+src/train_catboost_exp022_thresholds_9000.py,src/experiments/archive/exp_022_catboost_long_run.py,EXP-022,EXPERIMENT,ARCHIVE,Extiende el entrenamiento CatBoost de thresholds. Se conserva como parte de la historia experimental.,true
+src/train_exp028_seed_extension.py,src/experiments/archive/exp_028_seed_extension.py,EXP-028,EXPERIMENT,ARCHIVE,Amplía el ensemble a cinco seeds. Se conserva como parte de la historia experimental.,true
+src/train_exp030_rank_corrector.py,src/experiments/archive/exp_030_rank_corrector.py,EXP-030,EXPERIMENT,ARCHIVE,Entrena un corrector local de ranking. Se conserva como parte de la historia experimental.,true
+src/train_exp031_extratrees.py,src/experiments/archive/exp_031_extratrees_initial.py,EXP-031,LEGACY,ARCHIVE,Primer intento ExtraTrees que no completó. Se conserva como parte de la historia experimental.,true
+src/train_exp031b_extratrees_memory_safe.py,src/experiments/archive/exp_031b_extratrees.py,EXP-031B,EXPERIMENT,ARCHIVE,Versión ExtraTrees con menor uso de memoria. Se conserva como parte de la historia experimental.,true
+src/train_exp032_neural_tabular.py,src/experiments/archive/exp_032_tabular_mlp.py,EXP-032,EXPERIMENT,ARCHIVE,Evalúa viabilidad de una MLP tabular. Se conserva como parte de la historia experimental.,true
+src/train_exp034_factorization_machine.py,src/experiments/archive/exp_034_factorization_machine.py,EXP-034,EXPERIMENT,ARCHIVE,Prueba una Factorization Machine dispersa. Se conserva como parte de la historia experimental.,true
+src/train_exp035_exact_value_logistic.py,src/models/logistic_exact_values.py,EXP-035,CORE,RENAME,Entrena Logistic sparse con categorías de valores exactos. Visible en el código principal.,true
+src/train_exp036_ratio_ablation.py,src/experiments/exp_036_ratio_features.py,EXP-036,EXPERIMENT,ARCHIVE,Selecciona ratios para la Logistic sparse. Se conserva como parte de la historia experimental.,true
+src/train_exp037_relational_features.py,src/models/logistic_relational.py,EXP-037,CORE,RENAME,Añade relaciones seleccionadas a la Logistic sparse. Visible en el código principal.,true
+src/train_exp038_discretization_refinement.py,src/experiments/archive/exp_038_discretized_relations.py,EXP-038,EXPERIMENT,ARCHIVE,Prueba discretización de relaciones. Se conserva como parte de la historia experimental.,true
+src/train_exp039_high_bin_lgbm.py,src/models/lightgbm_high_resolution.py,EXP-039,CORE,RENAME,Entrena LightGBM con bins de alta resolución. Visible en el código principal.,true
+src/train_exp040_dual_repr_lgbm.py,src/experiments/archive/exp_040_dual_representation.py,EXP-040,EXPERIMENT,ARCHIVE,Prueba representación numérica y categórica simultánea. Se conserva como parte de la historia experimental.,true
+src/train_exp041_realmlp.py,src/experiments/archive/exp_041_realmlp.py,EXP-041,EXPERIMENT,ARCHIVE,Ejecuta el diagnóstico GPU de RealMLP. Se conserva como parte de la historia experimental.,true
+src/train_lightgbm_exp004.py,src/models/lightgbm_baseline.py,EXP-004,CORE,RENAME,Entrena LightGBM base y aporta manejo categórico común. Visible en el código principal.,true
+src/train_lightgbm_exp006_features.py,src/experiments/archive/exp_006_behavior_features.py,EXP-006,EXPERIMENT,ARCHIVE,Prueba ocho features conductuales en LightGBM. Se conserva como parte de la historia experimental.,true
+src/train_lightgbm_exp019_thresholds.py,src/experiments/archive/exp_019_lightgbm_thresholds.py,EXP-019,EXPERIMENT,ARCHIVE,Prueba thresholds con LightGBM. Se conserva como parte de la historia experimental.,true
+src/train_logistic_baseline.py,src/models/baseline_logistic.py,EXP-001,CORE,RENAME,Entrena el baseline lineal reproducible. Visible en el código principal.,true
+src/train_xgboost_exp008.py,src/models/xgboost_baseline.py,EXP-008,CORE,RENAME,Entrena XGBoost base y aporta codificación estable. Visible en el código principal.,true
+src/train_xgboost_exp010_features.py,src/experiments/archive/exp_010_xgboost_behavior_features.py,EXP-010,EXPERIMENT,ARCHIVE,Prueba features conductuales en XGBoost. Se conserva como parte de la historia experimental.,true
+src/train_xgboost_exp012_threshold_features.py,src/features/threshold_features.py,EXP-012,CORE,RENAME,Define thresholds y regiones reutilizados posteriormente. Visible en el código principal.,true
+src/train_xgboost_exp014_ambiguous_features.py,src/experiments/archive/exp_014_ambiguous_region.py,EXP-014,EXPERIMENT,ARCHIVE,Prueba contexto adicional en la región ambigua. Se conserva como parte de la historia experimental.,true
+src/train_xgboost_exp015_depth5.py,src/experiments/archive/exp_015_xgboost_depth5.py,EXP-015,EXPERIMENT,ARCHIVE,Reduce la profundidad del XGBoost de thresholds. Se conserva como parte de la historia experimental.,true
+src/train_xgboost_exp016_depth5_9000.py,src/models/xgboost_thresholds.py,EXP-016,CORE,RENAME,Entrena el XGBoost de thresholds de referencia. Visible en el código principal.,true
+src/train_xgboost_exp018_nested_negative_rules.py,src/experiments/archive/exp_018_negative_region_rules.py,EXP-018,EXPERIMENT,ARCHIVE,Prueba reglas nested para la zona negativa. Se conserva como parte de la historia experimental.,true

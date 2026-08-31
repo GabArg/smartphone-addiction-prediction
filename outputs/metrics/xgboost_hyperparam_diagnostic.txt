@@ -1,0 +1,112 @@
+XGBoost hyperparameter diagnostic (EXP-012 features; Fold 1 screening)
+baseline_reproduced_fold1: 0.9646014342
+baseline_reference_fold1: 0.9646014342
+baseline_3fold_scores: [0.964601434220276, 0.9652172313341448, 0.9653439240559616]
+baseline_3fold_mean: 0.9650541965
+top10_screening:
+  config_id  max_depth  min_child_weight  learning_rate  n_estimators  subsample  colsample_bytree  reg_alpha  reg_lambda  gamma  fold1_auc  delta_vs_baseline  best_iteration  training_seconds
+  A1_depth5          5                 1           0.03          6000        0.9               0.9        0.0         1.0    0.0   0.964934           0.000333            5997        386.808446
+  A2_depth6          6                 1           0.03          6000        0.9               0.9        0.0         1.0    0.0   0.964824           0.000222            5799        411.319296
+C3_lambda10          7                 1           0.03          6000        0.9               0.9        0.0        10.0    0.0   0.964770           0.000169            4193        324.223957
+  B2_child5          7                 5           0.03          6000        0.9               0.9        0.0         1.0    0.0   0.964721           0.000119            3667        280.344388
+  G1_lr0.02          7                 1           0.02          8000        0.9               0.9        0.0         1.0    0.0   0.964719           0.000118            5396        417.351357
+ B3_child10          7                10           0.03          6000        0.9               0.9        0.0         1.0    0.0   0.964711           0.000109            4124        312.826174
+ C2_lambda5          7                 1           0.03          6000        0.9               0.9        0.0         5.0    0.0   0.964700           0.000099            4057        314.035035
+  B1_child3          7                 3           0.03          6000        0.9               0.9        0.0         1.0    0.0   0.964664           0.000063            3790        290.706172
+D2_alpha0.5          7                 1           0.03          6000        0.9               0.9        0.5         1.0    0.0   0.964635           0.000033            3737        291.584018
+D3_alpha1.0          7                 1           0.03          6000        0.9               0.9        1.0         1.0    0.0   0.964626           0.000025            3348        265.261213
+best_by_block: {"A": {"config_id": "A1_depth5", "max_depth": 5, "min_child_weight": 1, "learning_rate": 0.03, "n_estimators": 6000, "subsample": 0.9, "colsample_bytree": 0.9, "reg_alpha": 0.0, "reg_lambda": 1.0, "gamma": 0.0, "fold1_auc": 0.9649342061140153, "delta_vs_baseline": 0.00033277189373925875, "best_iteration": 5997, "training_seconds": 386.8084464999847}, "B": {"config_id": "B2_child5", "max_depth": 7, "min_child_weight": 5, "learning_rate": 0.03, "n_estimators": 6000, "subsample": 0.9, "colsample_bytree": 0.9, "reg_alpha": 0.0, "reg_lambda": 1.0, "gamma": 0.0, "fold1_auc": 0.9647207779541006, "delta_vs_baseline": 0.00011934373382460617, "best_iteration": 3667, "training_seconds": 280.3443877999671}, "C": {"config_id": "C3_lambda10", "max_depth": 7, "min_child_weight": 1, "learning_rate": 0.03, "n_estimators": 6000, "subsample": 0.9, "colsample_bytree": 0.9, "reg_alpha": 0.0, "reg_lambda": 10.0, "gamma": 0.0, "fold1_auc": 0.964770004502546, "delta_vs_baseline": 0.0001685702822700197, "best_iteration": 4193, "training_seconds": 324.2239570999518}, "D": {"config_id": "D2_alpha0.5", "max_depth": 7, "min_child_weight": 1, "learning_rate": 0.03, "n_estimators": 6000, "subsample": 0.9, "colsample_bytree": 0.9, "reg_alpha": 0.5, "reg_lambda": 1.0, "gamma": 0.0, "fold1_auc": 0.9646347351704898, "delta_vs_baseline": 3.330095021381041e-05, "best_iteration": 3737, "training_seconds": 291.5840181999374}, "E": {"config_id": "E1_gamma0.05", "max_depth": 7, "min_child_weight": 1, "learning_rate": 0.03, "n_estimators": 6000, "subsample": 0.9, "colsample_bytree": 0.9, "reg_alpha": 0.0, "reg_lambda": 1.0, "gamma": 0.05, "fold1_auc": 0.9646090007728184, "delta_vs_baseline": 7.566552542415117e-06, "best_iteration": 3588, "training_seconds": 278.20787249994464}, "F": {"config_id": "F5_sub0.8_col0.8", "max_depth": 7, "min_child_weight": 1, "learning_rate": 0.03, "n_estimators": 6000, "subsample": 0.8, "colsample_bytree": 0.8, "reg_alpha": 0.0, "reg_lambda": 1.0, "gamma": 0.0, "fold1_auc": 0.9646251455847779, "delta_vs_baseline": 2.371136450185496e-05, "best_iteration": 3769, "training_seconds": 296.445809799945}, "G": {"config_id": "G1_lr0.02", "max_depth": 7, "min_child_weight": 1, "learning_rate": 0.02, "n_estimators": 8000, "subsample": 0.9, "colsample_bytree": 0.9, "reg_alpha": 0.0, "reg_lambda": 1.0, "gamma": 0.0, "fold1_auc": 0.9647191280155917, "delta_vs_baseline": 0.00011769379531567647, "best_iteration": 5396, "training_seconds": 417.35135689994786}}
+selected_candidates: ['A1_depth5', 'A2_depth6', 'C3_lambda10']
+candidate_3fold_results:
+[
+  {
+    "config_id": "A1_depth5",
+    "modified_params": {
+      "max_depth": 5
+    },
+    "fold_aucs": [
+      0.9649342061140153,
+      0.9655728626019948,
+      0.9657851713510681
+    ],
+    "mean_auc": 0.9654307466890261,
+    "std_auc": 0.0003616473035129797,
+    "delta_vs_baseline_3fold": 0.00037655015223181376,
+    "best_iterations": [
+      5997,
+      5994,
+      5982
+    ],
+    "training_seconds": [
+      386.8084464999847,
+      387.8434076999547,
+      385.79105250001885
+    ],
+    "early_stopping_activated": [
+      false,
+      false,
+      false
+    ]
+  },
+  {
+    "config_id": "A2_depth6",
+    "modified_params": {
+      "max_depth": 6
+    },
+    "fold_aucs": [
+      0.9648238724703536,
+      0.9654272368167589,
+      0.9656433596056039
+    ],
+    "mean_auc": 0.9652981562975721,
+    "std_auc": 0.0003467815129014382,
+    "delta_vs_baseline_3fold": 0.00024395976077784542,
+    "best_iterations": [
+      5799,
+      4979,
+      4886
+    ],
+    "training_seconds": [
+      411.319296300062,
+      358.04716519999783,
+      347.1072664000094
+    ],
+    "early_stopping_activated": [
+      false,
+      true,
+      true
+    ]
+  },
+  {
+    "config_id": "C3_lambda10",
+    "modified_params": {
+      "reg_lambda": 10
+    },
+    "fold_aucs": [
+      0.964770004502546,
+      0.9652441868842141,
+      0.9654111422412788
+    ],
+    "mean_auc": 0.965141777876013,
+    "std_auc": 0.00027157577669027896,
+    "delta_vs_baseline_3fold": 8.758133921871192e-05,
+    "best_iterations": [
+      4193,
+      3785,
+      4050
+    ],
+    "training_seconds": [
+      324.2239570999518,
+      293.0737924000714,
+      314.1338096000254
+    ],
+    "early_stopping_activated": [
+      true,
+      true,
+      true
+    ]
+  }
+]
+recommendation: Candidato(s) fuerte(s) para EXP-015: ['A1_depth5', 'A2_depth6']
+total_seconds: 9245.93
+problems: none

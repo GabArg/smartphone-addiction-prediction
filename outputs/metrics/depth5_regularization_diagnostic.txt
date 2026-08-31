@@ -1,0 +1,64 @@
+Depth-5 XGBoost regularization diagnostic (EXP-016 features only)
+baseline_exact_folds: [0.9650202929179754, 0.9656644620983974, 0.9658836874972772, 0.966455024819542, 0.9654874019318932]
+baseline_3fold_mean: 0.9655228142
+screening_ordered:
+config_id  min_child_weight  reg_lambda  fold1_auc  fold2_auc  fold3_auc  mean_auc  std_auc  delta_vs_baseline  best_iter_fold1  best_iter_fold2  best_iter_fold3  training_seconds classification  improved_first3
+       R3                10           1   0.965088   0.965628   0.965946  0.965554 0.000354           0.000031             7897             7336             8107       1797.375064       marginal                2
+       R1                 3           1   0.965061   0.965672   0.965886  0.965540 0.000350           0.000017             7886             7884             8628       1838.430476            tie                3
+       R8                 5           5   0.965064   0.965622   0.965894  0.965527 0.000346           0.000004             7885             7438             8239       1832.977484            tie                2
+       R7                 3           5   0.965066   0.965634   0.965877  0.965526 0.000340           0.000003             8541             7436             7580       1836.378583            tie                1
+      R10                10           5   0.965007   0.965657   0.965895  0.965520 0.000375          -0.000003             8304             8790             8661       2092.692662        discard                1
+       R6                 1          10   0.964985   0.965607   0.965939  0.965510 0.000395          -0.000013             7907             7954             8074       1752.689319        discard                1
+       R5                 1           5   0.965018   0.965587   0.965916  0.965507 0.000371          -0.000016             7759             7920             8075       1725.220403        discard                1
+       R2                 5           1   0.964991   0.965648   0.965882  0.965507 0.000377          -0.000016             7907             7573             8069       1798.323367        discard                0
+       R4                 1           3   0.965033   0.965608   0.965870  0.965503 0.000349          -0.000019             7894             8198             8019       1764.348938        discard                1
+       R9                 5          10   0.964987   0.965629   0.965892  0.965503 0.000380          -0.000020             7904             8859             8268       1962.394245        discard                1
+strong_candidates: []
+marginal_candidates: ['R3']
+selected_for_5fold: ['R3']
+five_fold_results:
+[
+  {
+    "config_id": "R3",
+    "min_child_weight": 10,
+    "reg_lambda": 1,
+    "fold_aucs": [
+      0.9650881847288104,
+      0.965627598544528,
+      0.9659464669851864,
+      0.9664562553595647,
+      0.9654754342373011
+    ],
+    "mean_auc": 0.9657187879710781,
+    "std_auc": 0.0004606284582964523,
+    "delta_vs_exp016_mean": 1.6614118061086813e-05,
+    "fold_deltas": [
+      6.789181083499685e-05,
+      -3.6863553869448396e-05,
+      6.277948790922583e-05,
+      1.2305400226564345e-06,
+      -1.196769459210767e-05
+    ],
+    "improved_folds": 3,
+    "best_iterations": [
+      7897,
+      7336,
+      8107,
+      8470,
+      7176
+    ],
+    "training_seconds": 3041.049978199997
+  }
+]
+best_iteration_shift: {
+  "R3": {
+    "mean_best_iteration": 7797.2,
+    "exp016_mean_best_iteration": 7791.8,
+    "difference": 5.399999999999636
+  }
+}
+recommendation: R3 is only marginal/inconsistent; EXP-019 not justified yet.
+total_seconds: 19648.45
+submission_generated: false
+experiment_log_modified: false
+problems: none

@@ -1,0 +1,62 @@
+EXP-030 nested local rank corrector
+model_params={'objective': 'binary', 'n_estimators': 1000, 'learning_rate': 0.03, 'num_leaves': 15, 'max_depth': 4, 'min_child_samples': 100, 'subsample': 0.9, 'colsample_bytree': 0.9, 'reg_alpha': 1.0, 'reg_lambda': 5.0, 'random_state': 42, 'n_jobs': -1, 'verbosity': -1}
+corrector_auc_folds=[0.9659822778807032, 0.9668881353512412, 0.9666397425157753, 0.9680713601262134, 0.9676790849817626]; mean=0.96705212; std=0.00074477
+fold_choices:
+ fold scope transformation  alpha  selection_auc_outer_train  corrector_auc  auc_exp016  auc_exp030    delta  best_iteration
+    1   ALL  A_probability    0.5                   0.966005       0.965982    0.965020    0.965151 0.000131             573
+    2   ALL  A_probability    0.5                   0.965854       0.966888    0.965664    0.965764 0.000099             624
+    3   ALL  A_probability    0.5                   0.965787       0.966640    0.965884    0.966031 0.000148             516
+    4   ALL  A_probability    0.5                   0.965641       0.968071    0.966455    0.966606 0.000151             560
+    5   ALL  A_probability    0.5                   0.965888       0.967679    0.965487    0.965624 0.000137             638
+global_metrics:
+       model      auc    fold1    fold2    fold3    fold4    fold5      std  log_loss    brier
+     EXP-016 0.965702 0.965020 0.965664 0.965884 0.966455 0.965487 0.000472  0.214360 0.066998
+     EXP-022 0.964912 0.964162 0.964839 0.965131 0.965676 0.964747 0.000495  0.216754 0.067800
+global_75_25 0.965874 0.965171 0.965812 0.966075 0.966655 0.965655 0.000489  0.213860 0.066857
+     EXP-027 0.965919 0.965214 0.965841 0.966131 0.966708 0.965699 0.000494  0.213750 0.066817
+     EXP-028 0.965931 0.965234 0.965858 0.966149 0.966716 0.965696 0.000492  0.213720 0.066805
+     EXP-030 0.965835 0.965151 0.965764 0.966031 0.966606 0.965624 0.000479  0.213918 0.066849
+delta_vs_exp016=0.000133126429; delta_vs_exp027=-0.000084331267; delta_vs_exp028=-0.000095848353
+pairwise:
+       model  misordered_pairs  corrected_misordered_rate  broken_correct_rate  net_pair_gain
+     EXP-016            125287                   0.000000             0.000000       0.000000
+     EXP-022            125287                   0.231876             0.142289       0.089586
+global_75_25            125287                   0.092915             0.077470       0.015445
+     EXP-027            125287                   0.109836             0.088094       0.021742
+     EXP-028            125287                   0.114944             0.091574       0.023370
+     EXP-030            125287                   0.041497             0.068108      -0.026611
+bands_regions:
+  analysis        segment   model   rows      auc
+score_band      0.30-0.40 EXP-016  22074 0.541609
+score_band      0.30-0.40 EXP-022  22074 0.543962
+score_band      0.30-0.40 EXP-030  22074 0.551371
+score_band      0.40-0.45 EXP-016  10562 0.512693
+score_band      0.40-0.45 EXP-022  10562 0.532419
+score_band      0.40-0.45 EXP-030  10562 0.532376
+score_band      0.45-0.50 EXP-016  10450 0.521880
+score_band      0.45-0.50 EXP-022  10450 0.528852
+score_band      0.45-0.50 EXP-030  10450 0.534924
+score_band      0.50-0.55 EXP-016  10722 0.512362
+score_band      0.50-0.55 EXP-022  10722 0.534329
+score_band      0.50-0.55 EXP-030  10722 0.535397
+score_band      0.55-0.60 EXP-016  11048 0.512986
+score_band      0.55-0.60 EXP-022  11048 0.531588
+score_band      0.55-0.60 EXP-030  11048 0.533041
+score_band      0.60-0.65 EXP-016  11478 0.514800
+score_band      0.60-0.65 EXP-022  11478 0.528913
+score_band      0.60-0.65 EXP-030  11478 0.532165
+score_band      0.65-0.75 EXP-016  26229 0.545668
+score_band      0.65-0.75 EXP-022  26229 0.540193
+score_band      0.65-0.75 EXP-030  26229 0.552683
+    region clear_positive EXP-016 245424 0.974038
+    region clear_positive EXP-022 245424 0.973109
+    region clear_positive EXP-030 245424 0.974232
+    region clear_negative EXP-016 154634 0.914034
+    region clear_negative EXP-022 154634 0.912362
+    region clear_negative EXP-030 154634 0.914365
+    region      ambiguous EXP-016 102202 0.928041
+    region      ambiguous EXP-022 102202 0.926062
+    region      ambiguous EXP-030 102202 0.928386
+success=False; submission_generated=False; path=none
+total_seconds=334.07
+problems=none

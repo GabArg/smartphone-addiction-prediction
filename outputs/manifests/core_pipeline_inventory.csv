@@ -1,0 +1,14 @@
+component,path,role,experiment_origin,public_api,status
+baseline_logistic,src/models/baseline_logistic.py,linear baseline,EXP-001,"build_pipeline; main",MIGRATED
+catboost_model,src/models/catboost_model.py,CatBoost baseline,EXP-003,"prepare_categorical_missing; main",MIGRATED
+lightgbm_baseline,src/models/lightgbm_baseline.py,LightGBM baseline,EXP-004,"prepare_aligned_categories; main",MIGRATED
+xgboost_baseline,src/models/xgboost_baseline.py,XGBoost ordinal baseline,EXP-008,"ordinal_encode_categories; main",MIGRATED
+threshold_features,src/features/thresholds.py,threshold and region features,EXP-012,"add_threshold_features",CENTRALIZED
+xgboost_thresholds,src/models/xgboost_thresholds.py,threshold XGBoost model,EXP-016,"main",MIGRATED
+exact_values,src/features/exact_values.py,exact-value categorical representation,EXP-035,"build_rep; stringify; safe_ratio",CENTRALIZED
+logistic_exact_values,src/models/logistic_exact_values.py,sparse exact-value Logistic,EXP-035,"build_rep; fit_fold; main",MIGRATED
+relational_features,src/features/relational.py,relational numeric and categorical features,EXP-036/037,"add_relational_features; add_numeric_relations",CENTRALIZED
+logistic_relational,src/models/logistic_relational.py,sparse relational Logistic,EXP-037,"add_features; fit_cv; main",MIGRATED
+frequency_features,src/features/frequency.py,fold-safe frequency encoding,EXP-039,"fit_frequency_map; apply_frequency_map",CENTRALIZED
+lightgbm_high_resolution,src/models/lightgbm_high_resolution.py,high-resolution LightGBM,EXP-039,"build_fold; train_config; main",MIGRATED
+final_ensemble,src/ensembles/final_ensemble.py,final persisted-prediction rank blend,EXP-039,"load_predictions; validate_prediction_frame; normalized_rank; blend_predictions; build_final_submission; main",MIGRATED

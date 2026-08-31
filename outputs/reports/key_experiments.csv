@@ -1,0 +1,12 @@
+experiment_id,model,oof_auc,public_lb,stage,notes
+EXP-001,Logistic baseline,0.911452,0.91355,baseline,Baseline reproducible
+EXP-003,CatBoost,0.963593,0.96497,boosting,4000 iterations
+EXP-008,XGBoost,0.964358,0.96587,boosting,Ordinal categorical baseline
+EXP-012,XGBoost thresholds,0.96523300,0.96696,feature engineering,Explicit screen/social thresholds
+EXP-016,XGBoost refined,0.96570217,0.96730,feature engineering,Depth 5 and 9000-tree ceiling
+EXP-021,Rank ensemble,0.9658597975,0.96733,ensemble,Best locally recorded Public LB before sparse Logistic
+EXP-027,XGBoost seed ensemble + CatBoost,0.9659191881,,stability,Three-seed bag
+EXP-035,Exact-value Logistic + rank blend,0.9668097849,0.96815,sparse representation,Public LB is REPORTED
+EXP-036,Relational ratios + rank blend,0.9670368278,0.96838,relational engineering,Public LB is REPORTED
+EXP-037,Relational Logistic + rank blend,0.9670683293,0.96842,relational engineering,Public LB is REPORTED
+EXP-039,High-resolution LightGBM + rank blend,0.9674680608,0.96876,final ensemble,Public LB is REPORTED

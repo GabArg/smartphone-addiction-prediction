@@ -1,0 +1,12 @@
+experiment,feature,source_script,new_module,rows_checked,values_match,missing_match,dtype_match,index_match,order_match,original_cardinality,new_cardinality,status
+EXP-036,social_over_screen,src/train_exp036_ratio_ablation.py,src/features/relational.py,12000,True,True,True,True,True,83,83,PASS
+EXP-036,gaming_over_screen,src/train_exp036_ratio_ablation.py,src/features/relational.py,12000,True,True,True,True,True,70,70,PASS
+EXP-036,work_over_screen,src/train_exp036_ratio_ablation.py,src/features/relational.py,12000,True,True,True,True,True,77,77,PASS
+EXP-036,work_over_social,src/train_exp036_ratio_ablation.py,src/features/relational.py,12000,True,True,True,True,True,730,730,PASS
+EXP-036,gaming_over_social,src/train_exp036_ratio_ablation.py,src/features/relational.py,12000,True,True,True,True,True,518,518,PASS
+EXP-037,social_over_screen,src/train_exp037_relational_features.py,src/features/relational.py,12000,True,True,True,True,True,83,83,PASS
+EXP-037,gaming_over_screen,src/train_exp037_relational_features.py,src/features/relational.py,12000,True,True,True,True,True,70,70,PASS
+EXP-037,work_over_screen,src/train_exp037_relational_features.py,src/features/relational.py,12000,True,True,True,True,True,77,77,PASS
+EXP-037,work_over_social,src/train_exp037_relational_features.py,src/features/relational.py,12000,True,True,True,True,True,730,730,PASS
+EXP-037,gaming_over_social,src/train_exp037_relational_features.py,src/features/relational.py,12000,True,True,True,True,True,518,518,PASS
+EXP-037,screen_minus_social,src/train_exp037_relational_features.py,src/features/relational.py,12000,True,True,True,True,True,121,121,PASS

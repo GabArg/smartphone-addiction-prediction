@@ -1,0 +1,154 @@
+Clear negative zone diagnostic
+definition: daily_screen_time_hours <= 6 AND social_media_hours <= 4; both values known
+train_rows: 691369
+valid_zone_determination_rows: 502260
+negative_zone_rows: 154634
+negative_zone_proportion_of_valid_train: 0.30787640
+target_0_count: 104333
+target_1_count: 50301
+target_0_rate: 0.67470931
+target_1_rate: 0.32529069
+numeric_descriptive_by_class:
+                feature  target  count       mean  median       std   q10   q25    q50    q75    q90  missing_rate
+                    age       0 100433  26.727729   27.00  5.168523 19.00 22.00  27.00  31.00  34.00      0.037380
+                    age       1  48335  26.658819   27.00  5.015164 20.00 23.00  27.00  31.00  33.00      0.039085
+daily_screen_time_hours       0 104333   4.269688    4.36  1.129307  2.68  3.50   4.36   5.27   5.62      0.000000
+daily_screen_time_hours       1  50301   4.566496    4.72  1.055888  3.02  3.94   4.72   5.44   5.77      0.000000
+     social_media_hours       0 104333   1.199031    1.14  0.625962  0.44  0.74   1.14   1.58   2.03      0.000000
+     social_media_hours       1  50301   1.943620    1.91  0.653801  1.13  1.50   1.91   2.35   2.81      0.000000
+           gaming_hours       0  93766   0.998759    0.94  0.610612  0.24  0.52   0.94   1.39   1.82      0.101281
+           gaming_hours       1  45189   0.824783    0.79  0.496508  0.19  0.43   0.79   1.16   1.48      0.101628
+       work_study_hours       0  97247   1.601064    1.54  0.772522  0.63  1.00   1.54   2.11   2.65      0.067917
+       work_study_hours       1  46886   1.336335    1.30  0.635202  0.53  0.85   1.30   1.76   2.17      0.067891
+            sleep_hours       0  98475   6.735768    6.76  1.236492  5.05  5.67   6.76   7.75   8.48      0.056147
+            sleep_hours       1  47406   6.826751    6.86  1.237282  5.13  5.79   6.86   7.90   8.53      0.057554
+  notifications_per_day       0  95241 147.076721  154.00 66.224899 52.00 92.00 154.00 206.00 231.00      0.087144
+  notifications_per_day       1  45920 146.058319  152.00 67.902395 46.00 91.00 152.00 210.00 233.00      0.087096
+      app_opens_per_day       0  93452  98.410146   99.00 46.989216 29.00 63.00  99.00 135.00 163.00      0.104291
+      app_opens_per_day       1  45027 100.590912   99.00 47.718789 35.00 61.00  99.00 144.00 167.00      0.104849
+    weekend_screen_time       0  94942   6.432191    6.32  1.639917  4.31  5.31   6.32   7.58   8.60      0.090010
+    weekend_screen_time       1  45764   7.064638    7.00  1.889267  4.55  5.76   7.00   8.41   9.43      0.090197
+numeric_discriminative_power:
+                feature  raw_auc  oriented_auc positive_direction  valid_rows
+     social_media_hours 0.799358      0.799358                  >      154634
+    weekend_screen_time 0.599108      0.599108                  >      140706
+       work_study_hours 0.404283      0.595717                 <=      144133
+daily_screen_time_hours 0.578579      0.578579                  >      154634
+           gaming_hours 0.422790      0.577210                 <=      138955
+            sleep_hours 0.521205      0.521205                  >      145881
+      app_opens_per_day 0.511942      0.511942                  >      138479
+                    age 0.495570      0.504430                 <=      148768
+  notifications_per_day 0.496492      0.503508                 <=      141161
+important_mean_median_differences:
+                         mean_target0  mean_target1  mean_difference_1_minus_0  median_target0  median_target1  median_difference_1_minus_0
+feature                                                                                                                                    
+social_media_hours           1.199031      1.943620                   0.744590            1.14            1.91                         0.77
+weekend_screen_time          6.432191      7.064638                   0.632447            6.32            7.00                         0.68
+work_study_hours             1.601064      1.336335                  -0.264729            1.54            1.30                        -0.24
+daily_screen_time_hours      4.269688      4.566496                   0.296808            4.36            4.72                         0.36
+gaming_hours                 0.998759      0.824783                  -0.173976            0.94            0.79                        -0.15
+sleep_hours                  6.735768      6.826751                   0.090984            6.76            6.86                         0.10
+app_opens_per_day           98.410146    100.590912                   2.180766           99.00           99.00                         0.00
+age                         26.727729     26.658819                  -0.068910           27.00           27.00                         0.00
+notifications_per_day      147.076721    146.058319                  -1.018402          154.00          152.00                        -2.00
+categorical_distribution_and_target_rate:
+             feature    category  count  proportion  target_rate
+              gender      Female  50779    0.328382     0.324524
+              gender        Male  48420    0.313126     0.335048
+              gender       Other  49519    0.320234     0.316121
+              gender __MISSING__   5916    0.038258     0.328769
+        stress_level        High  47862    0.309518     0.314320
+        stress_level         Low  46814    0.302741     0.330243
+        stress_level      Medium  48895    0.316198     0.331874
+        stress_level __MISSING__  11063    0.071543     0.322697
+academic_work_impact          No  69619    0.450218     0.322340
+academic_work_impact         Yes  76099    0.492123     0.328309
+academic_work_impact __MISSING__   8916    0.057659     0.322566
+categorical_separation:
+             feature  min_target_rate  max_target_rate  target_rate_range
+              gender         0.316121         0.335048           0.018926
+        stress_level         0.314320         0.331874           0.017554
+academic_work_impact         0.322340         0.328309           0.005969
+top_four_numeric_for_pairs: ['social_media_hours', 'weekend_screen_time', 'work_study_hours', 'daily_screen_time_hours']
+top10_rules:
+rule_type                                                          rule          feature_a operator_a  threshold_a               feature_b operator_b  threshold_b  rows  coverage  target_rate  positive_rate  negative_rate  precision_positive  precision_negative  positive_lift  negative_lift
+     pair      social_media_hours > 1.91 AND weekend_screen_time > 7.78 social_media_hours          >         1.91     weekend_screen_time          >         7.78 12662  0.081884     0.750750       0.750750       0.249250            0.750750            0.249250       2.307937       0.369418
+     pair      social_media_hours > 1.91 AND weekend_screen_time > 6.58 social_media_hours          >         1.91     weekend_screen_time          >         6.58 21653  0.140027     0.694869       0.694869       0.305131            0.694869            0.305131       2.136148       0.452241
+     pair      social_media_hours > 1.91 AND weekend_screen_time > 5.41 social_media_hours          >         1.91     weekend_screen_time          >         5.41 28556  0.184668     0.671523       0.671523       0.328477            0.671523            0.328477       2.064377       0.486843
+     pair        social_media_hours > 1.91 AND work_study_hours <= 1.99 social_media_hours          >         1.91        work_study_hours         <=         1.99 29921  0.193496     0.662077       0.662077       0.337923            0.662077            0.337923       2.035339       0.500843
+     pair         social_media_hours > 1.91 AND work_study_hours > 1.45 social_media_hours          >         1.91        work_study_hours          >         1.45 14442  0.093395     0.661404       0.661404       0.338596            0.661404            0.338596       2.033271       0.501839
+     pair         social_media_hours > 1.91 AND work_study_hours > 0.95 social_media_hours          >         1.91        work_study_hours          >         0.95 24155  0.156208     0.658870       0.658870       0.341130            0.658870            0.341130       2.025480       0.505596
+     pair  social_media_hours > 1.91 AND daily_screen_time_hours > 5.32 social_media_hours          >         1.91 daily_screen_time_hours          >         5.32 17905  0.115790     0.655068       0.655068       0.344932            0.655068            0.344932       2.013794       0.511230
+     pair   social_media_hours > 1.91 AND daily_screen_time_hours > 4.5 social_media_hours          >         1.91 daily_screen_time_hours          >         4.50 30780  0.199051     0.653476       0.653476       0.346524            0.653476            0.346524       2.008899       0.513590
+     pair  social_media_hours > 1.91 AND daily_screen_time_hours > 3.67 social_media_hours          >         1.91 daily_screen_time_hours          >         3.67 37264  0.240982     0.652721       0.652721       0.347279            0.652721            0.347279       2.006578       0.514709
+     pair social_media_hours > 1.91 AND daily_screen_time_hours <= 5.32 social_media_hours          >         1.91 daily_screen_time_hours         <=         5.32 20500  0.132571     0.650195       0.650195       0.349805            0.650195            0.349805       1.998813       0.518453
+top10_fold_details:
+ rule_rank                                                          rule  fold  coverage  target_rate  positive_lift  rows
+         1      social_media_hours > 1.91 AND weekend_screen_time > 7.78     1  0.083130     0.748357       2.290409  2587
+         1      social_media_hours > 1.91 AND weekend_screen_time > 7.78     2  0.080718     0.752714       2.315020  2487
+         1      social_media_hours > 1.91 AND weekend_screen_time > 7.78     3  0.080859     0.756421       2.324240  2492
+         1      social_media_hours > 1.91 AND weekend_screen_time > 7.78     4  0.082485     0.739914       2.288505  2553
+         1      social_media_hours > 1.91 AND weekend_screen_time > 7.78     5  0.082210     0.756587       2.322236  2543
+         2      social_media_hours > 1.91 AND weekend_screen_time > 6.58     1  0.141645     0.693966       2.123939  4408
+         2      social_media_hours > 1.91 AND weekend_screen_time > 6.58     2  0.138425     0.687222       2.113594  4265
+         2      social_media_hours > 1.91 AND weekend_screen_time > 6.58     3  0.141082     0.702162       2.157520  4348
+         2      social_media_hours > 1.91 AND weekend_screen_time > 6.58     4  0.140900     0.692272       2.141154  4361
+         2      social_media_hours > 1.91 AND weekend_screen_time > 6.58     5  0.138073     0.698665       2.144455  4271
+         3      social_media_hours > 1.91 AND weekend_screen_time > 5.41     1  0.186279     0.670692       2.052707  5797
+         3      social_media_hours > 1.91 AND weekend_screen_time > 5.41     2  0.183928     0.665608       2.047120  5667
+         3      social_media_hours > 1.91 AND weekend_screen_time > 5.41     3  0.184886     0.675325       2.075058  5698
+         3      social_media_hours > 1.91 AND weekend_screen_time > 5.41     4  0.184356     0.671574       2.077134  5706
+         3      social_media_hours > 1.91 AND weekend_screen_time > 5.41     5  0.183881     0.674402       2.069983  5688
+         4        social_media_hours > 1.91 AND work_study_hours <= 1.99     1  0.192577     0.663107       2.029493  5993
+         4        social_media_hours > 1.91 AND work_study_hours <= 1.99     2  0.192983     0.657080       2.020893  5946
+         4        social_media_hours > 1.91 AND work_study_hours <= 1.99     3  0.196437     0.662372       2.035258  6054
+         4        social_media_hours > 1.91 AND work_study_hours <= 1.99     4  0.193112     0.666555       2.061612  5977
+         4        social_media_hours > 1.91 AND work_study_hours <= 1.99     5  0.192384     0.661233       2.029563  5951
+         5         social_media_hours > 1.91 AND work_study_hours > 1.45     1  0.092802     0.666551       2.040035  2888
+         5         social_media_hours > 1.91 AND work_study_hours > 1.45     2  0.093019     0.672366       2.067904  2866
+         5         social_media_hours > 1.91 AND work_study_hours > 1.45     3  0.095201     0.657464       2.020178  2934
+         5         social_media_hours > 1.91 AND work_study_hours > 1.45     4  0.094084     0.649038       2.007434  2912
+         5         social_media_hours > 1.91 AND work_study_hours > 1.45     5  0.091876     0.661858       2.031479  2842
+         6         social_media_hours > 1.91 AND work_study_hours > 0.95     1  0.154434     0.663546       2.030836  4806
+         6         social_media_hours > 1.91 AND work_study_hours > 0.95     2  0.155107     0.663109       2.039436  4779
+         6         social_media_hours > 1.91 AND work_study_hours > 0.95     3  0.156592     0.659345       2.025958  4826
+         6         social_media_hours > 1.91 AND work_study_hours > 0.95     4  0.158735     0.654997       2.025863  4913
+         6         social_media_hours > 1.91 AND work_study_hours > 0.95     5  0.156176     0.653488       2.005789  4831
+         7  social_media_hours > 1.91 AND daily_screen_time_hours > 5.32     1  0.115488     0.658319       2.014841  3594
+         7  social_media_hours > 1.91 AND daily_screen_time_hours > 5.32     2  0.114991     0.661304       2.033883  3543
+         7  social_media_hours > 1.91 AND daily_screen_time_hours > 5.32     3  0.114085     0.651024       2.000389  3516
+         7  social_media_hours > 1.91 AND daily_screen_time_hours > 5.32     4  0.118348     0.651379       2.014672  3663
+         7  social_media_hours > 1.91 AND daily_screen_time_hours > 5.32     5  0.116025     0.653385       2.005474  3589
+         8   social_media_hours > 1.91 AND daily_screen_time_hours > 4.5     1  0.198104     0.657421       2.012091  6165
+         8   social_media_hours > 1.91 AND daily_screen_time_hours > 4.5     2  0.199636     0.651764       2.004542  6151
+         8   social_media_hours > 1.91 AND daily_screen_time_hours > 4.5     3  0.198092     0.655364       2.013727  6105
+         8   social_media_hours > 1.91 AND daily_screen_time_hours > 4.5     4  0.202223     0.651222       2.014188  6259
+         8   social_media_hours > 1.91 AND daily_screen_time_hours > 4.5     5  0.197200     0.651639       2.000115  6100
+         9  social_media_hours > 1.91 AND daily_screen_time_hours > 3.67     1  0.240199     0.655786       2.007087  7475
+         9  social_media_hours > 1.91 AND daily_screen_time_hours > 3.67     2  0.239947     0.650615       2.001009  7393
+         9  social_media_hours > 1.91 AND daily_screen_time_hours > 3.67     3  0.241215     0.653484       2.007948  7434
+         9  social_media_hours > 1.91 AND daily_screen_time_hours > 3.67     4  0.242028     0.652249       2.017365  7491
+         9  social_media_hours > 1.91 AND daily_screen_time_hours > 3.67     5  0.241522     0.651452       1.999541  7471
+        10 social_media_hours > 1.91 AND daily_screen_time_hours <= 5.32     1  0.132294     0.652417       1.996775  4117
+        10 social_media_hours > 1.91 AND daily_screen_time_hours <= 5.32     2  0.132355     0.640265       1.969175  4078
+        10 social_media_hours > 1.91 AND daily_screen_time_hours <= 5.32     3  0.134430     0.653391       2.007664  4143
+        10 social_media_hours > 1.91 AND daily_screen_time_hours <= 5.32     4  0.130367     0.652045       2.016732  4035
+        10 social_media_hours > 1.91 AND daily_screen_time_hours <= 5.32     5  0.133417     0.652774       2.003599  4127
+top10_fold_summary:
+ rule_rank                                                          rule  coverage_mean  coverage_std  target_rate_mean  target_rate_std  lift_mean  lift_std  min_rows
+         1      social_media_hours > 1.91 AND weekend_screen_time > 7.78       0.081880      0.001052          0.750798         0.006950   2.308082  0.017358      2487
+         2      social_media_hours > 1.91 AND weekend_screen_time > 6.58       0.140025      0.001649          0.694857         0.005780   2.136132  0.017382      4265
+         3      social_media_hours > 1.91 AND weekend_screen_time > 5.41       0.184666      0.000988          0.671520         0.003822   2.064400  0.013622      5667
+         4        social_media_hours > 1.91 AND work_study_hours <= 1.99       0.193499      0.001669          0.662070         0.003423   2.035364  0.015544      5946
+         5         social_media_hours > 1.91 AND work_study_hours > 1.45       0.093396      0.001278          0.661455         0.008878   2.033406  0.022843      2842
+         6         social_media_hours > 1.91 AND work_study_hours > 0.95       0.156209      0.001650          0.658897         0.004583   2.025576  0.012364      4779
+         7  social_media_hours > 1.91 AND daily_screen_time_hours > 5.32       0.115788      0.001600          0.655082         0.004535   2.013852  0.012790      3516
+         8   social_media_hours > 1.91 AND daily_screen_time_hours > 4.5       0.199051      0.001978          0.653482         0.002762   2.008932  0.006277      6100
+         9  social_media_hours > 1.91 AND daily_screen_time_hours > 3.67       0.240982      0.000884          0.652717         0.002015   2.006590  0.007054      7393
+        10 social_media_hours > 1.91 AND daily_screen_time_hours <= 5.32       0.132573      0.001513          0.650178         0.005564   1.998789  0.018061      4035
+recommended_hypotheses:
+H1: social_media_hours > 1.91 AND weekend_screen_time > 7.78; target_rate=0.750750 vs base=0.325291; coverage=0.0819; fold_lift=2.3081±0.0174
+H2: social_media_hours > 1.91 AND work_study_hours <= 1.99; target_rate=0.662077 vs base=0.325291; coverage=0.1935; fold_lift=2.0354±0.0155
+H3: social_media_hours > 1.91 AND daily_screen_time_hours > 5.32; target_rate=0.655068 vs base=0.325291; coverage=0.1158; fold_lift=2.0139±0.0128
+total_seconds: 4.39
+problems: none

@@ -1,0 +1,232 @@
+experiment_id: EXP-022
+parameters: {'iterations': 9000, 'learning_rate': 0.05, 'depth': 7, 'loss_function': 'Logloss', 'eval_metric': 'AUC', 'random_seed': 42, 'verbose': False, 'allow_writing_files': False}; early_stopping=350
+exact_reused_threshold_features: ['screen_gt_8', 'screen_le_6', 'social_gt_4', 'social_le_4', 'clear_positive_zone', 'clear_negative_zone', 'ambiguous_zone', 'screen_dist_to_6', 'screen_dist_to_8', 'social_dist_to_4', 'screen_abs_dist_to_6', 'screen_abs_dist_to_8', 'social_abs_dist_to_4', 'screen_x_social', 'screen_plus_social', 'screen_minus_social', 'screen_over_social', 'social_over_screen', 'min_abs_threshold_distance', 'screen_mid_band', 'social_near_threshold', 'screen_near_threshold', 'region_code']
+categorical_features: ['gender', 'stress_level', 'academic_work_impact']
+categorical_treatment: __MISSING__ strings; CatBoost native cat_features
+fold_1_roc_auc: 0.96416182
+fold_2_roc_auc: 0.96483929
+fold_3_roc_auc: 0.96513076
+fold_4_roc_auc: 0.96567590
+fold_5_roc_auc: 0.96474682
+mean_roc_auc: 0.96491092
+std_roc_auc: 0.00049532
+overall_oof_roc_auc: 0.96491223
+fold_1_best_iteration_zero_based: 6645
+fold_2_best_iteration_zero_based: 6970
+fold_3_best_iteration_zero_based: 6948
+fold_4_best_iteration_zero_based: 7644
+fold_5_best_iteration_zero_based: 6606
+fold_1_last_executed_iteration_zero_based: 6995
+fold_2_last_executed_iteration_zero_based: 7320
+fold_3_last_executed_iteration_zero_based: 7298
+fold_4_last_executed_iteration_zero_based: 7994
+fold_5_last_executed_iteration_zero_based: 6956
+fold_1_distance_best_to_limit: 2354
+fold_2_distance_best_to_limit: 2029
+fold_3_distance_best_to_limit: 2051
+fold_4_distance_best_to_limit: 1355
+fold_5_distance_best_to_limit: 2393
+fold_1_seconds: 1915.51
+fold_2_seconds: 2008.91
+fold_3_seconds: 2078.88
+fold_4_seconds: 2124.54
+fold_5_seconds: 1818.11
+total_seconds: 9947.99
+delta_vs_exp020_oof: +0.00003325
+fold_deltas_vs_exp020: [3.1402620223719424e-05, 3.2046560549336967e-05, 3.426812929985257e-05, 3.992785224604667e-05, 2.4506264086565643e-05]
+std_change_vs_exp020: +0.00000331
+delta_vs_exp016_oof: -0.00078950
+correlations: {'EXP-016': {'pearson': 0.9933616449815229, 'spearman': 0.9932386915693275}, 'EXP-020': {'pearson': 0.9997963608149362, 'spearman': 0.999865512095618}, 'EXP-015': {'pearson': 0.9939216513447318, 'spearman': 0.9937848580813483}, 'EXP-012': {'pearson': 0.992735959453183, 'spearman': 0.9932967186892817}, 'EXP-006': {'pearson': 0.9899245283105459, 'spearman': 0.9913016757078982}}
+regional_comparison: {'clear_positive_zone': {'rows': 297745, 'exp022_auc': 0.9718392836761912, 'exp020_auc': 0.9717486048213883, 'exp016_auc': 0.9728037117546363, 'delta_vs_exp020': 9.067885480296134e-05, 'delta_vs_exp016': -0.0009644280784451009}, 'clear_negative_zone': {'rows': 154634, 'exp022_auc': 0.9123617993297517, 'exp020_auc': 0.9123059073768531, 'exp016_auc': 0.9140341872492231, 'delta_vs_exp020': 5.5891952898567965e-05, 'delta_vs_exp016': -0.0016723879194714408}, 'ambiguous_zone': {'rows': 102202, 'exp022_auc': 0.9260621245635298, 'exp020_auc': 0.9258920526690422, 'exp016_auc': 0.9280405270624151, 'delta_vs_exp020': 0.00017007189448758897, 'delta_vs_exp016': -0.0019784024988853677}}
+top25_mean_normalized_feature_importance:
+1. weekend_screen_time: 0.14796778
+2. notifications_per_day: 0.11337747
+3. screen_abs_dist_to_8: 0.10029185
+4. app_opens_per_day: 0.09914537
+5. screen_abs_dist_to_6: 0.05270285
+6. work_study_hours: 0.04696530
+7. social_over_screen: 0.04394347
+8. gaming_hours: 0.03785743
+9. min_abs_threshold_distance: 0.03577161
+10. daily_screen_time_hours: 0.03489606
+11. social_abs_dist_to_4: 0.03151079
+12. clear_positive_zone: 0.03085177
+13. social_media_hours: 0.03025215
+14. sleep_hours: 0.02743253
+15. region_code: 0.02418472
+16. screen_over_social: 0.02408320
+17. age: 0.02065398
+18. screen_dist_to_8: 0.01691388
+19. screen_dist_to_6: 0.01673128
+20. screen_gt_8: 0.01084126
+21. screen_le_6: 0.00981076
+22. social_dist_to_4: 0.00954487
+23. screen_minus_social: 0.00832725
+24. screen_plus_social: 0.00549568
+25. screen_x_social: 0.00523131
+best_iteration_distribution: {'<6000': 0, '6000-7000': 4, '7000-8000': 1, '8000-8500': 0, '>8500': 0}
+iteration_assessment: Los 5 folds convergen antes de 8500: 9000 da margen suficiente.
+probability_blend_weights_tried:
+ stage  w_exp016      w_exp020      auc
+coarse    0.5000  5.000000e-01 0.965798
+coarse    0.5100  4.900000e-01 0.965806
+coarse    0.5200  4.800000e-01 0.965813
+coarse    0.5300  4.700000e-01 0.965820
+coarse    0.5400  4.600000e-01 0.965826
+coarse    0.5500  4.500000e-01 0.965832
+coarse    0.5600  4.400000e-01 0.965838
+coarse    0.5700  4.300000e-01 0.965843
+coarse    0.5800  4.200000e-01 0.965848
+coarse    0.5900  4.100000e-01 0.965853
+coarse    0.6000  4.000000e-01 0.965857
+coarse    0.6100  3.900000e-01 0.965861
+coarse    0.6200  3.800000e-01 0.965864
+coarse    0.6300  3.700000e-01 0.965867
+coarse    0.6400  3.600000e-01 0.965870
+coarse    0.6500  3.500000e-01 0.965872
+coarse    0.6600  3.400000e-01 0.965874
+coarse    0.6700  3.300000e-01 0.965876
+coarse    0.6800  3.200000e-01 0.965877
+coarse    0.6900  3.100000e-01 0.965877
+coarse    0.7000  3.000000e-01 0.965878
+coarse    0.7100  2.900000e-01 0.965878
+coarse    0.7200  2.800000e-01 0.965877
+coarse    0.7300  2.700000e-01 0.965876
+coarse    0.7400  2.600000e-01 0.965875
+coarse    0.7500  2.500000e-01 0.965874
+coarse    0.7600  2.400000e-01 0.965872
+coarse    0.7700  2.300000e-01 0.965869
+coarse    0.7800  2.200000e-01 0.965866
+coarse    0.7900  2.100000e-01 0.965863
+coarse    0.8000  2.000000e-01 0.965860
+coarse    0.8100  1.900000e-01 0.965856
+coarse    0.8200  1.800000e-01 0.965851
+coarse    0.8300  1.700000e-01 0.965847
+coarse    0.8400  1.600000e-01 0.965842
+coarse    0.8500  1.500000e-01 0.965836
+coarse    0.8600  1.400000e-01 0.965830
+coarse    0.8700  1.300000e-01 0.965824
+coarse    0.8800  1.200000e-01 0.965817
+coarse    0.8900  1.100000e-01 0.965810
+coarse    0.9000  1.000000e-01 0.965802
+coarse    0.9100  9.000000e-02 0.965794
+coarse    0.9200  8.000000e-02 0.965786
+coarse    0.9300  7.000000e-02 0.965777
+coarse    0.9400  6.000000e-02 0.965767
+coarse    0.9500  5.000000e-02 0.965758
+coarse    0.9600  4.000000e-02 0.965747
+coarse    0.9700  3.000000e-02 0.965737
+coarse    0.9800  2.000000e-02 0.965725
+coarse    0.9900  1.000000e-02 0.965714
+coarse    1.0000 -4.440892e-16 0.965702
+  fine    0.6700  3.300000e-01 0.965876
+  fine    0.6725  3.275000e-01 0.965876
+  fine    0.6750  3.250000e-01 0.965876
+  fine    0.6775  3.225000e-01 0.965876
+  fine    0.6800  3.200000e-01 0.965877
+  fine    0.6825  3.175000e-01 0.965877
+  fine    0.6850  3.150000e-01 0.965877
+  fine    0.6875  3.125000e-01 0.965877
+  fine    0.6900  3.100000e-01 0.965877
+  fine    0.6925  3.075000e-01 0.965878
+  fine    0.6950  3.050000e-01 0.965878
+  fine    0.6975  3.025000e-01 0.965878
+  fine    0.7000  3.000000e-01 0.965878
+  fine    0.7025  2.975000e-01 0.965878
+  fine    0.7050  2.950000e-01 0.965878
+  fine    0.7075  2.925000e-01 0.965878
+  fine    0.7100  2.900000e-01 0.965878
+  fine    0.7125  2.875000e-01 0.965878
+  fine    0.7150  2.850000e-01 0.965878
+  fine    0.7175  2.825000e-01 0.965877
+  fine    0.7200  2.800000e-01 0.965877
+  fine    0.7225  2.775000e-01 0.965877
+  fine    0.7250  2.750000e-01 0.965877
+  fine    0.7275  2.725000e-01 0.965877
+  fine    0.7300  2.700000e-01 0.965876
+best_probability_blend: {'stage': 'fine', 'w_exp016': 0.7024999999999995, 'w_exp020': 0.29750000000000054, 'auc': 0.9658777477035247}; folds=[0.9651714287315982, 0.965812127027997, 0.9660822158472723, 0.9666627090216058, 0.9656600054511805]; std=0.0004916453
+rank_blend_weights_tried:
+ stage  w_exp016      w_exp020      auc
+coarse    0.5000  5.000000e-01 0.965789
+coarse    0.5100  4.900000e-01 0.965796
+coarse    0.5200  4.800000e-01 0.965804
+coarse    0.5300  4.700000e-01 0.965810
+coarse    0.5400  4.600000e-01 0.965817
+coarse    0.5500  4.500000e-01 0.965823
+coarse    0.5600  4.400000e-01 0.965829
+coarse    0.5700  4.300000e-01 0.965834
+coarse    0.5800  4.200000e-01 0.965839
+coarse    0.5900  4.100000e-01 0.965844
+coarse    0.6000  4.000000e-01 0.965848
+coarse    0.6100  3.900000e-01 0.965852
+coarse    0.6200  3.800000e-01 0.965855
+coarse    0.6300  3.700000e-01 0.965858
+coarse    0.6400  3.600000e-01 0.965861
+coarse    0.6500  3.500000e-01 0.965863
+coarse    0.6600  3.400000e-01 0.965865
+coarse    0.6700  3.300000e-01 0.965867
+coarse    0.6800  3.200000e-01 0.965868
+coarse    0.6900  3.100000e-01 0.965868
+coarse    0.7000  3.000000e-01 0.965869
+coarse    0.7100  2.900000e-01 0.965869
+coarse    0.7200  2.800000e-01 0.965868
+coarse    0.7300  2.700000e-01 0.965868
+coarse    0.7400  2.600000e-01 0.965866
+coarse    0.7500  2.500000e-01 0.965865
+coarse    0.7600  2.400000e-01 0.965863
+coarse    0.7700  2.300000e-01 0.965861
+coarse    0.7800  2.200000e-01 0.965858
+coarse    0.7900  2.100000e-01 0.965855
+coarse    0.8000  2.000000e-01 0.965851
+coarse    0.8100  1.900000e-01 0.965847
+coarse    0.8200  1.800000e-01 0.965843
+coarse    0.8300  1.700000e-01 0.965839
+coarse    0.8400  1.600000e-01 0.965834
+coarse    0.8500  1.500000e-01 0.965828
+coarse    0.8600  1.400000e-01 0.965822
+coarse    0.8700  1.300000e-01 0.965816
+coarse    0.8800  1.200000e-01 0.965810
+coarse    0.8900  1.100000e-01 0.965803
+coarse    0.9000  1.000000e-01 0.965796
+coarse    0.9100  9.000000e-02 0.965788
+coarse    0.9200  8.000000e-02 0.965780
+coarse    0.9300  7.000000e-02 0.965771
+coarse    0.9400  6.000000e-02 0.965763
+coarse    0.9500  5.000000e-02 0.965753
+coarse    0.9600  4.000000e-02 0.965744
+coarse    0.9700  3.000000e-02 0.965734
+coarse    0.9800  2.000000e-02 0.965723
+coarse    0.9900  1.000000e-02 0.965713
+coarse    1.0000 -4.440892e-16 0.965702
+  fine    0.6800  3.200000e-01 0.965868
+  fine    0.6825  3.175000e-01 0.965868
+  fine    0.6850  3.150000e-01 0.965868
+  fine    0.6875  3.125000e-01 0.965868
+  fine    0.6900  3.100000e-01 0.965868
+  fine    0.6925  3.075000e-01 0.965869
+  fine    0.6950  3.050000e-01 0.965869
+  fine    0.6975  3.025000e-01 0.965869
+  fine    0.7000  3.000000e-01 0.965869
+  fine    0.7025  2.975000e-01 0.965869
+  fine    0.7050  2.950000e-01 0.965869
+  fine    0.7075  2.925000e-01 0.965869
+  fine    0.7100  2.900000e-01 0.965869
+  fine    0.7125  2.875000e-01 0.965869
+  fine    0.7150  2.850000e-01 0.965869
+  fine    0.7175  2.825000e-01 0.965869
+  fine    0.7200  2.800000e-01 0.965868
+  fine    0.7225  2.775000e-01 0.965868
+  fine    0.7250  2.750000e-01 0.965868
+  fine    0.7275  2.725000e-01 0.965868
+  fine    0.7300  2.700000e-01 0.965868
+  fine    0.7325  2.675000e-01 0.965867
+  fine    0.7350  2.650000e-01 0.965867
+  fine    0.7375  2.625000e-01 0.965867
+  fine    0.7400  2.600000e-01 0.965866
+best_rank_blend: {'stage': 'fine', 'w_exp016': 0.7074999999999996, 'w_exp020': 0.2925000000000004, 'auc': 0.9658688570514935}; folds=[0.965170490857125, 0.9657980180620466, 0.9660714553456418, 0.9666487014166323, 0.9656553837748318]; std=0.0004873413
+best_blend_method: probability; best_blend={'stage': 'fine', 'w_exp016': 0.7024999999999995, 'w_exp020': 0.29750000000000054, 'auc': 0.9658777477035247}; folds=[0.9651714287315982, 0.965812127027997, 0.9660822158472723, 0.9666627090216058, 0.9656600054511805]; std=0.0004916453
+best_blend_delta_vs_exp021: +0.0000179502
+individual_recommendation: Recomendar submission individual: mejora marginal y >=4/5 folds.
+ensemble_recommendation: No justifica EXP-023.
+submission_validations: OK
+problems: none

@@ -1,0 +1,3 @@
+artifact,reference,rows,reference_auc,reconstructed_auc,auc_delta,max_abs_prediction_diff,ids_match,order_match,tolerance,status,notes
+OOF,EXP-039 refined metric artifact,691369,0.9674680607837304,0.9674680607938791,1.0148770712703481e-11,,true,true,1e-9,PASS,"Reconstructed from persisted EXP-027/037/039 OOF CSVs; historical metric was computed before CSV float serialization. Fold deltas are all below 5.1e-10."
+submission,submission_exp039_highbin_lgbm_ensemble.csv,296302,,,0,1.1102230246251565e-16,true,true,2e-16,PASS,"Read-only reconstruction recovered the unstored mean fold-rank EXP-039 component from the finalized blend; no production file was written."

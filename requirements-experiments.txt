@@ -1,0 +1,3 @@
+-r requirements.txt
+torch
+pytabkit==1.7.3

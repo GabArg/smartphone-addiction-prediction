@@ -1,0 +1,174 @@
+EXP-029 pairwise ranking diagnostic
+model_aucs={'EXP-016': 0.9657017303568276, 'EXP-022': 0.9649122287863467, 'EXP-027': 0.965919188052602, 'EXP-028': 0.9659307051390922}
+hard_cases:
+           group  rows  score_threshold  score_mean  score_median  mean_missing_rate  region_clear_positive  region_clear_negative  region_ambiguous  region_unknown gender_mode  gender_mode_share stress_level_mode  stress_level_mode_share academic_work_impact_mode  academic_work_impact_mode_share
+ hard_positive_1  4905         0.141542    0.079318      0.082819           0.096551               0.017737               0.543527          0.184098        0.254638      Female           0.342304              High                 0.317431                       Yes                         0.479918
+ hard_negative_1  2009         0.946841    0.972761      0.971838           0.105940               0.413639               0.073668          0.237432        0.275261        Male           0.325037              High                 0.315580                       Yes                         0.470881
+ hard_positive_5 24524         0.438860    0.261994      0.278226           0.120301               0.025648               0.438346          0.201762        0.334244      Female           0.326660              High                 0.316343                       Yes                         0.480917
+ hard_negative_5 10045         0.794897    0.887256      0.882708           0.121362               0.194923               0.213240          0.264709        0.327128        Male           0.328323              High                 0.315580                       Yes                         0.473768
+hard_positive_10 49048         0.647570    0.406962      0.438860           0.128203               0.034538               0.407662          0.206695        0.351105      Female           0.324539              High                 0.313815                       Yes                         0.480162
+hard_negative_10 20090         0.658402    0.804980      0.794900           0.128281               0.134943               0.272026          0.252514        0.340518      Female           0.322150              High                 0.316127                       Yes                         0.473917
+hard_positive_20 98095         0.860351    0.587698      0.647568           0.129756               0.056608               0.364320          0.227463        0.351608      Female           0.322279              High                 0.311983                       Yes                         0.478679
+hard_negative_20 40179         0.454026    0.678099      0.658403           0.131744               0.091416               0.322507          0.236915        0.349162      Female           0.323552              High                 0.312203                       Yes                         0.477463
+feature_shifts_top20:
+hard_positive_5:
+                feature        type  standardized_mean_difference  distance distance_name
+daily_screen_time_hours     numeric                     -1.907494  0.677460            KS
+    weekend_screen_time     numeric                     -1.800793  0.660824            KS
+     social_media_hours     numeric                     -1.470630  0.566795            KS
+       work_study_hours     numeric                     -0.670949  0.269853            KS
+           gaming_hours     numeric                     -0.547988  0.229610            KS
+      app_opens_per_day     numeric                     -0.137671  0.084397            KS
+            sleep_hours     numeric                     -0.106614  0.056305            KS
+                    age     numeric                     -0.031295  0.029753            KS
+  notifications_per_day     numeric                      0.023013  0.028102            KS
+                 gender categorical                           NaN  0.027243            TV
+   academic_work_impact categorical                           NaN  0.006395            TV
+           stress_level categorical                           NaN  0.005938            TV
+
+hard_negative_5:
+                feature        type  standardized_mean_difference  distance distance_name
+     social_media_hours     numeric                      1.478557  0.562447            KS
+daily_screen_time_hours     numeric                      1.133694  0.462608            KS
+    weekend_screen_time     numeric                      1.064393  0.449556            KS
+       work_study_hours     numeric                      0.299514  0.124290            KS
+      app_opens_per_day     numeric                      0.130758  0.086498            KS
+           gaming_hours     numeric                      0.191762  0.079479            KS
+            sleep_hours     numeric                      0.095777  0.052218            KS
+  notifications_per_day     numeric                     -0.036265  0.037039            KS
+                    age     numeric                     -0.027818  0.029679            KS
+                 gender categorical                           NaN  0.024486            TV
+           stress_level categorical                           NaN  0.009924            TV
+   academic_work_impact categorical                           NaN  0.007264            TV
+
+hard_positive_10:
+                feature        type  standardized_mean_difference  distance distance_name
+daily_screen_time_hours     numeric                     -1.974921  0.690259            KS
+    weekend_screen_time     numeric                     -1.837071  0.662404            KS
+     social_media_hours     numeric                     -1.343931  0.534198            KS
+       work_study_hours     numeric                     -0.722015  0.293616            KS
+           gaming_hours     numeric                     -0.596521  0.253993            KS
+      app_opens_per_day     numeric                     -0.118156  0.074297            KS
+            sleep_hours     numeric                     -0.092496  0.049325            KS
+                    age     numeric                     -0.028015  0.026576            KS
+  notifications_per_day     numeric                      0.011108  0.024121            KS
+                 gender categorical                           NaN  0.021394            TV
+           stress_level categorical                           NaN  0.010096            TV
+   academic_work_impact categorical                           NaN  0.008087            TV
+
+hard_negative_10:
+                feature        type  standardized_mean_difference  distance distance_name
+     social_media_hours     numeric                      1.388052  0.536581            KS
+    weekend_screen_time     numeric                      0.842261  0.370418            KS
+daily_screen_time_hours     numeric                      0.885100  0.369742            KS
+       work_study_hours     numeric                      0.183993  0.075831            KS
+      app_opens_per_day     numeric                      0.111190  0.072755            KS
+           gaming_hours     numeric                      0.098049  0.045503            KS
+            sleep_hours     numeric                      0.073081  0.042387            KS
+  notifications_per_day     numeric                     -0.049319  0.039597            KS
+                    age     numeric                     -0.033266  0.027038            KS
+                 gender categorical                           NaN  0.016168            TV
+   academic_work_impact categorical                           NaN  0.007502            TV
+           stress_level categorical                           NaN  0.006328            TV
+misordered_pairs=125287; correct_close_pairs=125287
+random_pairs=100000; random_pair_misordered_rate=0.03494000
+pair_logistic_folds=[0.7573572977133127, 0.7443942656305333, 0.7515983731238378, 0.7749612291175241, 0.7461643148101573]; mean=0.75489510; std=0.01100976
+pair_lightgbm_folds=[0.7613083832605534, 0.746154486521985, 0.7603251206858994, 0.7810662040987346, 0.7556894044576506]; mean=0.7609087198049647
+pair_feature_importance:
+                        feature  logistic_coefficient  abs_logistic_coefficient  lightgbm_gain
+   diff_daily_screen_time_hours             -0.667430                  0.667430  281455.416450
+       diff_weekend_screen_time             -0.617405                  0.617405  128486.716371
+        diff_social_media_hours             -0.377915                  0.377915   67902.026884
+absdiff_daily_screen_time_hours             -0.241297                  0.241297    8990.069914
+    absdiff_weekend_screen_time             -0.100487                  0.100487   10579.268542
+              diff_gaming_hours              0.096199                  0.096199    5821.896315
+               diff_sleep_hours             -0.073778                  0.073778    2399.829370
+       absdiff_work_study_hours              0.055803                  0.055803    2280.847352
+          diff_work_study_hours             -0.034901                  0.034901    7343.125391
+  absdiff_notifications_per_day             -0.029743                  0.029743     659.379254
+                    absdiff_age             -0.028888                  0.028888     178.137729
+                       diff_age             -0.015472                  0.015472     691.075819
+      absdiff_app_opens_per_day             -0.011799                  0.011799     246.885368
+     absdiff_social_media_hours              0.009956                  0.009956    3715.247034
+              same_stress_level             -0.008551                  0.008551      18.437110
+           absdiff_gaming_hours             -0.006628                  0.006628     369.772539
+         diff_app_opens_per_day             -0.006269                  0.006269    1053.126000
+      same_academic_work_impact              0.004620                  0.004620       6.591548
+     diff_notifications_per_day              0.002290                  0.002290    1248.301854
+                    same_gender             -0.001477                  0.001477       0.000000
+hardness_correlations:
+ target_class                 feature   pearson  spearman
+            1 daily_screen_time_hours -0.835828 -0.856945
+            1     weekend_screen_time -0.785088 -0.803114
+            0      social_media_hours  0.652622  0.662404
+            1      social_media_hours -0.528968 -0.520984
+            0 daily_screen_time_hours  0.369815  0.363703
+            0     weekend_screen_time  0.362609  0.359309
+            1        work_study_hours -0.303175 -0.296805
+            1            gaming_hours -0.253843 -0.239656
+            0       app_opens_per_day  0.045188  0.042501
+            1       app_opens_per_day -0.034617 -0.035186
+            1                     age -0.033415 -0.033174
+            0             sleep_hours  0.025067  0.024421
+            1             sleep_hours -0.022875 -0.023157
+            0                     age -0.022497 -0.022851
+            0   notifications_per_day -0.015820 -0.016030
+            1   notifications_per_day -0.012644 -0.012369
+            0            gaming_hours  0.004144 -0.010738
+            0        work_study_hours  0.019504 -0.002174
+pairwise_model_comparison:
+        analysis                       group   model   rows  mean_prediction  median_prediction  corrected_rate  broken_rate  net_pair_gain
+hard_group_score             hard_positive_5 EXP-016  24524         0.261994           0.278226             NaN          NaN            NaN
+hard_group_score             hard_positive_5 EXP-022  24524         0.279899           0.284289             NaN          NaN            NaN
+hard_group_score             hard_positive_5 EXP-027  24524         0.268055           0.283938             NaN          NaN            NaN
+hard_group_score             hard_positive_5 EXP-028  24524         0.268486           0.284050             NaN          NaN            NaN
+hard_group_score            hard_positive_10 EXP-016  49048         0.406962           0.438860             NaN          NaN            NaN
+hard_group_score            hard_positive_10 EXP-022  49048         0.418863           0.441002             NaN          NaN            NaN
+hard_group_score            hard_positive_10 EXP-027  49048         0.410952           0.442554             NaN          NaN            NaN
+hard_group_score            hard_positive_10 EXP-028  49048         0.411247           0.442652             NaN          NaN            NaN
+hard_group_score             hard_negative_5 EXP-016  10045         0.887256           0.882708             NaN          NaN            NaN
+hard_group_score             hard_negative_5 EXP-022  10045         0.871197           0.878972             NaN          NaN            NaN
+hard_group_score             hard_negative_5 EXP-027  10045         0.881677           0.878112             NaN          NaN            NaN
+hard_group_score             hard_negative_5 EXP-028  10045         0.881318           0.877920             NaN          NaN            NaN
+hard_group_score            hard_negative_10 EXP-016  20090         0.804980           0.794900             NaN          NaN            NaN
+hard_group_score            hard_negative_10 EXP-022  20090         0.790613           0.793987             NaN          NaN            NaN
+hard_group_score            hard_negative_10 EXP-027  20090         0.799805           0.790315             NaN          NaN            NaN
+hard_group_score            hard_negative_10 EXP-028  20090         0.799429           0.790318             NaN          NaN            NaN
+        pairwise misordered_vs_correct_close EXP-016 125287              NaN                NaN        0.000000     0.000000       0.000000
+        pairwise misordered_vs_correct_close EXP-022 125287              NaN                NaN        0.231876     0.142289       0.089586
+        pairwise misordered_vs_correct_close EXP-027 125287              NaN                NaN        0.109836     0.088094       0.021742
+        pairwise misordered_vs_correct_close EXP-028 125287              NaN                NaN        0.114944     0.091574       0.023370
+score_bands:
+     band  lower  upper   rows  target_rate  local_auc  hard_positive_5_share  hard_negative_5_share
+0.00-0.10   0.00   0.10  95137     0.033100   0.733638               0.033100               0.000000
+0.10-0.20   0.10   0.20  32998     0.138796   0.566454               0.138796               0.000000
+0.20-0.30   0.20   0.30  25011     0.236616   0.542028               0.236616               0.000000
+0.30-0.40   0.30   0.40  22074     0.335780   0.541609               0.335780               0.000000
+0.40-0.50   0.40   0.50  21012     0.446602   0.532790               0.164906               0.000000
+0.50-0.60   0.50   0.60  21770     0.548140   0.531839               0.000000               0.000000
+0.60-0.70   0.60   0.70  24278     0.643669   0.539401               0.000000               0.000000
+0.70-0.80   0.70   0.80  28507     0.757393   0.548607               0.000000               0.012032
+0.80-0.90   0.80   0.90  40211     0.862326   0.568080               0.000000               0.137674
+0.90-1.00   0.90   1.00 380371     0.989048   0.897938               0.000000               0.010952
+0.40-0.45   0.40   0.45  10562     0.422837   0.512693               0.328063               0.000000
+0.45-0.50   0.45   0.50  10450     0.470622   0.521880               0.000000               0.000000
+0.50-0.55   0.50   0.55  10722     0.522477   0.512362               0.000000               0.000000
+0.55-0.60   0.55   0.60  11048     0.573045   0.512986               0.000000               0.000000
+0.60-0.65   0.60   0.65  11478     0.613696   0.514800               0.000000               0.000000
+simple_rules:
+                feature            direction  coverage  pair_error_precision  lift_vs_base
+daily_screen_time_hours positive_le_negative  0.320073              0.707514      0.207514
+    weekend_screen_time positive_le_negative  0.287995              0.666787      0.166787
+     social_media_hours positive_le_negative  0.300322              0.575725      0.075725
+       work_study_hours positive_le_negative  0.422550              0.555431      0.055431
+           gaming_hours positive_le_negative  0.310016              0.522515      0.022515
+            sleep_hours positive_le_negative  0.456791              0.512651      0.012651
+            sleep_hours positive_gt_negative  0.416424              0.485323     -0.014677
+           gaming_hours positive_gt_negative  0.342142              0.471586     -0.028414
+       work_study_hours positive_gt_negative  0.421951              0.435619     -0.064381
+     social_media_hours positive_gt_negative  0.330920              0.415002     -0.084998
+    weekend_screen_time positive_gt_negative  0.373367              0.345579     -0.154421
+daily_screen_time_hours positive_gt_negative  0.396382              0.344321     -0.155679
+promising_signal=True; pair_structure=True; secondary_net_signal=True
+total_seconds=23.22
+problems=none

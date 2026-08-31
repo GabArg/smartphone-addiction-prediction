@@ -1,0 +1,67 @@
+EXP-034 Factorization Machine
+implementation=custom PyTorch binary FM; CSR retained until minibatch
+viability={'k': 16, 'fold': 1, 'auc': 0.9314957507911665, 'best_epoch': 22, 'epochs_run': 25, 'seconds': 33.53894400014542, 'mean_epoch_seconds': 1.041878316020593, 'peak_rss_gb': 1.0230789184570312}
+variant_aucs={16: 0.9325665536774191}
+best_k=16; best_auc=0.9325665536774191
+folds=[{'k': 16, 'fold': 1, 'auc': 0.9314957507911665, 'best_epoch': 22, 'epochs_run': 25, 'seconds': 33.53894400014542, 'mean_epoch_seconds': 1.041878316020593, 'peak_rss_gb': 1.0230789184570312, 'stage': 'viability'}, {'k': 16, 'fold': 2, 'auc': 0.9323735878508231, 'best_epoch': 25, 'epochs_run': 25, 'seconds': 30.563854599837214, 'mean_epoch_seconds': 1.0219708399754017, 'peak_rss_gb': 1.0329704284667969, 'stage': 'full'}, {'k': 16, 'fold': 3, 'auc': 0.9332784398309334, 'best_epoch': 23, 'epochs_run': 25, 'seconds': 34.04779119999148, 'mean_epoch_seconds': 1.1413477800413967, 'peak_rss_gb': 1.0358810424804688, 'stage': 'full'}, {'k': 16, 'fold': 4, 'auc': 0.9332509840726878, 'best_epoch': 25, 'epochs_run': 25, 'seconds': 30.542153100017458, 'mean_epoch_seconds': 1.0104502079915256, 'peak_rss_gb': 1.0380058288574219, 'stage': 'full'}, {'k': 16, 'fold': 5, 'auc': 0.9325300715979175, 'best_epoch': 23, 'epochs_run': 25, 'seconds': 25.09917110018432, 'mean_epoch_seconds': 0.8234890400059521, 'peak_rss_gb': 1.039794921875, 'stage': 'full'}]
+correlations=
+          model   pearson  spearman
+        EXP-016  0.899545  0.946736
+        EXP-022  0.904245  0.949905
+        EXP-027  0.902380  0.949109
+        EXP-028  0.902418  0.949109
+        EXP-006  0.913194  0.955117
+residual_EXP027 -0.003664  0.128322
+regional=
+  analysis        segment   model   rows      auc
+    region clear_positive      FM 245424 0.943470
+    region clear_positive EXP-027 245424 0.974619
+    region clear_negative      FM 154634 0.833387
+    region clear_negative EXP-027 154634 0.914552
+    region      ambiguous      FM 102202 0.839587
+    region      ambiguous EXP-027 102202 0.928597
+score_band      0.30-0.40      FM  22074 0.484199
+score_band      0.30-0.40 EXP-027  22074 0.552423
+score_band      0.40-0.50      FM  21012 0.490229
+score_band      0.40-0.50 EXP-027  21012 0.549348
+score_band      0.50-0.60      FM  21770 0.481579
+score_band      0.50-0.60 EXP-027  21770 0.547020
+score_band      0.60-0.70      FM  24278 0.482226
+score_band      0.60-0.70 EXP-027  24278 0.548949
+score_band      0.70-0.80      FM  28507 0.481098
+score_band      0.70-0.80 EXP-027  28507 0.560254
+pairwise=
+  model  misordered_pairs  corrected_misordered_rate  broken_correct_rate  net_pair_gain
+     FM            119299                   0.337321             0.247337       0.089984
+EXP-022            119299                   0.243707             0.148526       0.095181
+EXP-027            119299                   0.115441             0.088869       0.026572
+EXP-028            119299                   0.121107             0.091660       0.029447
+interactions=
+           feature_a                  feature_b  mean_strength  std_strength  abs_mean_strength
+    work_study_hours                screen_le_6      -0.455151      0.010611           0.455151
+  social_media_hours        screen_minus_social      -0.427490      0.009304           0.427490
+    social_dist_to_4        screen_minus_social      -0.395095      0.010677           0.395095
+  social_media_hours           social_dist_to_4       0.391192      0.016680           0.391192
+ weekend_screen_time            screen_x_social      -0.370142      0.009300           0.370142
+ screen_minus_social min_abs_threshold_distance      -0.368822      0.012532           0.368822
+         screen_le_6            screen_mid_band       0.367399      0.023101           0.367399
+  social_media_hours         social_over_screen      -0.352423      0.011264           0.352423
+ screen_minus_social         social_over_screen       0.346496      0.010979           0.346496
+    social_dist_to_4         social_over_screen      -0.337201      0.012313           0.337201
+    work_study_hours            screen_mid_band      -0.312362      0.006101           0.312362
+        gaming_hours                screen_le_6      -0.298797      0.016406           0.298797
+    work_study_hours        weekend_screen_time       0.294579      0.009685           0.294579
+ weekend_screen_time       screen_abs_dist_to_6       0.291549      0.013535           0.291549
+social_abs_dist_to_4        screen_minus_social       0.291345      0.013411           0.291345
+  social_over_screen                region_code      -0.288560      0.007569           0.288560
+ clear_positive_zone         social_over_screen      -0.281088      0.005851           0.281088
+         screen_gt_8         social_over_screen      -0.276505      0.008362           0.276505
+        gaming_hours           work_study_hours       0.251967      0.007754           0.251967
+        gaming_hours        weekend_screen_time       0.238510      0.005642           0.238510
+blends=
+Empty DataFrame
+Columns: []
+Index: []
+submission_generated=False; path=
+total_seconds=163.57
+problems=none

@@ -1,0 +1,5 @@
+step,spec,added,auc,delta,folds_improved,std,accepted
+0,"[('social_over_screen', 2), ('gaming_over_screen', 2), ('work_over_screen', 2)]",baseline,0.9633543562172753,0.0,5,,
+1,"[('social_over_screen', 2), ('gaming_over_screen', 2), ('work_over_screen', 2), ('work_over_social', 2)]",work_over_social,0.9634558442915742,0.00010148807429888329,5,0.0004355205239942989,True
+2,"[('social_over_screen', 2), ('gaming_over_screen', 2), ('work_over_screen', 2), ('work_over_social', 2), ('gaming_over_social', 2)]",gaming_over_social,0.9635095970483459,5.375275677177438e-05,4,0.00044280190784067074,True
+3,"[('social_over_screen', 2), ('gaming_over_screen', 2), ('work_over_screen', 2), ('work_over_social', 2), ('gaming_over_social', 2), ('social_over_weekend', 2)]",social_over_weekend,0.9635017777193289,-7.819329017055843e-06,1,0.0004530243437375169,False

@@ -1,0 +1,25 @@
+Nested gating diagnostic; OOF-only; no training; no submission; no experiment log update
+baseline: {'auc': 0.9657017303568276, 'folds': [0.9650202929179754, 0.9656644620983974, 0.9658836874972772, 0.966455024819542, 0.9654874019318932], 'std': 0.00047164447308606697, 'logloss': 0.2143600202828356, 'brier': 0.0669980701428631}
+nested_quantile: {'auc': 0.9657018360870718, 'folds': [0.965019191013786, 0.9656645673920281, 0.9658846034250057, 0.9664540223734325, 0.9654889696812362], 'std': 0.00047157025412391206, 'logloss': 0.21434315962179837, 'brier': 0.06699796656241491}
+fixed_structural: {'auc': 0.9657045233686875, 'folds': [0.965009918070125, 0.9656642773905343, 0.9658896874581969, 0.9664642970020438, 0.9654967177222724], 'std': 0.0004772462927689232, 'logloss': 0.21434582864300572, 'brier': 0.06699645005802203}
+combined_nonoverlap: None
+quantile_stable: True; quantiles=[0.1, 0.1, 0.1, 0.1, 0.1]; thresholds=[0.005490701599046542, 0.005446654371917181, 0.00548302633687848, 0.0055136693641543, 0.0053979479707777]; weights=[1.0, 1.0, 1.0, 1.0, 1.0]
+structural_stable: False; train_positive=False; valid_positive_folds=4
+fold_records:
+ fold        gate_type  selected_quantile  numeric_threshold  train_gate_rows  valid_gate_rows  train_gate_target_rate  train_auc_exp016  train_auc_exp022  selected_catboost_weight  valid_gate_target_rate  valid_auc_exp016  valid_auc_exp022  valid_auc_gated  train_gate_coverage
+    1  nested_quantile                0.1           0.005491            12352             3160                0.003886          0.605777          0.656374                      1.00                0.004747          0.553620          0.563646         0.563646             0.100005
+    1 fixed_structural                NaN                NaN             6201             1615                0.078697          0.835500          0.839769                      0.75                0.073684          0.858115          0.850088         0.853969             0.011211
+    2  nested_quantile                0.1           0.005447            12383             3049                0.003796          0.601154          0.653093                      1.00                0.005248          0.581252          0.589948         0.589948             0.100006
+    2 fixed_structural                NaN                NaN             6307             1509                0.078643          0.842140          0.844155                      0.50                0.073559          0.829937          0.830807         0.832483             0.011403
+    3  nested_quantile                0.1           0.005483            12382             3115                0.004280          0.608616          0.637099                      1.00                0.003210          0.512754          0.628760         0.628760             0.100004
+    3 fixed_structural                NaN                NaN             6226             1590                0.077257          0.840094          0.841291                      0.50                0.079245          0.838917          0.842717         0.844685             0.011257
+    4  nested_quantile                0.1           0.005514            12369             3199                0.004366          0.589760          0.626879                      1.00                0.003126          0.638413          0.686736         0.686736             0.100006
+    4 fixed_structural                NaN                NaN             6244             1572                0.077354          0.832759          0.834618                      0.50                0.078880          0.867130          0.868194         0.871580             0.011289
+    5  nested_quantile                0.1           0.005398            12371             2948                0.004123          0.578005          0.612576                      1.00                0.004071          0.699109          0.751873         0.751873             0.100007
+    5 fixed_structural                NaN                NaN             6286             1530                0.076360          0.848846          0.848353                      0.50                0.083007          0.805091          0.816148         0.813650             0.011365
+best_candidate: fixed_structural
+best_delta_vs_exp016: +0.0000027930
+best_fold_deltas: [-1.0374847850380675e-05, -1.847078631156407e-07, 5.999960919766956e-06, 9.272182501796067e-06, 9.31579037921626e-06]
+recommendation: Mejora <+0.00002: no justifica gating ni EXP-023.
+total_seconds: 9.16
+problems: none

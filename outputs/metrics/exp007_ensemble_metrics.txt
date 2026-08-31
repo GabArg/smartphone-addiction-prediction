@@ -1,0 +1,39 @@
+EXP-007 - EXISTING MODEL ENSEMBLE OPTIMIZATION
+exp003_oof_auc: 0.96359231
+exp004_oof_auc: 0.96353592
+exp006_oof_auc: 0.96366366
+
+pearson_correlation:
+           exp003     exp004     exp006
+exp003 1.00000000 0.99319147 0.99193981
+exp004 0.99319147 1.00000000 0.99584684
+exp006 0.99193981 0.99584684 1.00000000
+
+spearman_correlation:
+           exp003     exp004     exp006
+exp003 1.00000000 0.99152585 0.99065793
+exp004 0.99152585 1.00000000 0.99664061
+exp006 0.99065793 0.99664061 1.00000000
+
+probability_two_auc: 0.96422756
+probability_two_weights_exp003_exp006: (0.48, 0.52)
+probability_three_coarse_auc: 0.96425640
+probability_three_coarse_weights: (0.45, 0.15, 0.4)
+probability_three_refined_auc: 0.96425749
+probability_three_refined_weights_exp003_exp004_exp006: (0.43, 0.18, 0.39)
+rank_two_auc: 0.96423010
+rank_two_weights_exp003_exp006: (0.49, 0.51)
+rank_three_coarse_auc: 0.96425623
+rank_three_coarse_weights: (0.45, 0.15, 0.4)
+rank_three_refined_auc: 0.96425683
+rank_three_refined_weights_exp003_exp004_exp006: (0.43, 0.17, 0.4)
+
+winning_method: probability_three
+winning_weights_exp003_exp004_exp006: (0.43, 0.18, 0.39)
+best_oof_auc: 0.96425749
+exp005_oof_auc: 0.96407743
+improvement_vs_exp005: +0.00018006
+improvement_vs_best_individual: +0.00059383
+threshold: 0.00003
+threshold_met: True
+submission_generated: True

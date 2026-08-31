@@ -1,0 +1,62 @@
+EXP-031B memory-safe ExtraTrees
+fold1_in_memory=True
+model={'n_estimators': 300, 'max_depth': 18, 'min_samples_split': 4, 'min_samples_leaf': 5, 'max_features': 'sqrt', 'bootstrap': False, 'class_weight': None, 'random_state': 42, 'n_jobs': 1}
+fold_aucs=[0.9315153177729874, 0.931766723188922, 0.9327384040216351, 0.932873257760999, 0.9321123529172719]; oof_auc=0.932194474273; std=0.000530537110
+fold_rows=[{'fold': 1, 'auc': 0.9315153177729874, 'seconds': 438.6045802999288, 'observed_rss_gb': 1.2696380615234375}, {'fold': 2, 'auc': 0.931766723188922, 'seconds': 445.969842400169, 'observed_rss_gb': 1.2681121826171875}, {'fold': 3, 'auc': 0.9327384040216351, 'seconds': 426.21195749985054, 'observed_rss_gb': 1.269378662109375}, {'fold': 4, 'auc': 0.932873257760999, 'seconds': 418.09557339991443, 'observed_rss_gb': 1.2664947509765625}, {'fold': 5, 'auc': 0.9321123529172719, 'seconds': 384.15568590001203, 'observed_rss_gb': 1.1855964660644531}]
+peak_observed_rss_gb=1.2655677795410156
+correlations:
+  model  pearson  spearman
+EXP-016 0.898114  0.941790
+EXP-022 0.902595  0.944013
+EXP-027 0.900882  0.943911
+EXP-028 0.900925  0.943931
+EXP-006 0.909341  0.945910
+regional_bands:
+  analysis        segment      model   rows      auc
+    region clear_positive ExtraTrees 245424 0.939411
+    region clear_positive    EXP-016 245424 0.974038
+    region clear_negative ExtraTrees 154634 0.843027
+    region clear_negative    EXP-016 154634 0.914034
+    region      ambiguous ExtraTrees 102202 0.840021
+    region      ambiguous    EXP-016 102202 0.928041
+score_band      0.30-0.40 ExtraTrees  22074 0.489694
+score_band      0.30-0.40    EXP-016  22074 0.541609
+score_band      0.40-0.50 ExtraTrees  21012 0.487177
+score_band      0.40-0.50    EXP-016  21012 0.532790
+score_band      0.50-0.60 ExtraTrees  21770 0.480757
+score_band      0.50-0.60    EXP-016  21770 0.531839
+score_band      0.60-0.70 ExtraTrees  24278 0.483224
+score_band      0.60-0.70    EXP-016  24278 0.539401
+score_band      0.70-0.80 ExtraTrees  28507 0.480385
+score_band      0.70-0.80    EXP-016  28507 0.548607
+top25_importance:
+                   feature  importance_mean  importance_std
+               screen_gt_8         0.116991        0.003696
+               screen_le_6         0.107109        0.004659
+       weekend_screen_time         0.066609        0.001064
+      social_abs_dist_to_4         0.060642        0.000978
+          screen_dist_to_8         0.054375        0.001223
+          screen_dist_to_6         0.053277        0.001642
+   daily_screen_time_hours         0.053219        0.001439
+        social_media_hours         0.050986        0.001692
+          social_dist_to_4         0.047777        0.001030
+       clear_negative_zone         0.042852        0.001194
+        screen_plus_social         0.042823        0.001578
+       clear_positive_zone         0.041584        0.002140
+               region_code         0.038267        0.003093
+           screen_x_social         0.033768        0.002021
+        social_over_screen         0.029398        0.001427
+      screen_abs_dist_to_6         0.016718        0.001136
+          work_study_hours         0.014737        0.000349
+       screen_minus_social         0.014707        0.000769
+min_abs_threshold_distance         0.014546        0.000458
+      screen_abs_dist_to_8         0.013753        0.000765
+        screen_over_social         0.011368        0.000305
+              gaming_hours         0.008878        0.000223
+               social_gt_4         0.008165        0.000297
+           screen_mid_band         0.007770        0.000630
+     social_near_threshold         0.007761        0.000295
+nested_results={}
+useful_diversity=False; submission_generated=False
+total_seconds=2122.93
+problems=none

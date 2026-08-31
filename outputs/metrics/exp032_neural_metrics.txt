@@ -1,0 +1,8 @@
+EXP-032 stopped after viability benchmark
+hardware={'cpu': 'Intel64 Family 6 Model 165 Stepping 3, GenuineIntel', 'physical_cores': 6, 'logical_cores': 12, 'ram_total_gb': 15.828727722167969, 'ram_available_gb': 2.7977371215820312, 'python': '3.12.10', 'pytorch': '2.13.0+cpu', 'cuda_available': False, 'gpu': 'none', 'vram_total_gb': 0.0, 'torch_cuda': None, 'device': 'cpu'}
+benchmark={'variant': 'NN-NOMISS-BENCH', 'fold': 1, 'auc': 0.9383593818295171, 'best_epoch': 20, 'epochs_run': 20, 'seconds': 386.2425381001085, 'mean_epoch_seconds': np.float64(18.834480585029816), 'peak_rss_gb': 0.9060287475585938, 'peak_vram_gb': 0.0}
+viable=False
+total_seconds=388.68
+problems=quality/time viability criterion failed
+full_cv=false; nn_miss=false; ensembles=false; submission=false
+future={'FT-Transformer': 'VIABLE PERO COSTOSO (CPU; GPU recomendable)', 'TabM': 'REQUIERE GPU/NUBE RECOMENDABLE', 'TabNet': 'VIABLE PERO COSTOSO (GPU recomendable)', 'TabPFN': 'NO ADECUADO PARA 691k FILAS'}

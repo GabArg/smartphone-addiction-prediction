@@ -1,0 +1,27 @@
+EXP-028 seed extension; exact EXP-016 pipeline
+model={'objective': 'binary:logistic', 'eval_metric': 'auc', 'n_estimators': 9000, 'learning_rate': 0.03, 'max_depth': 5, 'min_child_weight': 1, 'subsample': 0.9, 'colsample_bytree': 0.9, 'reg_alpha': 0.0, 'reg_lambda': 1.0, 'gamma': 0.0, 'tree_method': 'hist', 'random_state': 42, 'n_jobs': -1}; early_stopping=300; features=['screen_gt_8', 'screen_le_6', 'social_gt_4', 'social_le_4', 'clear_positive_zone', 'clear_negative_zone', 'ambiguous_zone', 'screen_dist_to_6', 'screen_dist_to_8', 'social_dist_to_4', 'screen_abs_dist_to_6', 'screen_abs_dist_to_8', 'social_abs_dist_to_4', 'screen_x_social', 'screen_plus_social', 'screen_minus_social', 'screen_over_social', 'social_over_screen', 'min_abs_threshold_distance', 'screen_mid_band', 'social_near_threshold', 'screen_near_threshold', 'region_code']; mappings={'gender': {'Female': 0, 'Male': 1, 'Other': 2, '__MISSING__': 3}, 'stress_level': {'High': 0, 'Low': 1, 'Medium': 2, '__MISSING__': 3}, 'academic_work_impact': {'No': 0, 'Yes': 1, '__MISSING__': 2}}
+individual_auc={42: 0.9657017303568276, 2026: 0.9656868289434649, 777: 0.9656722641151995, 31415: 0.9656831787991077, 1234: 0.9656960307121689}
+best_iterations={31415: [7324, 7020, 8115, 7325, 6941], 1234: [7998, 7745, 8054, 7713, 7465]}
+correlations:
+ seed_a  seed_b  pearson  spearman
+     42    2026 0.998904  0.999020
+     42     777 0.998871  0.998935
+     42   31415 0.998912  0.999067
+     42    1234 0.998900  0.999043
+   2026     777 0.998884  0.998930
+   2026   31415 0.998934  0.999040
+   2026    1234 0.998901  0.999001
+    777   31415 0.998877  0.998914
+    777    1234 0.998864  0.998927
+  31415    1234 0.998905  0.999053
+baseline_3seed_auc=0.965794662705
+best4={stage=specified_4seed, name=4seed_1234_A_equal, method=probability, weights=42:0.250000;2026:0.250000;777:0.250000;1234:0.250000, auc=0.9658094045840956, delta=1.4741879232227362e-05, fold1=0.9651455580865057, fold2=0.9657514022882064, fold3=0.9660146827959408, fold4=0.9665673403937991, fold5=0.9655688338114671, std=0.0004729770491242159}
+best5={stage=specified_5seed, name=5seed_A_equal, method=probability, weights=42:0.200000;2026:0.200000;777:0.200000;31415:0.200000;1234:0.200000, auc=0.9658153443393173, delta=2.06816344539007e-05, fold1=0.965148046187688, fold2=0.9657659183472428, fold3=0.9660200575917849, fold4=0.9665787203518142, fold5=0.9655664947467003, std=0.0004762992878896164}
+best_xgb={stage=specified_5seed, name=5seed_A_equal, method=probability, weights=42:0.200000;2026:0.200000;777:0.200000;31415:0.200000;1234:0.200000, auc=0.9658153443393173, delta=2.06816344539007e-05, fold1=0.965148046187688, fold2=0.9657659183472428, fold3=0.9660200575917849, fold4=0.9665787203518142, fold5=0.9655664947467003, std=0.0004762992878896164}
+gain_3_to_4=0.000014741879; gain_4_to_5=0.000005939755; ratio=0.40291709951661947; interpretation=diminishing but useful
+best_final_oof={xgb_name=5seed_A_equal, xgb_method=probability, final_method=probability, weights=42:0.200000;2026:0.200000;777:0.200000;31415:0.200000;1234:0.200000, cat_weight=0.25, auc=0.9659307051390922, delta_vs_exp027=1.1517086490164807e-05, fold1=0.9652344001583787, fold2=0.9658577211998985, fold3=0.9661487705558556, fold4=0.9667155801251348, fold5=0.9656964100168435, std=0.0004916589616198318, folds_improved=4, large_drop=False, test_available=True}
+selected_final=None
+submission_generated=False; path=none
+test_artifact_note=individual test predictions for seeds 2026/777 were not persisted by EXP-027; exact reconstruction is available when their weights are equal
+total_seconds=76.88
+problems=none during training/validation; historical EXP-027 test-artifact limitation documented

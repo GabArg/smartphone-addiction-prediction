@@ -1,0 +1,12 @@
+package,used_by_count,example_files,installed_version_if_available,required_for_core_pipeline,notes
+catboost,5,src/diagnose_catboost_convergence.py;src/train_catboost_baseline.py;src/train_catboost_exp003.py;src/train_catboost_exp020_thresholds.py;src/train_catboost_exp022_thresholds_9000.py,1.2.10,true,CORE
+joblib,1,src/train_exp031_extratrees.py,1.5.3,false,UTILITY/REVIEW
+lightgbm,9,src/diagnose_exp025_adversarial_validation.py;src/diagnose_exp026_original_forensics.py;src/diagnose_exp029_pairwise_ranking.py;src/train_exp030_rank_corrector.py;src/train_exp039_high_bin_lgbm.py,4.7.0,true,CORE
+numpy,52,src/audit_data.py;src/create_blend_exp005.py;src/diagnose_catboost_convergence.py;src/diagnose_exp024_nearest_neighbors.py;src/diagnose_exp025_adversarial_validation.py,2.5.2,true,CORE
+pandas,54,notebooks/exp041_realmlp_kaggle.ipynb;src/audit_data.py;src/create_blend_exp005.py;src/diagnose_catboost_convergence.py;src/diagnose_exp024_nearest_neighbors.py,3.0.5,true,CORE
+psutil,11,notebooks/exp041_realmlp_kaggle.ipynb;src/train_exp031b_extratrees_memory_safe.py;src/train_exp032_neural_tabular.py;src/train_exp034_factorization_machine.py;src/train_exp035_exact_value_logistic.py,7.2.2,false,OPTIONAL/EXPERIMENTAL
+pytabkit,3,notebooks/exp041_realmlp_kaggle.ipynb;src/diagnose_exp041b_realmlp.py;src/train_exp041_realmlp.py,,false,OPTIONAL/EXPERIMENTAL
+scikit-learn,51,notebooks/exp041_realmlp_kaggle.ipynb;src/create_blend_exp005.py;src/diagnose_catboost_convergence.py;src/diagnose_exp024_nearest_neighbors.py;src/diagnose_exp025_adversarial_validation.py,1.9.0,true,CORE
+scipy,10,src/diagnose_exp025_adversarial_validation.py;src/diagnose_exp026_original_forensics.py;src/diagnose_exp029_pairwise_ranking.py;src/train_exp034_factorization_machine.py;src/train_exp035_exact_value_logistic.py,1.18.0,true,CORE
+torch,4,notebooks/exp041_realmlp_kaggle.ipynb;src/train_exp032_neural_tabular.py;src/train_exp034_factorization_machine.py;src/train_exp041_realmlp.py,2.13.0,false,OPTIONAL/EXPERIMENTAL
+xgboost,11,src/diagnose_exp027_seed_diversity.py;src/diagnose_xgboost_depth5_regularization.py;src/diagnose_xgboost_hyperparams.py;src/train_exp028_seed_extension.py;src/train_xgboost_exp008.py,3.4.1,true,CORE

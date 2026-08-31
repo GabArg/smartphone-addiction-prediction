@@ -1,0 +1,61 @@
+experiment_id: EXP-012
+parameters: XGBClassifier(objective='binary:logistic', eval_metric='auc', n_estimators=6000, learning_rate=0.03, max_depth=7, min_child_weight=1, subsample=0.9, colsample_bytree=0.9, reg_alpha=0.0, reg_lambda=1.0, gamma=0.0, tree_method='hist', random_state=42, n_jobs=-1, early_stopping_rounds=200)
+new_features: ['screen_gt_8', 'screen_le_6', 'social_gt_4', 'social_le_4', 'clear_positive_zone', 'clear_negative_zone', 'ambiguous_zone', 'screen_dist_to_6', 'screen_dist_to_8', 'social_dist_to_4', 'screen_abs_dist_to_6', 'screen_abs_dist_to_8', 'social_abs_dist_to_4', 'screen_x_social', 'screen_plus_social', 'screen_minus_social', 'screen_over_social', 'social_over_screen', 'min_abs_threshold_distance', 'screen_mid_band', 'social_near_threshold', 'screen_near_threshold', 'region_code']
+cv_strategy: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+fold_1_roc_auc: 0.96460143
+fold_2_roc_auc: 0.96521723
+fold_3_roc_auc: 0.96534392
+fold_4_roc_auc: 0.96599757
+fold_5_roc_auc: 0.96500485
+mean_roc_auc: 0.96523300
+std_roc_auc: 0.00045783
+overall_oof_roc_auc: 0.96522827
+fold_1_best_iteration_zero_based: 3852
+fold_2_best_iteration_zero_based: 3568
+fold_3_best_iteration_zero_based: 3583
+fold_4_best_iteration_zero_based: 3439
+fold_5_best_iteration_zero_based: 3703
+fold_1_seconds: 390.48
+fold_2_seconds: 353.32
+fold_3_seconds: 351.73
+fold_4_seconds: 340.10
+fold_5_seconds: 362.62
+total_seconds: 1798.24
+exp008_global_difference: +0.00087357
+exp010_global_difference: +0.00085398
+exp008_fold_differences: [0.000891971524425994, 0.0008790956356943269, 0.0008717826758845026, 0.0008164792894829187, 0.0009144043298974225]
+exp010_fold_differences: [0.0009305384247788595, 0.000861232507795906, 0.0008714273415953988, 0.00075165203074401, 0.0008709804132958077]
+exp008_std_change: -0.00002860
+exp010_std_change: -0.00005642
+exp008_best_iteration_changes: [418, 747, 438, -54, 391]
+exp010_best_iteration_changes: [915, 666, 705, 349, 466]
+top20_mean_normalized_gain:
+1. clear_positive_zone: 0.66256576
+2. region_code: 0.22830927
+3. screen_dist_to_6: 0.03099212
+4. daily_screen_time_hours: 0.01461765
+5. ambiguous_zone: 0.00788175
+6. social_media_hours: 0.00717704
+7. social_dist_to_4: 0.00700430
+8. social_over_screen: 0.00613631
+9. weekend_screen_time: 0.00383874
+10. social_abs_dist_to_4: 0.00334291
+11. screen_gt_8: 0.00234805
+12. screen_over_social: 0.00230933
+13. notifications_per_day: 0.00208879
+14. app_opens_per_day: 0.00195869
+15. screen_abs_dist_to_8: 0.00183584
+16. screen_plus_social: 0.00130820
+17. clear_negative_zone: 0.00129848
+18. social_le_4: 0.00127369
+19. social_gt_4: 0.00107736
+20. screen_x_social: 0.00103144
+pearson_vs_exp008: 0.99462752
+pearson_vs_exp010: 0.99407998
+pearson_vs_exp003: 0.98920059
+pearson_vs_exp006: 0.99045353
+spearman_vs_exp008: 0.99639562
+spearman_vs_exp010: 0.99580967
+spearman_vs_exp003: 0.98961773
+spearman_vs_exp006: 0.99311353
+decision: Mejora >= +0.00010: recomendar subir a Kaggle.

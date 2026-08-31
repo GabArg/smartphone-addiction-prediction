@@ -1,0 +1,60 @@
+experiment_id: EXP-019
+parameters: {'objective': 'binary', 'n_estimators': 7000, 'learning_rate': 0.03, 'num_leaves': 31, 'max_depth': -1, 'min_child_samples': 20, 'subsample': 0.9, 'colsample_bytree': 0.9, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'random_state': 42, 'n_jobs': -1}; early_stopping=300
+exact_reused_threshold_features: ['screen_gt_8', 'screen_le_6', 'social_gt_4', 'social_le_4', 'clear_positive_zone', 'clear_negative_zone', 'ambiguous_zone', 'screen_dist_to_6', 'screen_dist_to_8', 'social_dist_to_4', 'screen_abs_dist_to_6', 'screen_abs_dist_to_8', 'social_abs_dist_to_4', 'screen_x_social', 'screen_plus_social', 'screen_minus_social', 'screen_over_social', 'social_over_screen', 'min_abs_threshold_distance', 'screen_mid_band', 'social_near_threshold', 'screen_near_threshold', 'region_code']
+categorical_features: ['gender', 'stress_level', 'academic_work_impact']
+categorical_treatment: __MISSING__ + aligned pandas category train/test
+fold_1_roc_auc: 0.96373645
+fold_2_roc_auc: 0.96427000
+fold_3_roc_auc: 0.96482503
+fold_4_roc_auc: 0.96521254
+fold_5_roc_auc: 0.96452342
+mean_roc_auc: 0.96451349
+std_roc_auc: 0.00049978
+overall_oof_roc_auc: 0.96451054
+fold_1_best_iteration: 6894
+fold_2_best_iteration: 5895
+fold_3_best_iteration: 5795
+fold_4_best_iteration: 6577
+fold_5_best_iteration: 5924
+fold_1_seconds: 222.07
+fold_2_seconds: 184.80
+fold_3_seconds: 179.15
+fold_4_seconds: 227.39
+fold_5_seconds: 202.94
+total_seconds: 1019.29
+delta_vs_exp006_oof: +0.00084688
+delta_vs_exp016_oof: -0.00119119
+fold_deltas_vs_exp016: [-0.0012838392781731045, -0.001394457468357313, -0.0010586529911904563, -0.0012424861561172174, -0.0009639830391126036]
+correlations: {'EXP-016': {'pearson': 0.9939325431531184, 'spearman': 0.994626440894139}, 'EXP-015': {'pearson': 0.9949181293777509, 'spearman': 0.9951190340649819}, 'EXP-012': {'pearson': 0.9940134441551193, 'spearman': 0.9950193279823007}, 'EXP-003': {'pearson': 0.9905265218213601, 'spearman': 0.9891502996859223}, 'EXP-006': {'pearson': 0.9936926178343558, 'spearman': 0.9950378027416232}}
+regional_comparison: {'clear_positive_zone': {'rows': 297745, 'exp019_auc': 0.970897369350611, 'exp016_auc': 0.9728037117546363, 'difference': -0.0019063424040253185}, 'clear_negative_zone': {'rows': 154634, 'exp019_auc': 0.9113088799515081, 'exp016_auc': 0.9140341872492231, 'difference': -0.0027253072977150294}, 'ambiguous_zone': {'rows': 102202, 'exp019_auc': 0.9254263345965416, 'exp016_auc': 0.9280405270624151, 'difference': -0.002614192465873577}}
+top25_mean_normalized_gain:
+1. clear_positive_zone: 0.20656464
+2. weekend_screen_time: 0.12757072
+3. screen_dist_to_8: 0.12531592
+4. social_media_hours: 0.09002111
+5. notifications_per_day: 0.07182161
+6. app_opens_per_day: 0.06380782
+7. daily_screen_time_hours: 0.05809839
+8. social_over_screen: 0.02740168
+9. screen_over_social: 0.02437853
+10. work_study_hours: 0.02369556
+11. gaming_hours: 0.02153164
+12. region_code: 0.02140120
+13. social_dist_to_4: 0.01993024
+14. social_abs_dist_to_4: 0.01917076
+15. screen_dist_to_6: 0.01886374
+16. sleep_hours: 0.01411545
+17. min_abs_threshold_distance: 0.01157090
+18. screen_plus_social: 0.01035473
+19. screen_abs_dist_to_6: 0.00953255
+20. screen_abs_dist_to_8: 0.00915984
+21. age: 0.00844658
+22. screen_x_social: 0.00694873
+23. screen_minus_social: 0.00589359
+24. ambiguous_zone: 0.00165620
+25. academic_work_impact: 0.00125383
+diversity_assessment: Diversidad limitada o rendimiento insuficiente para considerarla especialmente fuerte.
+individual_recommendation: No recomendar submission individual salvo diversidad extraordinaria.
+ensemble_recommendation: No cumple simultaneamente Pearson < 0.9935 y OOF >= 0.96500.
+submission_validations: OK
+problems: none

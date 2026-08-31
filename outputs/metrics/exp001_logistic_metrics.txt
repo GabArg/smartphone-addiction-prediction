@@ -1,0 +1,15 @@
+experiment_id: EXP-001
+model: LogisticRegression(max_iter=2000, solver='liblinear')
+cv_strategy: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+fold_1_roc_auc: 0.910350
+fold_2_roc_auc: 0.910800
+fold_3_roc_auc: 0.911880
+fold_4_roc_auc: 0.912655
+fold_5_roc_auc: 0.911575
+mean_roc_auc: 0.911452
+std_roc_auc: 0.000810
+overall_oof_roc_auc: 0.911450
+preprocessed_feature_count: 17
+cv_training_seconds: 12.37
+final_fit_seconds: 2.84
+total_training_and_prediction_seconds: 17.32

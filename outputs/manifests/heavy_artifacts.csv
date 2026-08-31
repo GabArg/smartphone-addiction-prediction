@@ -1,0 +1,89 @@
+relative_path,size_mb,type,keep_local,publish_git,reason
+data/sample_submission.csv,7.346983,DATA,true,false,competition/external data; distribution terms must be verified
+data/test.csv,17.807960,DATA,true,false,competition/external data; distribution terms must be verified
+data/train.csv,42.777582,DATA,true,false,competition/external data; distribution terms must be verified
+outputs/metrics/exp001_logistic_oof.csv,19.068188,PREDICTION,true,false,generated row-level OOF prediction; legacy location under metrics
+outputs/metrics/exp002_catboost_oof.csv,19.108239,PREDICTION,true,false,generated row-level OOF prediction; legacy location under metrics
+outputs/metrics/exp003_catboost_oof.csv,19.135181,PREDICTION,true,false,generated row-level OOF prediction; legacy location under metrics
+outputs/predictions/oof_exp003_catboost.csv,18.895778,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp004_lightgbm.csv,19.139087,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp006_lightgbm_features.csv,19.141610,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp008_xgboost.csv,19.128324,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp010_xgboost_features.csv,19.132118,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp012_xgboost_thresholds.csv,19.127816,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp014_xgboost_ambiguous.csv,19.130564,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp015_xgboost_depth5.csv,19.098492,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp016_xgboost_depth5_9000.csv,19.048297,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp018_xgboost_nested_negative.csv,19.049489,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp019_lightgbm_thresholds.csv,19.146023,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp020_catboost_thresholds.csv,19.145473,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp022_catboost_thresholds_9000.csv,19.146636,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp023_nested_gating_diagnostic.csv,46.142007,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp023_stack_logreg.csv,20.477412,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp024_best_nested_blend.csv,39.355863,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp025_adversarial_train.csv,19.297046,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp026_original_prior_blend.csv,54.114175,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp027_seed2026.csv,19.057966,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp027_seed42.csv,18.792640,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp027_seed777.csv,19.067039,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp028_seed1234.csv,19.041595,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp028_seed31415.csv,19.061698,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp030_rank_corrector.csv,33.910457,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp031b_extratrees.csv,18.828279,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp033_best_te_nested.csv,20.510199,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp034_fm.csv,19.030338,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp035_exact_logistic.csv,19.160506,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp036_ratio_logistic.csv,19.162379,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp037_relational_logistic.csv,19.167212,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp038_discretized_logistic.csv,19.167212,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp039_lgbm_highbin.csv,19.148515,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/oof_exp039_lgbm_highbin_raw.csv,19.147957,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp004_lightgbm.csv,7.682730,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp006_lightgbm_features.csv,7.683900,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp008_xgboost.csv,7.685921,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp010_xgboost_features.csv,7.685390,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp012_xgboost_thresholds.csv,7.686469,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp014_xgboost_ambiguous.csv,7.686541,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp015_xgboost_depth5.csv,7.679673,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp016_xgboost_depth5_9000.csv,7.669729,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp018_xgboost_nested_negative.csv,7.669469,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp019_lightgbm_thresholds.csv,7.686001,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp020_catboost_thresholds.csv,7.685951,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp022_catboost_thresholds_9000.csv,7.686792,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp028_seed1234.csv,7.667556,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp028_seed31415.csv,7.673327,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp031b_extratrees.csv,7.627572,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp034_fm.csv,7.642522,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp035_exact_logistic.csv,7.692430,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp036_ratio_logistic.csv,7.692773,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp037_relational_logistic.csv,7.694866,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp038_discretized_logistic.csv,7.694866,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp039_lgbm_highbin.csv,7.687182,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/predictions/test_exp039_lgbm_highbin_raw.csv,7.686620,PREDICTION,true,false,generated row-level predictions; heavy artifact
+outputs/submissions/submission_exp001_logistic.csv,7.654203,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp002_catboost.csv,7.670823,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp003_catboost_4000.csv,7.681752,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp004_lightgbm.csv,7.682734,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp005_blend_cat_lgbm.csv,7.680719,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp006_lightgbm_features.csv,7.683904,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp007_ensemble.csv,7.681200,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp008_xgboost.csv,7.685925,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp009_ensemble.csv,7.705254,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp010_xgboost_features.csv,7.685394,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp011_ensemble.csv,7.705729,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp012_xgboost_thresholds.csv,7.686473,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp013_ensemble.csv,7.705445,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp014_xgboost_ambiguous.csv,7.686544,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp015_xgboost_depth5.csv,7.679677,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp016_xgboost_depth5_9000.csv,7.669733,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp017_ensemble.csv,7.685756,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp018_xgboost_nested_negative.csv,7.669473,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp019_lightgbm_thresholds.csv,7.686005,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp020_catboost_thresholds.csv,7.685955,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp021_ensemble.csv,7.705519,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp022_catboost_thresholds_9000.csv,7.686796,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp027_seed_ensemble.csv,7.687799,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp035_exact_logistic_ensemble.csv,7.704822,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp036_ratio_logistic_ensemble.csv,7.703696,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp037_relational_logistic_ensemble.csv,7.704101,SUBMISSION,true,false,complete competition submission; generated and heavy
+outputs/submissions/submission_exp039_highbin_lgbm_ensemble.csv,7.704374,SUBMISSION,true,false,complete competition submission; generated and heavy

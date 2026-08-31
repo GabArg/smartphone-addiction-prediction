@@ -1,0 +1,199 @@
+EXP-033 exact/discretized TE diagnostic
+checks={'EXP016': 0.9657017303568276, 'EXP027': 0.965919188052602, 'EXP028': 0.9659307051390922}
+cardinality:
+                feature  unique_values  cardinality_ratio  median_frequency  mean_frequency  max_frequency  test_seen_rate  test_unseen_rate  mean_train_frequency_for_test_values  rows_value_freq_ge_2  rows_value_freq_ge_5  rows_value_freq_ge_10  rows_value_freq_ge_20  rows_value_freq_ge_50  rows_value_freq_ge_100
+daily_screen_time_hours           1390           0.002011             236.0      497.387770          95854        0.999970          0.000030                          11505.391599              0.999938              0.999656               0.999163               0.997803               0.992370                0.977795
+     social_media_hours            722           0.001044             712.5      957.574792         133995        0.999970          0.000030                          22506.697377              0.999975              0.999868               0.999663               0.999359               0.997291                0.994272
+    weekend_screen_time           1438           0.002080             228.0      480.785118         112063        0.999919          0.000081                          19920.836927              0.999948              0.999780               0.999285               0.997783               0.990757                0.977711
+       work_study_hours            601           0.000869            1065.0     1150.364393          51518        0.999990          0.000010                           6247.055795              1.000000              1.000000               0.999951               0.999812               0.999251                0.996738
+           gaming_hours            402           0.000581            1527.0     1719.823383         126821        1.000000          0.000000                          26926.383426              1.000000              0.999997               0.999984               0.999984               0.999918                0.999378
+            sleep_hours            452           0.000654            1297.5     1529.577434          44480        1.000000          0.000000                           5218.138865              1.000000              1.000000               1.000000               1.000000               0.999970                0.999515
+  notifications_per_day            232           0.000336            2194.5     2980.038793          67584        1.000000          0.000000                          11175.125031              1.000000              1.000000               1.000000               1.000000               1.000000                1.000000
+      app_opens_per_day            167           0.000242            3369.0     4139.934132          80710        1.000000          0.000000                          11207.335590              1.000000              1.000000               1.000000               1.000000               1.000000                1.000000
+                    age             19           0.000027           37303.0    36387.842105          43607        1.000000          0.000000                          36567.995633              1.000000              1.000000               1.000000               1.000000               1.000000                1.000000
+                 gender              4           0.000006          219336.5   172842.250000         223662        1.000000          0.000000                         211614.924067              1.000000              1.000000               1.000000               1.000000               1.000000                1.000000
+           stress_level              4           0.000006          207674.0   172842.250000         220873        1.000000          0.000000                         201830.931928              1.000000              1.000000               1.000000               1.000000               1.000000                1.000000
+   academic_work_impact              3           0.000004          316579.0   230456.333333         330566        1.000000          0.000000                         299483.840409              1.000000              1.000000               1.000000               1.000000               1.000000                1.000000
+top20:
+encoding                 feature granularity  smoothing      auc  orientation  fold_std  coverage  unseen_rate
+      TE daily_screen_time_hours       exact        1.0 0.877761            1  0.000148  0.999928     0.000072
+      TE daily_screen_time_hours       exact        5.0 0.877578            1  0.000124  0.999928     0.000072
+      TE daily_screen_time_hours       exact       10.0 0.877313            1  0.000110  0.999928     0.000072
+      TE daily_screen_time_hours       exact       20.0 0.876773            1  0.000098  0.999928     0.000072
+      TE daily_screen_time_hours       exact       50.0 0.875261            1  0.000155  0.999928     0.000072
+      TE daily_screen_time_hours       exact      100.0 0.873202            1  0.000209  0.999928     0.000072
+      TE daily_screen_time_hours       exact      200.0 0.870159            1  0.000237  0.999928     0.000072
+      TE daily_screen_time_hours   round_0.1        1.0 0.868079            1  0.000304  1.000000     0.000000
+      TE daily_screen_time_hours   round_0.1        5.0 0.868065            1  0.000296  1.000000     0.000000
+      TE daily_screen_time_hours   round_0.1       10.0 0.868043            1  0.000285  1.000000     0.000000
+      TE daily_screen_time_hours   round_0.1       20.0 0.867992            1  0.000279  1.000000     0.000000
+      TE daily_screen_time_hours   round_0.1       50.0 0.867822            1  0.000249  1.000000     0.000000
+      TE daily_screen_time_hours   round_0.1      100.0 0.867513            1  0.000217  1.000000     0.000000
+      TE daily_screen_time_hours  round_0.25        1.0 0.866972            1  0.000435  1.000000     0.000000
+      TE daily_screen_time_hours  round_0.25        5.0 0.866967            1  0.000434  1.000000     0.000000
+      TE daily_screen_time_hours  round_0.25       10.0 0.866961            1  0.000432  1.000000     0.000000
+      TE daily_screen_time_hours   round_0.1      200.0 0.866943            1  0.000234  1.000000     0.000000
+      TE daily_screen_time_hours  round_0.25       20.0 0.866941            1  0.000420  1.000000     0.000000
+      TE daily_screen_time_hours  round_0.25       50.0 0.866883            1  0.000404  1.000000     0.000000
+      TE daily_screen_time_hours  round_0.25      100.0 0.866756            1  0.000374  1.000000     0.000000
+stability:
+                feature granularity  smoothing      auc  fold_std  coverage  cardinality  weighted_std_target_rate_across_folds
+daily_screen_time_hours       exact        1.0 0.877761  0.000148  0.999928         1390                               0.018133
+daily_screen_time_hours       exact        5.0 0.877578  0.000124  0.999928         1390                               0.018133
+daily_screen_time_hours       exact       10.0 0.877313  0.000110  0.999928         1390                               0.018133
+daily_screen_time_hours       exact       20.0 0.876773  0.000098  0.999928         1390                               0.018133
+daily_screen_time_hours       exact       50.0 0.875261  0.000155  0.999928         1390                               0.018133
+daily_screen_time_hours       exact      100.0 0.873202  0.000209  0.999928         1390                               0.018133
+daily_screen_time_hours       exact      200.0 0.870159  0.000237  0.999928         1390                               0.018133
+daily_screen_time_hours   round_0.1        1.0 0.868079  0.000304  1.000000          147                               0.006860
+daily_screen_time_hours   round_0.1        5.0 0.868065  0.000296  1.000000          147                               0.006860
+daily_screen_time_hours   round_0.1       10.0 0.868043  0.000285  1.000000          147                               0.006860
+correlations:
+                feature granularity  smoothing        model   pearson  spearman
+daily_screen_time_hours       exact        1.0      EXP-016  0.747961  0.832620
+daily_screen_time_hours       exact        1.0      EXP-027  0.750175  0.834542
+daily_screen_time_hours       exact        1.0      EXP-028  0.750225  0.834516
+daily_screen_time_hours       exact        1.0 residual_027  0.010123  0.104504
+daily_screen_time_hours       exact        5.0      EXP-016  0.747682  0.825502
+daily_screen_time_hours       exact        5.0      EXP-027  0.749897  0.827612
+daily_screen_time_hours       exact        5.0      EXP-028  0.749948  0.827589
+daily_screen_time_hours       exact        5.0 residual_027  0.010122  0.110999
+daily_screen_time_hours       exact       10.0      EXP-016  0.747176  0.820278
+daily_screen_time_hours       exact       10.0      EXP-027  0.749391  0.822522
+daily_screen_time_hours       exact       10.0      EXP-028  0.749442  0.822499
+daily_screen_time_hours       exact       10.0 residual_027  0.010103  0.115452
+daily_screen_time_hours       exact       20.0      EXP-016  0.746038  0.813766
+daily_screen_time_hours       exact       20.0      EXP-027  0.748251  0.816154
+daily_screen_time_hours       exact       20.0      EXP-028  0.748302  0.816132
+daily_screen_time_hours       exact       20.0 residual_027  0.010052  0.120515
+daily_screen_time_hours       exact       50.0      EXP-016  0.742521  0.802372
+daily_screen_time_hours       exact       50.0      EXP-027  0.744726  0.804927
+daily_screen_time_hours       exact       50.0      EXP-028  0.744778  0.804908
+daily_screen_time_hours       exact       50.0 residual_027  0.009869  0.128067
+daily_screen_time_hours       exact      100.0      EXP-016  0.737083  0.791741
+daily_screen_time_hours       exact      100.0      EXP-027  0.739272  0.794379
+daily_screen_time_hours       exact      100.0      EXP-028  0.739324  0.794363
+daily_screen_time_hours       exact      100.0 residual_027  0.009571  0.133593
+daily_screen_time_hours       exact      200.0      EXP-016  0.727907  0.779588
+daily_screen_time_hours       exact      200.0      EXP-027  0.730068  0.782252
+daily_screen_time_hours       exact      200.0      EXP-028  0.730120  0.782238
+daily_screen_time_hours       exact      200.0 residual_027  0.009083  0.138277
+daily_screen_time_hours   round_0.1        1.0      EXP-016  0.736128  0.836176
+daily_screen_time_hours   round_0.1        1.0      EXP-027  0.738614  0.838234
+daily_screen_time_hours   round_0.1        1.0      EXP-028  0.738656  0.838198
+daily_screen_time_hours   round_0.1        1.0 residual_027 -0.001740  0.077656
+daily_screen_time_hours   round_0.1        5.0      EXP-016  0.736112  0.834973
+daily_screen_time_hours   round_0.1        5.0      EXP-027  0.738599  0.837074
+daily_screen_time_hours   round_0.1        5.0      EXP-028  0.738641  0.837041
+daily_screen_time_hours   round_0.1        5.0 residual_027 -0.001737  0.078784
+daily_screen_time_hours   round_0.1       10.0      EXP-016  0.736084  0.833768
+daily_screen_time_hours   round_0.1       10.0      EXP-027  0.738572  0.835917
+daily_screen_time_hours   round_0.1       10.0      EXP-028  0.738614  0.835885
+daily_screen_time_hours   round_0.1       10.0 residual_027 -0.001733  0.079894
+daily_screen_time_hours   round_0.1       20.0      EXP-016  0.736011  0.831467
+daily_screen_time_hours   round_0.1       20.0      EXP-027  0.738500  0.833692
+daily_screen_time_hours   round_0.1       20.0      EXP-028  0.738542  0.833661
+daily_screen_time_hours   round_0.1       20.0 residual_027 -0.001725  0.082003
+daily_screen_time_hours   round_0.1       50.0      EXP-016  0.735731  0.827309
+daily_screen_time_hours   round_0.1       50.0      EXP-027  0.738221  0.829664
+daily_screen_time_hours   round_0.1       50.0      EXP-028  0.738263  0.829636
+daily_screen_time_hours   round_0.1       50.0 residual_027 -0.001705  0.085623
+daily_screen_time_hours   round_0.1      100.0      EXP-016  0.735193  0.821771
+daily_screen_time_hours   round_0.1      100.0      EXP-027  0.737685  0.824314
+daily_screen_time_hours   round_0.1      100.0      EXP-028  0.737727  0.824286
+daily_screen_time_hours   round_0.1      100.0 residual_027 -0.001678  0.090224
+daily_screen_time_hours  round_0.25        1.0      EXP-016  0.733908  0.836412
+daily_screen_time_hours  round_0.25        1.0      EXP-027  0.736415  0.838549
+daily_screen_time_hours  round_0.25        1.0      EXP-028  0.736456  0.838516
+daily_screen_time_hours  round_0.25        1.0 residual_027 -0.001917  0.074564
+daily_screen_time_hours  round_0.25        5.0      EXP-016  0.733905  0.835835
+daily_screen_time_hours  round_0.25        5.0      EXP-027  0.736411  0.838005
+daily_screen_time_hours  round_0.25        5.0      EXP-028  0.736452  0.837974
+daily_screen_time_hours  round_0.25        5.0 residual_027 -0.001917  0.075100
+daily_screen_time_hours  round_0.25       10.0      EXP-016  0.733897  0.835127
+daily_screen_time_hours  round_0.25       10.0      EXP-027  0.736404  0.837328
+daily_screen_time_hours  round_0.25       10.0      EXP-028  0.736445  0.837298
+daily_screen_time_hours  round_0.25       10.0 residual_027 -0.001916  0.075762
+daily_screen_time_hours   round_0.1      200.0      EXP-016  0.734080  0.814169
+daily_screen_time_hours   round_0.1      200.0      EXP-027  0.736571  0.816949
+daily_screen_time_hours   round_0.1      200.0      EXP-028  0.736613  0.816919
+daily_screen_time_hours   round_0.1      200.0 residual_027 -0.001639  0.096202
+daily_screen_time_hours  round_0.25       20.0      EXP-016  0.733876  0.834096
+daily_screen_time_hours  round_0.25       20.0      EXP-027  0.736384  0.836338
+daily_screen_time_hours  round_0.25       20.0      EXP-028  0.736425  0.836308
+daily_screen_time_hours  round_0.25       20.0 residual_027 -0.001914  0.076708
+daily_screen_time_hours  round_0.25       50.0      EXP-016  0.733789  0.831621
+daily_screen_time_hours  round_0.25       50.0      EXP-027  0.736298  0.833973
+daily_screen_time_hours  round_0.25       50.0      EXP-028  0.736339  0.833942
+daily_screen_time_hours  round_0.25       50.0 residual_027 -0.001910  0.078937
+daily_screen_time_hours  round_0.25      100.0      EXP-016  0.733598  0.828680
+daily_screen_time_hours  round_0.25      100.0      EXP-027  0.736110  0.831138
+daily_screen_time_hours  round_0.25      100.0      EXP-028  0.736151  0.831108
+daily_screen_time_hours  round_0.25      100.0 residual_027 -0.001902  0.081465
+individual_nested_auc=0.9659226940534905; choices=
+             type  fold                 feature granularity  smoothing method  weight  selection_auc  valid_coverage  valid_unseen
+individual_choice     1 daily_screen_time_hours       exact         10   rank   0.005       0.966098        0.999928      0.000072
+individual_choice     2 daily_screen_time_hours       exact         10   rank   0.010       0.965943        0.999935      0.000065
+individual_choice     3 daily_screen_time_hours       exact          5   rank   0.010       0.965872        0.999920      0.000080
+individual_choice     4 daily_screen_time_hours       exact         20   rank   0.010       0.965728        0.999957      0.000043
+individual_choice     5 daily_screen_time_hours       exact          5   rank   0.010       0.965979        0.999899      0.000101
+multi_auc=0.9659219702864315; choices=
+        type  fold                features method  weight  selection_auc
+multi_choice     1 daily_screen_time_hours   rank   0.005       0.966098
+multi_choice     2 daily_screen_time_hours   rank   0.005       0.965942
+multi_choice     3 daily_screen_time_hours   rank   0.010       0.965872
+multi_choice     4 daily_screen_time_hours   rank   0.010       0.965727
+multi_choice     5 daily_screen_time_hours   rank   0.010       0.965979
+pair_top:
+              feature_a           feature_b granularity  smoothing      auc  coverage   unseen  pearson_exp027  pearson_residual  spearman_residual
+daily_screen_time_hours  social_media_hours   round_0.5         10 0.911167  0.999977 0.000023        0.846595         -0.003942           0.131319
+daily_screen_time_hours  social_media_hours   round_0.5         50 0.910604  0.999977 0.000023        0.845715         -0.003927           0.148298
+daily_screen_time_hours  social_media_hours   round_0.5        100 0.909952  0.999977 0.000023        0.844411         -0.003909           0.159468
+     social_media_hours weekend_screen_time   round_0.5         10 0.906987  0.999964 0.000036        0.835005         -0.003453           0.136835
+     social_media_hours weekend_screen_time   round_0.5         50 0.906173  0.999964 0.000036        0.833665         -0.003429           0.154622
+daily_screen_time_hours  social_media_hours   round_1.0         10 0.906134  0.999994 0.000006        0.832479         -0.003689           0.118478
+daily_screen_time_hours  social_media_hours   round_1.0         50 0.905935  0.999994 0.000006        0.832242         -0.003687           0.127241
+daily_screen_time_hours  social_media_hours   round_1.0        100 0.905762  0.999994 0.000006        0.831896         -0.003679           0.132226
+     social_media_hours weekend_screen_time   round_0.5        100 0.905239  0.999964 0.000036        0.831989         -0.003424           0.166149
+     social_media_hours weekend_screen_time   round_1.0         10 0.902330  0.999986 0.000014        0.823601         -0.003662           0.123928
+     social_media_hours weekend_screen_time   round_1.0         50 0.902059  0.999986 0.000014        0.823218         -0.003645           0.132983
+     social_media_hours weekend_screen_time   round_1.0        100 0.901737  0.999986 0.000014        0.822705         -0.003629           0.139894
+daily_screen_time_hours weekend_screen_time   round_0.5         10 0.892662  0.999894 0.000106        0.796997         -0.002502           0.097898
+daily_screen_time_hours weekend_screen_time   round_0.5         50 0.891513  0.999894 0.000106        0.794621         -0.002477           0.112751
+daily_screen_time_hours weekend_screen_time   round_1.0         10 0.891036  0.999978 0.000022        0.793479         -0.002759           0.087820
+missing_control={'best_global_feature': 'daily_screen_time_hours', 'missing_rate': np.float64(0.13864376331597164), 'nested_auc': 0.9659226940534905, 'nested_no_missing_auc': 0.9659227494202929, 'delta_no_missing_vs_regular': 5.5366802365064416e-08}
+regions_bands:
+  analysis        segment   rows  auc_exp027  auc_nested_te
+    region clear_positive 245424    0.974619       0.974660
+    region clear_negative 154634    0.914552       0.914605
+    region      ambiguous 102202    0.928597       0.928684
+score_band      0.30-0.40  22074    0.552423       0.553556
+score_band      0.40-0.50  21012    0.549348       0.550555
+score_band      0.50-0.60  21770    0.547020       0.547289
+score_band      0.60-0.70  24278    0.548949       0.548579
+score_band      0.70-0.80  28507    0.560254       0.559919
+test_transfer:
+                feature granularity  smoothing  test_coverage  test_unseen  train_oof_mean  train_oof_std  test_mean  test_std  mean_shift  std_ratio  test_q01  test_q50  test_q99
+daily_screen_time_hours       exact        1.0        0.99997      0.00003        0.709502       0.279965   0.709412  0.284752   -0.000090   1.017100  0.138305  0.720731  0.999786
+daily_screen_time_hours       exact        5.0        0.99997      0.00003        0.709836       0.276682   0.709694  0.281998   -0.000141   1.019213  0.145083  0.720717  0.998931
+daily_screen_time_hours       exact       10.0        0.99997      0.00003        0.710204       0.273111   0.710014  0.278973   -0.000190   1.021464  0.152026  0.720701  0.998043
+daily_screen_time_hours       exact       20.0        0.99997      0.00003        0.710827       0.266865   0.710569  0.273629   -0.000257   1.025347  0.164151  0.720668  0.996893
+daily_screen_time_hours       exact       50.0        0.99997      0.00003        0.712186       0.251764   0.711834  0.260493   -0.000352   1.034668  0.202189  0.720572  0.993011
+daily_screen_time_hours       exact      100.0        0.99997      0.00003        0.713620       0.232627   0.713247  0.243477   -0.000373   1.046643  0.237095  0.720414  0.986770
+daily_screen_time_hours       exact      200.0        0.99997      0.00003        0.715141       0.205075   0.714876  0.218320   -0.000265   1.064582  0.273205  0.717496  0.975078
+daily_screen_time_hours   round_0.1        1.0        1.00000      0.00000        0.709432       0.272636   0.709217  0.277338   -0.000215   1.017247  0.207951  0.711300  0.999825
+daily_screen_time_hours   round_0.1        5.0        1.00000      0.00000        0.709471       0.272226   0.709249  0.277001   -0.000222   1.017542  0.210384  0.711300  0.999546
+daily_screen_time_hours   round_0.1       10.0        1.00000      0.00000        0.709526       0.271732   0.709293  0.276594   -0.000232   1.017891  0.211169  0.711300  0.999355
+daily_screen_time_hours   round_0.1       20.0        1.00000      0.00000        0.709637       0.270788   0.709385  0.275810   -0.000252   1.018547  0.212732  0.711300  0.998975
+daily_screen_time_hours   round_0.1       50.0        1.00000      0.00000        0.709960       0.268161   0.709658  0.273615   -0.000302   1.020339  0.217362  0.711300  0.997839
+daily_screen_time_hours   round_0.1      100.0        1.00000      0.00000        0.710443       0.264190   0.710078  0.270271   -0.000365   1.023019  0.224891  0.711299  0.995966
+daily_screen_time_hours  round_0.25        1.0        1.00000      0.00000        0.709428       0.271777   0.709171  0.276476   -0.000258   1.017291  0.229162  0.711300  0.999829
+daily_screen_time_hours  round_0.25        5.0        1.00000      0.00000        0.709444       0.271607   0.709183  0.276337   -0.000261   1.017414  0.229568  0.711300  0.999675
+daily_screen_time_hours  round_0.25       10.0        1.00000      0.00000        0.709465       0.271400   0.709200  0.276166   -0.000265   1.017562  0.230075  0.711300  0.999483
+daily_screen_time_hours   round_0.1      200.0        1.00000      0.00000        0.711251       0.257117   0.710797  0.264265   -0.000454   1.027798  0.240303  0.711297  0.992292
+daily_screen_time_hours  round_0.25       20.0        1.00000      0.00000        0.709509       0.270996   0.709236  0.275833   -0.000274   1.017848  0.231084  0.711300  0.999309
+daily_screen_time_hours  round_0.25       50.0        1.00000      0.00000        0.709648       0.269845   0.709350  0.274878   -0.000299   1.018651  0.234088  0.711300  0.998802
+daily_screen_time_hours  round_0.25      100.0        1.00000      0.00000        0.709873       0.268054   0.709539  0.273383   -0.000335   1.019880  0.239010  0.711299  0.997960
+success_direct=False; justify_exp034=False; residual_max_abs_pearson=0.010123427767544777
+total_seconds=578.12
+problems=none
