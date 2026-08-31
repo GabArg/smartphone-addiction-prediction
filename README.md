@@ -2,22 +2,21 @@
 
 Proyecto desarrollado para **Kaggle Playground Series S6E8**.
 
+- **Problema:** clasificación binaria de hábitos de uso del smartphone
+- **Target:** `addicted_label`
+- **Métrica:** ROC AUC
+- **Ensemble final OOF:** `0.967468`
+- **Public LB reportado:** `0.96876`
+
 ## Resumen
 
-El problema consiste en predecir `addicted_label`, una variable binaria, a partir de hábitos de uso del smartphone y variables personales. La métrica de la competencia es **ROC AUC**.
-
-El conjunto de entrenamiento tiene 691.369 filas y el de test 296.302, con 12 variables predictoras. Trabajé con validación cruzada estratificada, guardé predicciones out-of-fold (OOF) para comparar modelos en las mismas particiones y mantuve una bitácora de los experimentos que funcionaron y de los que descarté.
-
-El resultado final fue:
-
-- **OOF ROC AUC:** `0.967468`
-- **Public LB:** `0.96876` (resultado reportado desde Kaggle)
+El conjunto de entrenamiento tiene 691.369 filas y el de test 296.302, con 12 variables predictoras. Trabajé con validación cruzada estratificada y predicciones out-of-fold (OOF) para comparar modelos en las mismas particiones. El OOF mostrado arriba corresponde al ensemble final, no a un modelo individual.
 
 ## Qué hice
 
 Comencé con una regresión logística sencilla y comparé CatBoost, LightGBM y XGBoost. XGBoost mejoró al incorporar umbrales explícitos sobre tiempo de pantalla y uso de redes sociales. Más adelante probé una representación distinta: convertir valores numéricos exactos en categorías y entrenar una Logistic sparse. Esa rama añadió diversidad y terminó siendo una parte relevante del ensemble.
 
-Después incorporé relaciones entre variables, especialmente cocientes de horas y la diferencia entre pantalla y redes sociales. La última mejora individual importante vino de LightGBM: aumentar `max_bin`, añadir frequency encoding fold-safe y conservar las relaciones como variables numéricas continuas.
+Después incorporé relaciones entre variables, especialmente cocientes de horas y la diferencia entre pantalla y redes sociales. El LightGBM individual de EXP-039 obtuvo aproximadamente `0.966684` OOF al aumentar `max_bin`, añadir frequency encoding fold-safe y conservar las relaciones como variables numéricas continuas. Al combinarlo con las otras ramas, el ensemble final alcanzó `0.967468` OOF.
 
 No todas las ramas avanzaron. ExtraTrees, redes neuronales, Factorization Machine, target encoding, correctores de ranking y la representación dual de EXP-040 quedaron documentados porque también explican cómo llegué a la solución final.
 
@@ -66,16 +65,26 @@ src/
   features/       # transformaciones compartidas
   ensembles/      # ensemble final
   diagnostics/    # análisis que no entrenan el pipeline principal
-  experiments/    # espacio para preservar experimentos históricos
+  *.py             # wrappers y entrypoints históricos
 tests/             # imports, contratos, smoke tests y paridad
 docs/              # bitácora, metodología, decisiones y resultados
-outputs/metrics/   # métricas livianas
-outputs/reports/   # tablas y reportes reproducibles
-outputs/manifests/ # inventarios, hashes y trazabilidad
 assets/            # gráficos para la documentación
+outputs/
+  metrics/         # métricas livianas
+  reports/         # tablas y reportes reproducibles
+  manifests/       # inventarios, hashes y trazabilidad
 ```
 
 Los scripts con nombres `EXP` se conservan como entrypoints históricos o wrappers. Esto mantiene la trazabilidad sin duplicar la lógica core.
+
+## Por dónde empezar
+
+- [`src/models/xgboost_thresholds.py`](src/models/xgboost_thresholds.py): XGBoost refinado con threshold features.
+- [`src/models/logistic_relational.py`](src/models/logistic_relational.py): Logistic sparse con relaciones entre variables.
+- [`src/models/lightgbm_high_resolution.py`](src/models/lightgbm_high_resolution.py): LightGBM high-resolution de la rama final.
+- [`src/ensembles/final_ensemble.py`](src/ensembles/final_ensemble.py): rank blend final sobre predicciones persistidas.
+- [`docs/bitacora_competencia.md`](docs/bitacora_competencia.md): evolución completa de los experimentos.
+- [`docs/metodologia.md`](docs/metodologia.md): validación, leakage, OOF y ensembles.
 
 ## Reproducibilidad
 
@@ -107,4 +116,4 @@ Los datos de competencia, OOF completos, test predictions y submissions no se in
 
 Competition data is not included in this repository. Download it directly from the official Kaggle competition page.
 
-El código y la documentación necesitan una licencia explícita antes de publicar el repositorio. Esa decisión se mantiene separada de la licencia de los datos.
+El código se publica bajo licencia MIT.
