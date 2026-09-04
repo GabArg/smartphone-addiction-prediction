@@ -1,119 +1,406 @@
-# Predicción de adicción al smartphone
+<div align="center">
 
-Proyecto desarrollado para **Kaggle Playground Series S6E8**.
+# 📱 Smartphone Addiction Prediction
 
-- **Problema:** clasificación binaria de hábitos de uso del smartphone
-- **Target:** `addicted_label`
-- **Métrica:** ROC AUC
-- **Ensemble final OOF:** `0.967468`
-- **Public LB reportado:** `0.96876`
+### Kaggle Machine Learning Project with Feature Engineering, Cross-Validation & Ensemble Modeling
 
-## Resumen
+**Python · XGBoost · LightGBM · CatBoost · Logistic Regression · Rank Blending**
 
-El conjunto de entrenamiento tiene 691.369 filas y el de test 296.302, con 12 variables predictoras. Trabajé con validación cruzada estratificada y predicciones out-of-fold (OOF) para comparar modelos en las mismas particiones. El OOF mostrado arriba corresponde al ensemble final, no a un modelo individual.
+</div>
 
-## Qué hice
+---
 
-Comencé con una regresión logística sencilla y comparé CatBoost, LightGBM y XGBoost. XGBoost mejoró al incorporar umbrales explícitos sobre tiempo de pantalla y uso de redes sociales. Más adelante probé una representación distinta: convertir valores numéricos exactos en categorías y entrenar una Logistic sparse. Esa rama añadió diversidad y terminó siendo una parte relevante del ensemble.
+## 🎯 Executive Summary
 
-Después incorporé relaciones entre variables, especialmente cocientes de horas y la diferencia entre pantalla y redes sociales. El LightGBM individual de EXP-039 obtuvo aproximadamente `0.966684` OOF al aumentar `max_bin`, añadir frequency encoding fold-safe y conservar las relaciones como variables numéricas continuas. Al combinarlo con las otras ramas, el ensemble final alcanzó `0.967468` OOF.
+This project was developed for **Kaggle Playground Series S6E8**, a binary classification challenge focused on predicting smartphone addiction behavior.
 
-No todas las ramas avanzaron. ExtraTrees, redes neuronales, Factorization Machine, target encoding, correctores de ranking y la representación dual de EXP-040 quedaron documentados porque también explican cómo llegué a la solución final.
+The final solution was built through a sequence of reproducible experiments rather than a single model.
 
-## Hallazgos técnicos
+I compared linear and boosting approaches, engineered behavioral thresholds and relational features, tested sparse categorical representations of exact numeric values, and combined complementary model families through **out-of-fold rank blending**.
 
-- Las features de thresholds mejoraron XGBoost de `0.964358` a `0.965233` OOF.
-- Tratar valores numéricos exactos como categorías sparse funcionó mejor de lo esperado y aportó una señal complementaria.
-- Cinco ratios y `screen_minus_social` ayudaron a la Logistic relacional; `weekend_over_screen` fue descartada en la selección.
-- En LightGBM, subir `max_bin` de 255 a 2047 produjo una mejora clara. El cambio de 2047 a 4095 fue prácticamente neutro en el screening, pero se conservó 4095 en la configuración final.
-- `weekend_freq` y `screen_freq`, calculadas sólo con el fold de entrenamiento, aportaron señal. Añadir todas las frecuencias no mejoró el resultado.
-- Las copias categóricas y la representación dual de EXP-040 no superaron el baseline comparable.
-- La diversidad entre XGBoost, Logistic sparse y LightGBM permitió mejorar mediante rank blending.
+The final ensemble reached:
 
-## Resultados principales
+- **OOF ROC AUC: 0.967468**
+- **Reported Public LB: 0.96876**
 
-| Experimento | Modelo | OOF ROC AUC | Public LB | Comentario |
+> **Main lesson:** model diversity mattered more than squeezing the last decimal out of a single learner.
+
+---
+
+## 📊 Project Highlights
+
+| Metric | Result |
+|---|---:|
+| 🎯 Task | **Binary Classification** |
+| 📏 Competition metric | **ROC AUC** |
+| 🧪 Final OOF ROC AUC | **0.967468** |
+| 🏁 Reported Public LB | **0.96876** |
+| 📚 Train rows | **691,369** |
+| 🧾 Test rows | **296,302** |
+| 🔢 Predictive features | **12** |
+| 🧠 Final ensemble | **XGBoost + Logistic + LightGBM** |
+
+> The reported Public LB score is preserved from the competition workflow, but the repository does not include a downloaded Kaggle leaderboard artifact for that value.
+
+---
+
+## 🧩 What I Explored
+
+The project evolved across several modeling directions:
+
+- Logistic Regression baseline
+- CatBoost
+- XGBoost
+- threshold-based feature engineering
+- exact-value sparse categorical representations
+- relational ratios
+- LightGBM with high-resolution binning
+- fold-safe frequency encoding
+- seed ensembling
+- weighted rank blending
+
+Several ideas were also tested and rejected:
+
+- ExtraTrees
+- neural networks
+- Factorization Machines
+- target encoding
+- ranking correctors
+- dual representations
+- broader frequency encodings
+
+Those dead ends remain documented because they are part of the experimental reasoning, not noise to hide.
+
+---
+
+## 🧠 Modeling Strategy
+
+The workflow followed a consistent pattern:
+
+```text
+Baseline
+   ↓
+Stratified CV
+   ↓
+OOF predictions
+   ↓
+Feature experiments
+   ↓
+Model-family comparison
+   ↓
+Diversity analysis
+   ↓
+Rank blending
+   ↓
+Final ensemble
+```
+
+All major comparisons were made using **stratified cross-validation** and **out-of-fold predictions**, allowing models to be compared on equivalent validation structure.
+
+---
+
+## 🔬 Feature Engineering
+
+Feature engineering was one of the strongest sources of improvement.
+
+### Threshold features
+
+Explicit thresholds on variables such as screen time and social-media usage improved XGBoost from:
+
+```text
+0.964358 → 0.965233 OOF ROC AUC
+```
+
+This showed that nonlinear behavioral cut points contained useful signal that tree boosting could exploit more effectively when made explicit.
+
+### Relational features
+
+The project also tested relationships between variables rather than only raw values.
+
+Useful features included:
+
+- ratios between usage-hour variables,
+- relationships between screen time and social usage,
+- `screen_minus_social`.
+
+One candidate ratio, `weekend_over_screen`, did not survive selection.
+
+### Fold-safe frequency encoding
+
+Selected features such as:
+
+- `weekend_freq`
+- `screen_freq`
+
+were computed using only the training fold during cross-validation.
+
+This avoided leakage while still capturing how common specific values were in the observed training distribution.
+
+---
+
+## 🧮 A Useful Surprise: Sparse Exact-Value Logistic Regression
+
+One of the most interesting findings came from treating exact numeric values as categorical tokens and fitting a sparse Logistic Regression.
+
+That representation performed much better than expected.
+
+It did not replace boosting, but it captured a different type of structure and added useful ensemble diversity.
+
+This is a good example of why model-family diversity can matter as much as individual model strength.
+
+---
+
+## 🌳 LightGBM High-Resolution Branch
+
+A later branch focused on increasing LightGBM's histogram resolution.
+
+Increasing:
+
+```text
+max_bin: 255 → 2047
+```
+
+produced a clear improvement.
+
+Moving from:
+
+```text
+2047 → 4095
+```
+
+was nearly neutral during screening, but `4095` was retained in the final configuration.
+
+The strongest LightGBM branch also included:
+
+- relational numeric features,
+- selected fold-safe frequencies,
+- higher histogram resolution.
+
+The individual LightGBM model from the final branch reached approximately:
+
+```text
+OOF ROC AUC ≈ 0.966684
+```
+
+and became a major component of the final blend.
+
+---
+
+## 🏁 Experiment Journey
+
+| Experiment | Model | OOF ROC AUC | Public LB | Role in the journey |
 |---|---|---:|---:|---|
-| EXP-001 | Logistic baseline | 0.911452 | 0.91355 | Punto de partida reproducible |
-| EXP-003 | CatBoost | 0.963593 | 0.96497 | Primer boosting competitivo |
-| EXP-008 | XGBoost | 0.964358 | 0.96587 | Mejor modelo individual de esa etapa |
-| EXP-012 | XGBoost + thresholds | 0.965233 | 0.96696 | Salto importante por features |
-| EXP-016 | XGBoost refinado | 0.965702 | 0.96730 | Referencia fuerte de XGBoost |
-| EXP-027 | Ensemble de seeds XGBoost + CatBoost | 0.965919 | — | Reducción de varianza |
-| EXP-035 | Logistic exact-values + blend | 0.966810 | 0.96815* | Nueva representación sparse |
-| EXP-036 | Logistic con ratios + blend | 0.967037 | 0.96838* | Mejora consistente |
-| EXP-037 | Logistic relacional + blend | 0.967068 | 0.96842* | Añade `screen_minus_social` |
-| EXP-039 | Ensemble final | **0.967468** | **0.96876*** | Mejor resultado del proyecto |
+| EXP-001 | Logistic baseline | 0.911452 | 0.91355 | Reproducible starting point |
+| EXP-003 | CatBoost | 0.963593 | 0.96497 | First competitive boosting model |
+| EXP-008 | XGBoost | 0.964358 | 0.96587 | Strong early individual model |
+| EXP-012 | XGBoost + thresholds | 0.965233 | 0.96696 | Important feature-engineering gain |
+| EXP-016 | Refined XGBoost | 0.965702 | 0.96730 | Strong XGBoost reference |
+| EXP-027 | Seed ensemble XGBoost + CatBoost | 0.965919 | — | Variance reduction |
+| EXP-035 | Exact-values Logistic + blend | 0.966810 | 0.96815* | Sparse representation adds diversity |
+| EXP-036 | Logistic + ratios + blend | 0.967037 | 0.96838* | Consistent relational gain |
+| EXP-037 | Relational Logistic + blend | 0.967068 | 0.96842* | Adds `screen_minus_social` |
+| **EXP-039** | **Final ensemble** | **0.967468** | **0.96876*** | **Best result** |
 
-\* Public LB registrado como resultado reportado; no está respaldado por un artifact descargado de Kaggle dentro del repositorio.
+\* Public LB values are preserved as reported competition results and are not backed by downloaded Kaggle leaderboard artifacts inside the repository.
 
-## Ensemble final
+---
 
-El resultado final es un rank blend:
+## 🔀 Final Ensemble
 
-- EXP-027, ensemble XGBoost: **37,5 %**
-- EXP-037, Logistic relacional: **22,5 %**
-- EXP-039, LightGBM high-resolution: **40 %**
+The final solution is a weighted **rank blend** of three complementary branches:
 
-Cada componente se transforma a ranking con empates promedio, se normaliza al intervalo `[0, 1]` y luego se aplica el promedio ponderado. La implementación validada está en [`src/ensembles/final_ensemble.py`](src/ensembles/final_ensemble.py).
+| Component | Weight |
+|---|---:|
+| XGBoost ensemble | **37.5%** |
+| Relational Logistic | **22.5%** |
+| High-resolution LightGBM | **40.0%** |
 
-## Estructura del repositorio
+Each component is converted to ranks with average tie handling, normalized to `[0, 1]`, and then combined through a weighted mean.
+
+```text
+XGBoost ensemble ─────── 37.5%
+Relational Logistic ──── 22.5%
+High-res LightGBM ────── 40.0%
+             ↓
+       Weighted Rank Blend
+             ↓
+     OOF ROC AUC 0.967468
+```
+
+The validated implementation is in:
+
+[`src/ensembles/final_ensemble.py`](src/ensembles/final_ensemble.py)
+
+---
+
+## 🧪 What Did Not Work
+
+Not every experiment improved the score.
+
+That is intentional to preserve in the repository.
+
+Documented unsuccessful or neutral directions include:
+
+- ExtraTrees
+- neural networks
+- Factorization Machine
+- target encoding
+- ranking correction
+- broader frequency encodings
+- dual representations
+- EXP-040 categorical-copy strategy
+
+These experiments helped narrow the search space and clarified which signals were genuinely complementary.
+
+See [`docs/decisiones_y_descartes.md`](docs/decisiones_y_descartes.md).
+
+---
+
+## 🛠️ Tech Stack
+
+<p>
+  <img src="https://img.shields.io/badge/Python-ML-3776AB?logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/XGBoost-Boosting-EC6B23">
+  <img src="https://img.shields.io/badge/LightGBM-Boosting-3A7D44">
+  <img src="https://img.shields.io/badge/CatBoost-Boosting-FFCC00">
+  <img src="https://img.shields.io/badge/scikit--learn-ML-F7931E?logo=scikitlearn&logoColor=white">
+  <img src="https://img.shields.io/badge/Pandas-Data-150458?logo=pandas&logoColor=white">
+  <img src="https://img.shields.io/badge/Kaggle-Competition-20BEFF?logo=kaggle&logoColor=white">
+</p>
+
+**Methods:** Stratified Cross-Validation · OOF Prediction · Feature Engineering · Frequency Encoding · Sparse Modeling · Gradient Boosting · Rank Blending
+
+---
+
+## 📂 Repository Structure
 
 ```text
 src/
-  models/         # modelos core migrados
-  features/       # transformaciones compartidas
-  ensembles/      # ensemble final
-  diagnostics/    # análisis que no entrenan el pipeline principal
-  *.py             # wrappers y entrypoints históricos
-tests/             # imports, contratos, smoke tests y paridad
-docs/              # bitácora, metodología, decisiones y resultados
-assets/            # gráficos para la documentación
+  models/         core migrated model implementations
+  features/       shared feature transformations
+  ensembles/      final ensemble logic
+  diagnostics/    analyses outside the main training pipeline
+  *.py            historical wrappers and experiment entrypoints
+
+tests/             imports, contracts, smoke tests and parity checks
+
+docs/              experiment log, methodology, decisions and results
+
+assets/            documentation figures
+
 outputs/
-  metrics/         # métricas livianas
-  reports/         # tablas y reportes reproducibles
-  manifests/       # inventarios, hashes y trazabilidad
+  metrics/         lightweight metrics
+  reports/         reproducible tables and reports
+  manifests/       inventories, hashes and traceability
 ```
 
-Los scripts con nombres `EXP` se conservan como entrypoints históricos o wrappers. Esto mantiene la trazabilidad sin duplicar la lógica core.
+Historical `EXP` scripts are preserved as wrappers or entrypoints to keep the experiment history traceable without duplicating core logic.
 
-## Por dónde empezar
+---
 
-- [`src/models/xgboost_thresholds.py`](src/models/xgboost_thresholds.py): XGBoost refinado con threshold features.
-- [`src/models/logistic_relational.py`](src/models/logistic_relational.py): Logistic sparse con relaciones entre variables.
-- [`src/models/lightgbm_high_resolution.py`](src/models/lightgbm_high_resolution.py): LightGBM high-resolution de la rama final.
-- [`src/ensembles/final_ensemble.py`](src/ensembles/final_ensemble.py): rank blend final sobre predicciones persistidas.
-- [`docs/bitacora_competencia.md`](docs/bitacora_competencia.md): evolución completa de los experimentos.
-- [`docs/metodologia.md`](docs/metodologia.md): validación, leakage, OOF y ensembles.
+## 🧭 Where to Start
 
-## Reproducibilidad
+For a quick technical review:
 
-1. Crear un entorno con una versión reciente de Python compatible con las dependencias.
-2. Instalar el pipeline principal:
+- [`src/models/xgboost_thresholds.py`](src/models/xgboost_thresholds.py) — refined XGBoost with threshold features
+- [`src/models/logistic_relational.py`](src/models/logistic_relational.py) — sparse Logistic model with relational features
+- [`src/models/lightgbm_high_resolution.py`](src/models/lightgbm_high_resolution.py) — final LightGBM branch
+- [`src/ensembles/final_ensemble.py`](src/ensembles/final_ensemble.py) — weighted rank blend
+- [`docs/bitacora_competencia.md`](docs/bitacora_competencia.md) — full experiment history
+- [`docs/metodologia.md`](docs/metodologia.md) — validation, leakage control, OOF and ensemble methodology
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+---
 
-3. Descargar los datos desde la página oficial de la competencia y ubicar `train.csv`, `test.csv` y `sample_submission.csv` en `data/`.
-4. Ejecutar las comprobaciones:
+## ✅ Reproducibility
 
-   ```bash
-   python -m compileall -q src
-   pytest tests -q
-   ```
+Install the main pipeline:
 
-Los datos de competencia, OOF completos, test predictions y submissions no se incluyen. Los experimentos neuronales y RealMLP tienen dependencias separadas en `requirements-experiments.txt`. El repositorio preserva los entrypoints históricos, pero no afirma que los 43 experimentos puedan reproducirse con un único comando.
+```bash
+pip install -r requirements.txt
+```
 
-## Documentación
+Download the official competition files and place them in:
 
-- [Bitácora de la competencia](docs/bitacora_competencia.md)
-- [Metodología](docs/metodologia.md)
-- [Decisiones y descartes](docs/decisiones_y_descartes.md)
-- [Resultados](docs/resultados.md)
+```text
+data/
+├── train.csv
+├── test.csv
+└── sample_submission.csv
+```
 
-## Datos y licencia
+Run validation checks:
 
-Competition data is not included in this repository. Download it directly from the official Kaggle competition page.
+```bash
+python -m compileall -q src
+pytest tests -q
+```
 
-El código se publica bajo licencia MIT.
+The repository does **not** include:
+
+- competition datasets,
+- full OOF predictions,
+- test predictions,
+- submission files.
+
+Neural and RealMLP experiments use separate dependencies in:
+
+```text
+requirements-experiments.txt
+```
+
+The repository preserves the historical experiment entrypoints, but it does not claim that all experiments can be reproduced with one command.
+
+---
+
+## 💡 Key Learnings
+
+- Strong validation structure matters more than leaderboard chasing.
+- Feature engineering can still materially improve gradient boosting on tabular data.
+- Sparse linear models can add useful diversity even when their standalone score is lower.
+- Fold-safe encodings are essential when frequencies are derived from the training distribution.
+- A slightly weaker individual model can still improve the final blend if its errors are different.
+- Failed experiments are useful when they reduce uncertainty about the search space.
+- Rank blending can stabilize heterogeneous model outputs and improve ensemble performance.
+
+---
+
+## ⚠️ Limitations
+
+- Public leaderboard values are preserved as reported results but are not backed by downloaded leaderboard artifacts in the repository.
+- Competition data is not redistributed.
+- The project is optimized for a Kaggle competition setting, not deployed production inference.
+- Some historical experiments require separate dependencies.
+- Not all 43 experiments are exposed through a single unified runner.
+- OOF performance should not be interpreted as evidence of real-world causal prediction.
+
+---
+
+## 🚀 Potential Next Steps
+
+- Reproduce the strongest branches under a fully unified experiment runner.
+- Add experiment tracking with structured metadata.
+- Add calibration and error-slice analysis.
+- Compare rank blending against stacking or constrained linear blending.
+- Add stronger permutation or SHAP-based diagnostics.
+- Benchmark modern tabular deep-learning approaches under the same CV folds.
+- Add a compact inference demo using synthetic or license-safe sample data.
+
+---
+
+## 👤 Author
+
+**Guido Arturo Broccoli**
+
+[LinkedIn](https://www.linkedin.com/in/guido-a-broccoli) ·
+[GitHub](https://github.com/GabArg) ·
+[Repository](https://github.com/GabArg/smartphone-addiction-prediction)
+
+---
+
+## 📄 License & Data
+
+Competition data is not included in this repository.
+
+Download it directly from the official Kaggle competition page.
+
+Original code in this repository is released under the MIT License.
